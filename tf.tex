@@ -6,9 +6,11 @@
 \usepackage[utf8]{inputenc}
 \usepackage{pslatex}
 \usepackage{theorem}
-\newtheorem{teorema}{Teorema}
-\newtheorem{proposicion}{Proposición}
-\newtheorem{nota}{Nota}
+\newtheorem{theorem}{Teorema}
+\newtheorem{lemma}{Lema}
+\newtheorem{proposition}{Proposición}
+\newtheorem{note}{Nota}
+\newtheorem{definition}{Definición}
 
 \author{Exequiel Aguirre}
 \title{Subgrupos discretos del grupo de Heisenberg }
@@ -35,6 +37,74 @@ dimensión 2.
  
 
 \section{Preliminares}
+\begin{definition} 
+ Un plano hiperbólico para una forma alternante es un espacio vectorial de dimensión 2 no degenerado,
+  i.e. $\psi|_P$ sea no degenerada. 
+\end{definition}
+
+\begin{definition}   
+ Decimos que un espacio vectorial V es hiperbólico si se puede escribir como suma ortogonal (directa ) de
+ planos hiperbólicos
+\end{definition}
+
+\begin{theorem}
+ Sea $\psi$ una forma bilineal, alternante, no degenerada, $\psi:VxV\mapsto \mathbb{R}$ con V, un espacio 
+ vectorial de dimensión finita.
+ Entonces: V es un espacio hiperbólico y dim(V) es par.
+\end{theorem}
+
+
+Demostración:
+Como $\psi$ es no degenerada entonces puedo asumir que $\psi \neq 0$.
+Existen entonces, $\tilde{e}_1$ y $f_1$ no nulos, tales que $\psi(\tilde{e}_1,f_1)=c\neq0$.
+Defino, $e_1=\frac{\tilde{e}_1}{c}$ entonces, $\psi(e_1,f_1)=1$
+
+Afirmación 1: $e_1,f_1$, son linealmente independientes.
+Supongamos que  $c_1 e_1 +c_2 f_1 = 0$ con $c_1,c_2 \in \mathbb{R}$  donde $c_1\neq0$ o  $c_2\neq0$
+Caso $c_1\neq0$:
+Entonces tenemos que,
+$0=\psi(e_1,e_1)=\psi(e_1,- \frac{c_2}{c_1} f_1)= - \frac{c_2}{c_1} \psi(e_1,f_1)=- \frac{c_2}{c_1} \Rightarrow c_2=0$
+$\Rightarrow c_1 e_1 = 0$ absurdo!
+Análogamente se puede comprobar que el caso $c_2\neq0$ también conduce a un absurdo, por lo que queda probada la
+afimación.
+
+Entonces tiene sentido definir $P_1=<e_1,f_1>$
+    
+Dado que $\psi(e_1,f_1)=1$ y $\psi$ es alternante, tenemos que:
+\begin{itemize}
+ \item $\psi(e_1,e_1)=0$
+ \item $\psi(f_1,f_1)=0$
+ \item $\psi(f_1,e_1)=0$
+\end{itemize}
+
+Por lo que, 
+$$\psi|_{P_1} = 
+\begin{bmatrix}
+ 1 & 0 &\\ 
+ 0& -1&
+\end{bmatrix}
+$$
+
+Se ve así que $\psi|_{P_1}$ es no degenerada $\Rightarrow P_1$ es un plano hiperbólico.
+
+Por Lema 1: $V=P_1 \oplus P_1^{\bot}$, con $P_1^{\bot}={v \in V : \psi(v,e_1)=0=\psi(v,f_1)}$
+Por inducción, aplico la hipotesis a $\psi|P_1^{\bot}$ y obtengo los pares $(e_i,f_i)$ con $i \in \mathbb{N}$
+
+Entonces sea $\beta$ la base: $\beta={e_1,f_1,...,e_n,f_n}$.
+En esta base, 
+$$\psi = 
+\begin{bmatrix}
+ 0 & 1 & & & & & & &\\ 
+ -1& 0 & & & & & & &\\
+ & & 0 & 1 & & & & &\\
+ & & -1 & 0 & & & & &\\
+ & &  &  & & \ddots & & &\\
+ & &  &  & & & 0 & 1 &\\
+ & &  &  & & & -1 & 0 &\\ 
+\end{bmatrix}
+$$
+
+De $\beta$ se ve que la dim(V) es par.
 
 
  \section{Referencias}
@@ -45,4 +115,5 @@ dimensión 2.
 
 
 \end{document}
+
 
