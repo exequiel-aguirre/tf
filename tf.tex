@@ -3,6 +3,7 @@
 \usepackage[spanish]{babel}
 \usepackage{amsmath}
 \usepackage{amsfonts}
+\usepackage{amssymb}
 \usepackage[utf8]{inputenc}
 \usepackage{pslatex}
 \usepackage{theorem}
@@ -136,6 +137,54 @@ De $\beta$ se ve que la dim(V) es par.
 \end{proof} 
 
 
+
+\section{?}
+
+\begin{definition}
+ Llamaremos una lattice de $H_n$, a un subgrupo discreto $\Gamma$ de $H_n$ tal que:
+ $H_n/\Gamma$ es compacto.
+\end{definition}
+
+\begin{definition}
+ Un lattice de $\mathbb{C}^n$ es un subgrupo discreto de $\mathbb{C}^n$ donde D/$\mathbb{C}^n$ es compacto.
+\end{definition}
+
+
+\begin{definition}
+ Llamaremos a un lattice D de $\mathbb{C}^n$, lattice de Heisenberg, cuando $J_{2n}(D,D)=l \mathbb{Z} $ para algún $l > 0$.
+ Denotaremos a los lattice de Heisenberg de $\mathbb{C}^n$ como el conjunto $HL(\mathbb{C}^n)$
+\end{definition}
+
+
+
+\begin{lemma}
+ Si un lattice D de $\mathbb{C}^n$  satisface que $\psi(D,D) \subset l \mathbb{Z}$, $l>0$ entonces D $\in HL(\mathbb{C}^n)$
+\end{lemma}
+\begin{proof}
+ Sin pérdida de generalidad podemos asumir que l=1, pues si $l\neq1$,tomo un isomorfismo 
+ $f:D \mapsto \tilde{D}$ donde $f(d):=d \frac{1}{\sqrt{l}}$. Entonces,\newline
+ $\psi(\tilde{D},\tilde{D})=\{ \psi(\tilde{d},\tilde{d}): \tilde{d} \in \tilde{D} \}=
+ \{ \psi(\frac{d}{\sqrt{l}},\frac{d}{\sqrt{l}}): d \in D \}=\{ \frac{1}{l} \psi(d,d):d\in D \} \newline
+ \subset \{ \frac{1}{l} l a : a \in \mathbb{Z} \}= 1 \mathbb{Z} $
+ 
+ Sea $l_1$ el entero positivo más pequeño de $\psi(D,D)$, donde  $ l_1 = \psi(v_1,v_1')$ con $v_1, v_1' \in D$.
+ Definimos $<v_1,v_1'>^\bot=\{v \in D: \psi(v,v_1)=\psi(v_1',v)=0\}$
+ 
+ Afirmación 1: $D=<v_1,v_1'>\oplus <v_1,v_1'>^\bot$ 
+ Pues por el algoritmo Euclideo $\psi(v_1,v)=m l_1 +r$ con $m,r \in \mathbb{Z}$ y $0 \leq r < l_1$ ($\mathbb{Z}$ es dominio Euclideo)
+ $\Rightarrow r=\psi(v_1,v)-m l_1=\psi(v_1,v)-m \psi(v_1,v_1')=\psi(v_1,v-mv_1')$\newline
+ 
+ Luego r=0, pues si $r\neq 0$ entonces $0<\psi(v_1,v-mv_1')<l_1$ absurdo!\newline
+ De esta forma $v-mv_1' \in <v_1>^\bot$.
+ Analogamente, $v-m'v_1 \in <v_1'>^\bot$  con $m'\in \mathbb{Z}$ tal que  $\psi(v,v_1')=m'l_1 + r$
+ 
+ Notar que $\psi(v-(m v_1' + m' v_1),v_1)=\psi(v-m v_1',v_1) + \psi(-m' v_1,v_1)=0=\psi(v_1',v-(m v_1'+m'v_1))=\psi(v_1',v-m'v_1)+
+ \psi(v_1',-m v_1') \therefore  v-(m v_1'+m'v_1) \in <v_1,v_1'>^\bot$
+ Finalmente,$v\in D, v=v-(m v_1'+ m'v_1)+(m v_1' + m'v_1)$ 
+ Fin de la afirmación
+ 
+ 
+\end{proof}
 
 
 
