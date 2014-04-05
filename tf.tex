@@ -170,7 +170,7 @@ De $\beta$ se ve que la dim(V) es par.
  Sea $l_1$ el entero positivo más pequeño de $\psi(D,D)$, donde  $ l_1 = \psi(v_1,v_1')$ con $v_1, v_1' \in D$.
  Definimos $<v_1,v_1'>^\bot=\{v \in D: \psi(v,v_1)=\psi(v_1',v)=0\}$
  
- Afirmación 1: $D=<v_1,v_1'>\oplus <v_1,v_1'>^\bot$ 
+ Afirmación 1: $D=<v_1,v_1'>\oplus <v_1,v_1'>^\bot$ .
  Pues por el algoritmo Euclideo $\psi(v_1,v)=m l_1 +r$ con $m,r \in \mathbb{Z}$ y $0 \leq r < l_1$ ($\mathbb{Z}$ es dominio Euclideo)
  $\Rightarrow r=\psi(v_1,v)-m l_1=\psi(v_1,v)-m \psi(v_1,v_1')=\psi(v_1,v-mv_1')$\newline
  
@@ -181,9 +181,23 @@ De $\beta$ se ve que la dim(V) es par.
  Notar que $\psi(v-(m v_1' + m' v_1),v_1)=\psi(v-m v_1',v_1) + \psi(-m' v_1,v_1)=0=\psi(v_1',v-(m v_1'+m'v_1))=\psi(v_1',v-m'v_1)+
  \psi(v_1',-m v_1') \therefore  v-(m v_1'+m'v_1) \in <v_1,v_1'>^\bot$
  Finalmente,$v\in D, v=v-(m v_1'+ m'v_1)+(m v_1' + m'v_1)$ 
+ Fin de la afirmación 
+ 
+ Afirmación 2: $l_1 | \psi(v,v') \forall v,v' \in <v_1,v_1'>^\bot$ pues, $\psi(v,v')=m l_1 + r$ con $m,r \in \mathbb{Z}$ y 
+ $0\leq r < l_1 \Rightarrow r= \psi(v,v') - m \psi(v_1,v_1')=\psi(v,v')-m\psi(v_1,v_1')+ \psi(v,-m v_1') + \psi (v_1,v')
+ = \psi(v+v_1,v'-mv_1') \Rightarrow $ r=0 (por la definición de $l_1$)
  Fin de la afirmación
  
  
+ Finalmente afirmo que $\psi(D,D)=l_1 \mathbb{Z}$ \newline
+ $\supseteq$) Sea $m l_1 \in l_1 \mathbb{Z} \Rightarrow \psi(v_1,m v_1') = m \psi(v_1,v_1')= m l_1$\newline
+ $\subseteq$) Sean w,w' $\in$ D ,por afirmación 1 ,\newline
+ $w = w_1 +w_2$  y $w'=w_1' +w_2'$ con $w_1,w_1' \in <v_1,v_1'>$ y  $w_2,w_2' \in <v_1,v_1'>^\bot$\newline
+ $\psi(w,w')=\psi(w_1,w_1')+ \psi(w_1,w_2')+ \psi(w_2,w_1')+\psi(w_2,w_2')=\psi(w_1,w_1')+\psi(w_2,w_2')=$ \footnote{$w_1,w_2 \in <v_1,v_1'>$ y afirmación 2}
+ $=\psi(n v_1+n' v_1',m v_1+m' v_1') + k l_1 = n m' \psi(v_1,v_1')+n' m \psi(v_1',v_1)+ k l_1 = (n m' - n'm+k)l_1$
+ 
+ 
+ Notar que el lattice original $\psi(D,D)= l l_1 \mathbb{Z} $
 \end{proof}
 
 
