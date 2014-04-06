@@ -4,6 +4,7 @@
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
+\usepackage{color}
 \usepackage[utf8]{inputenc}
 \usepackage{pslatex}
 \usepackage{theorem}
@@ -151,14 +152,14 @@ De $\beta$ se ve que la dim(V) es par.
 
 
 \begin{definition}
- Llamaremos a un lattice D de $\mathbb{C}^n$, lattice de Heisenberg, cuando $J_{2n}(D,D)=l \mathbb{Z} $ para algún $l > 0$.
+ Llamaremos a un lattice D de $\mathbb{C}^n$, lattice de Heisenberg, cuando $\psi(D,D)=l \mathbb{Z} $ para algún $l > 0$.
  Denotaremos a los lattice de Heisenberg de $\mathbb{C}^n$ como el conjunto $HL(\mathbb{C}^n)$
 \end{definition}
 
 
 
-\begin{lemma}
- Si un lattice D de $\mathbb{C}^n$  satisface que $\psi(D,D) \subset l \mathbb{Z}$, $l>0$ entonces D $\in HL(\mathbb{C}^n)$
+\begin{lemma} \label{1.7}
+ Si un lattice D de $\mathbb{C}^n$  satisface que $\psi(D,D) \subseteq  l \mathbb{Z}$, $l>0$ entonces D $\in HL(\mathbb{C}^n)$
 \end{lemma}
 \begin{proof}
  Sin pérdida de generalidad podemos asumir que l=1, pues si $l\neq1$,tomo un isomorfismo 
@@ -199,6 +200,54 @@ De $\beta$ se ve que la dim(V) es par.
  
  Notar que el lattice original $\psi(D,D)= l l_1 \mathbb{Z} $
 \end{proof}
+
+\begin{lemma} \label{1.8}
+ Un $D \in HL(\mathbb{C}^n)$ se puede escribir como una suma directa $\psi-ortogonal : D=<v_1,v_1'>\oplus<v_2,v_2'>...<v_n,v_n'>$
+ de $\mathbb{Z}$-módulos bidimensionales $<v_j,v_j'>$. Sea $l_j=\psi(v_j,v_j')$, entonces la descomposición puede ser tomada 
+ de forma tal que: $l_j \in \mathbb{R}^{>0} y l_j | l_{j+1}$
+ Es más, estos $l_j$ están unívocamente determinados.
+\end{lemma}
+
+\begin{proof}
+$\psi(D,D)  = l \mathbb{Z}$. Sin pérdida de generalidad podemos asumir l=1
+Sea $l_1$ el mínimo entero positivo de $\psi(D,D)$, donde $l_1=\psi(v_1,v_1')$ con $v_1,v_1' \in D$. \newline
+$v_1,v_1'$ son linealmente independientes. (pues si $v_1'=c v_1 \Rightarrow \psi(v_1,c v_1)=0$ ) entonces tiene sentido
+pensar en el $\mathbb{Z}$-módulo bidimensional $P_1:=<v_1,v_1'>$
+
+Notar que $$
+\psi|_{<v_1,v_1'>} = \begin{bmatrix}
+                              l_1 & 0 &\\
+                              0 & -l_1 &
+                             \end{bmatrix}
+$$
+
+En la prueba del lema \ref{1.7} vimos que $D=<v_1,v_1'> \oplus <v_1,v_1'>^\bot$
+Como $\psi(P_1^\bot,P_1^\bot) \subseteq \mathbb{Z}$ podemos aplicar el mismo razonamiento del principio a $P_1^\bot$ 
+para obtener los pares $(v_j,v_j')$
+
+Como $D \in HL(\mathbb{C}^n)$ con $\mathbb{C}^n$ de dimensión finita,  obtengo una cantidad finita de pares,entonces:
+$D=<v_1,v_1'>\oplus<v_2,v_2'>...<v_n,v_n'>$
+
+Afirmación: m=n\newline
+Sabemos que $m\leq n$, veamos que $m<n$ nos conduce a un absurdo\newline
+Si $m<n$ $\Rightarrow \mathbb{R}^{2n}/D=\mathbb{R}^{2n}/\oplus_{i=1}^m P_i \backsimeq \oplus_{i=1}^m (\mathbb{R}^{2n}/P_i) \oplus \mathbb{R}^{2(n-m)} $\newline
+Dado que $m<n \Rightarrow  mathbb{R}^{2(n-m)}$ no es compacto $\Rightarrow mathbb{R}^{2n}/D$ no es compacto, absurdo! pues D es un lattice
+Fin afirmación
+
+%Vimos en la demostración del lemma \ref{1.7}, que l_1 \ \psi(v,v') \forall v,v'  \in D
+Veamos que $l_j|l_{j+1}$.\newline
+Ya vimos que $D= P_1\oplus P_2 \oplus...\oplus P_j \oplus P_j^\bot$.\newline
+$l_{j+1}=\psi(v_{j+1},v_{j+1}')=m \psi(v_j,v_j') +r \Rightarrow r=\psi(v_{j+1},v_{j+1}')-m \psi(v_j,v_j') + \psi(v_{j+1},v_{j+1}')
+=\psi(v_{j+1},v_{j+1}')-m \psi(v_j,v_j') + \psi(v_{j+1},v_{j+1}') + \psi(v_{j+1},-mv_j') + \psi(v_j,v_{j+1}')
+=\psi(v_{j+1} + v_j, v_{j+1}'-m v_j')$ con $v_{j+1} + v_j, v_{j+1}'-m v_j' \in P_j \oplus P_j^\bot \Rightarrow
+r=0$ pues $l_j$ es el más pequeño de $\psi(P_j \oplus P_j^\bot, P_j \oplus P_j^\bot)$\newline
+
+{\color{red} Queda por ver la unicidad}
+
+
+
+ \end{proof}
+
 
 
 
