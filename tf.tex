@@ -11,6 +11,7 @@
 \newtheorem{theorem}{Teorema}
 \newtheorem{lemma}{Lema}
 \newtheorem{proposition}{Proposición}
+\newtheorem{corollary}{Corolario}
 \newtheorem{note}{Nota}
 \newtheorem{definition}{Definición}
 \newenvironment{proof}{\paragraph{Demostración:}}{\hfill$\square$}
@@ -26,10 +27,12 @@
 \begin{abstract}
 La teoría de series de Fourier es la versión clásica del análisis armónico en el toro,
 $\mathbb{R}^n /\mathbb{Z}^n$, donde $\mathbb{Z}^n$ denota el subgrupo discreto de $\mathbb{R}^n$ de
-las n-uplas de números enteros.\newline
+las n-uplas de números enteros.
+
 Si en lugar de $\mathbb{R}^n$ , consideramos el grupo de Heisenberg 2n+1 dimensional $H_n$, un tema
 de interés actual es desarrollar el análisis armónico asociado a $H_n/\Gamma$, donde $\Gamma$ 
-denota el subgrupo discreto de $H_n$. Ver \cite{Th} \newline
+denota el subgrupo discreto de $H_n$. Ver \cite{Th} 
+
 El objetivo primero de este trabajo es estudiar la descripción hecha por R. Tolimieri \cite{To}.
 Posteriormente dar ejemplos de subgrupos discretos en el grupo de tipo Heisenberg, cuyo centro tiene
 dimensión 2.
@@ -58,11 +61,14 @@ dimensión 2.
 
 \begin{proof}
 Como $\psi$ es no degenerada entonces puedo asumir que $\psi \neq 0$.
-Existen entonces, $\tilde{e}_1$ y $f_1$ no nulos, tales que $\psi(\tilde{e}_1,f_1)=c\neq0$.\newline
+Existen entonces, $\tilde{e}_1$ y $f_1$ no nulos, tales que $\psi(\tilde{e}_1,f_1)=c\neq0$.
+
 Defino, $e_1=\frac{\tilde{e}_1}{c}$ entonces, $\psi(e_1,f_1)=1$
 
-Afirmación 1: $e_1,f_1$, son linealmente independientes.\newline
-Supongamos que  $c_1 e_1 +c_2 f_1 = 0$ con $c_1,c_2 \in \mathbb{R}$  donde $c_1\neq0$ o  $c_2\neq0$\newline
+Afirmación 1: $e_1,f_1$, son linealmente independientes.
+
+Supongamos que  $c_1 e_1 +c_2 f_1 = 0$ con $c_1,c_2 \in \mathbb{R}$  donde $c_1\neq0$ o  $c_2\neq0$
+
 Caso $c_1\neq0$:
 Entonces tenemos que,
 $0=\psi(e_1,e_1)=\psi(e_1,- \frac{c_2}{c_1} f_1)= - \frac{c_2}{c_1} \psi(e_1,f_1)=- \frac{c_2}{c_1} \Rightarrow c_2=0$
@@ -112,7 +118,8 @@ De $\beta$ se ve que la dim(V) es par.
 \begin{lemma}
  Sea V un espacio vectorial de dimensión finita, sobre un subcuerpo F del cuerpo de los números complejos y
  $\psi$ una forma bilineal alternante no degenerada, en V.
- Entonces existe un subespacio $P_1$, tal que \newline
+ Entonces existe un subespacio $P_1$, tal que 
+ 
  $V = P_1 \oplus P_1^{\bot}$
  donde $P_1^{\bot}= \{ \alpha \in V: \psi(\alpha,\beta)=0$  $\forall$  $\beta \in P_1 \} $
  \end{lemma}
@@ -124,10 +131,12 @@ De $\beta$ se ve que la dim(V) es par.
  $$v_2:=v-v_1$$
  Notar que $v_1 \in <e_1,f_1>=P_1$ y $v_2 \in P_1^{\bot}$, pues 
  $\psi(v_2,e_1)=\psi(v,e_1)-\psi(v_1,e_1)=\psi (v,e_1)-[\psi(v,f_1) \psi(e_1,e_1) + \psi(v,e_1) \psi(f_1,e_1)]=
- \psi(v_1,e_1)- \psi(v,e_1)=0$.\newline
+ \psi(v_1,e_1)- \psi(v,e_1)=0$.
+ 
  Análogamente $\psi(v_2,f_1)=0$.
  
- Es decir, que $v=v-v_1+v_1=v_2 + v_1$ con $v_2 \in P_1^{\bot}$ y $v_1 \in P_1$.\newline
+ Es decir, que $v=v-v_1+v_1=v_2 + v_1$ con $v_2 \in P_1^{\bot}$ y $v_1 \in P_1$.
+ 
  Además, $P_1  \cap P_1^{\bot} = \{0\}$, pues si  $\tilde{v} \in  P_1 \cap P_1^{\bot}$ entonces
  $\tilde{v} \in P_1 \Rightarrow \tilde{v}=a e_1 + b f_1 \Rightarrow 
  \psi(\tilde{v},e_1)=\psi(a e_1 + b f_1,e_1)=-b$ y $\psi(\tilde{v},f_1)=\psi(a e_1 + b f_1,f_1)=a $
@@ -163,7 +172,8 @@ De $\beta$ se ve que la dim(V) es par.
 \end{lemma}
 \begin{proof}
  Sin pérdida de generalidad podemos asumir que l=1, pues si $l\neq1$,tomo un isomorfismo 
- $f:D \mapsto \tilde{D}$ donde $f(d):=d \frac{1}{\sqrt{l}}$. Entonces,\newline
+ $f:D \mapsto \tilde{D}$ donde $f(d):=d \frac{1}{\sqrt{l}}$. Entonces,
+ 
  $\psi(\tilde{D},\tilde{D})=\{ \psi(\tilde{d},\tilde{d}): \tilde{d} \in \tilde{D} \}=
  \{ \psi(\frac{d}{\sqrt{l}},\frac{d}{\sqrt{l}}): d \in D \}=\{ \frac{1}{l} \psi(d,d):d\in D \} \newline
  \subset \{ \frac{1}{l} l a : a \in \mathbb{Z} \}= 1 \mathbb{Z} $
@@ -173,9 +183,11 @@ De $\beta$ se ve que la dim(V) es par.
  
  Afirmación 1: $D=<v_1,v_1'>\oplus <v_1,v_1'>^\bot$ .
  Pues por el algoritmo Euclideo $\psi(v_1,v)=m l_1 +r$ con $m,r \in \mathbb{Z}$ y $0 \leq r < l_1$ ($\mathbb{Z}$ es dominio Euclideo)
- $\Rightarrow r=\psi(v_1,v)-m l_1=\psi(v_1,v)-m \psi(v_1,v_1')=\psi(v_1,v-mv_1')$\newline
+ $\Rightarrow r=\psi(v_1,v)-m l_1=\psi(v_1,v)-m \psi(v_1,v_1')=\psi(v_1,v-mv_1')$
  
- Luego r=0, pues si $r\neq 0$ entonces $0<\psi(v_1,v-mv_1')<l_1$ absurdo!\newline
+ 
+ Luego r=0, pues si $r\neq 0$ entonces $0<\psi(v_1,v-mv_1')<l_1$ absurdo!
+ 
  De esta forma $v-mv_1' \in <v_1>^\bot$.
  Analogamente, $v-m'v_1 \in <v_1'>^\bot$  con $m'\in \mathbb{Z}$ tal que  $\psi(v,v_1')=m'l_1 + r$
  
@@ -190,10 +202,14 @@ De $\beta$ se ve que la dim(V) es par.
  Fin de la afirmación
  
  
- Finalmente afirmo que $\psi(D,D)=l_1 \mathbb{Z}$ \newline
- $\supseteq$) Sea $m l_1 \in l_1 \mathbb{Z} \Rightarrow \psi(v_1,m v_1') = m \psi(v_1,v_1')= m l_1$\newline
- $\subseteq$) Sean w,w' $\in$ D ,por afirmación 1 ,\newline
- $w = w_1 +w_2$  y $w'=w_1' +w_2'$ con $w_1,w_1' \in <v_1,v_1'>$ y  $w_2,w_2' \in <v_1,v_1'>^\bot$\newline
+ Finalmente afirmo que $\psi(D,D)=l_1 \mathbb{Z}$ 
+ 
+ $\supseteq$) Sea $m l_1 \in l_1 \mathbb{Z} \Rightarrow \psi(v_1,m v_1') = m \psi(v_1,v_1')= m l_1$
+ 
+ $\subseteq$) Sean w,w' $\in$ D ,por afirmación 1 ,
+ 
+ $w = w_1 +w_2$  y $w'=w_1' +w_2'$ con $w_1,w_1' \in <v_1,v_1'>$ y  $w_2,w_2' \in <v_1,v_1'>^\bot$
+ 
  $\psi(w,w')=\psi(w_1,w_1')+ \psi(w_1,w_2')+ \psi(w_2,w_1')+\psi(w_2,w_2')=\psi(w_1,w_1')+\psi(w_2,w_2')=$ \footnote{$w_1,w_2 \in <v_1,v_1'>$ y afirmación 2}
  $=\psi(n v_1+n' v_1',m v_1+m' v_1') + k l_1 = n m' \psi(v_1,v_1')+n' m \psi(v_1',v_1)+ k l_1 = (n m' - n'm+k)l_1$
  
@@ -210,7 +226,8 @@ De $\beta$ se ve que la dim(V) es par.
 
 \begin{proof}
 $\psi(D,D)  = l \mathbb{Z}$. Sin pérdida de generalidad podemos asumir l=1
-Sea $l_1$ el mínimo entero positivo de $\psi(D,D)$, donde $l_1=\psi(v_1,v_1')$ con $v_1,v_1' \in D$. \newline
+Sea $l_1$ el mínimo entero positivo de $\psi(D,D)$, donde $l_1=\psi(v_1,v_1')$ con $v_1,v_1' \in D$. 
+
 $v_1,v_1'$ son linealmente independientes. (pues si $v_1'=c v_1 \Rightarrow \psi(v_1,c v_1)=0$ ) entonces tiene sentido
 pensar en el $\mathbb{Z}$-módulo bidimensional $P_1:=<v_1,v_1'>$
 
@@ -228,25 +245,84 @@ para obtener los pares $(v_j,v_j')$
 Como $D \in HL(\mathbb{C}^n)$ con $\mathbb{C}^n$ de dimensión finita,  obtengo una cantidad finita de pares,entonces:
 $D=<v_1,v_1'>\oplus<v_2,v_2'>...<v_n,v_n'>$
 
-Afirmación: m=n\newline
-Sabemos que $m\leq n$, veamos que $m<n$ nos conduce a un absurdo\newline
+Afirmación: m=n
+
+Sabemos que $m\leq n$, veamos que $m<n$ nos conduce a un absurdo
+
 Si $m<n$ $\Rightarrow \mathbb{R}^{2n}/D=\mathbb{R}^{2n}/\oplus_{i=1}^m P_i \backsimeq \oplus_{i=1}^m (\mathbb{R}^{2n}/P_i) \oplus \mathbb{R}^{2(n-m)} $\newline
 Dado que $m<n \Rightarrow  mathbb{R}^{2(n-m)}$ no es compacto $\Rightarrow mathbb{R}^{2n}/D$ no es compacto, absurdo! pues D es un lattice
 Fin afirmación
 
 %Vimos en la demostración del lemma \ref{1.7}, que l_1 \ \psi(v,v') \forall v,v'  \in D
-Veamos que $l_j|l_{j+1}$.\newline
-Ya vimos que $D= P_1\oplus P_2 \oplus...\oplus P_j \oplus P_j^\bot$.\newline
+Veamos que $l_j|l_{j+1}$.
+
+Ya vimos que $D= P_1\oplus P_2 \oplus...\oplus P_j \oplus P_j^\bot$.
+
 $l_{j+1}=\psi(v_{j+1},v_{j+1}')=m \psi(v_j,v_j') +r \Rightarrow r=\psi(v_{j+1},v_{j+1}')-m \psi(v_j,v_j') + \psi(v_{j+1},v_{j+1}')
 =\psi(v_{j+1},v_{j+1}')-m \psi(v_j,v_j') + \psi(v_{j+1},v_{j+1}') + \psi(v_{j+1},-mv_j') + \psi(v_j,v_{j+1}')
 =\psi(v_{j+1} + v_j, v_{j+1}'-m v_j')$ con $v_{j+1} + v_j, v_{j+1}'-m v_j' \in P_j \oplus P_j^\bot \Rightarrow
-r=0$ pues $l_j$ es el más pequeño de $\psi(P_j \oplus P_j^\bot, P_j \oplus P_j^\bot)$\newline
+r=0$ pues $l_j$ es el más pequeño de $\psi(P_j \oplus P_j^\bot, P_j \oplus P_j^\bot)$
+
 
 {\color{red} Queda por ver la unicidad}
-
-
-
  \end{proof}
+ 
+ \begin{corollary}
+  $\pi L = HL(\mathbb{C}^n)$
+ \end{corollary}
+ \begin{proof}
+$\subseteq)$ Sea $\Gamma \in L$
+
+$[\Gamma,\Gamma] \subseteq \Gamma \cap Z \Rightarrow$ es un subgrupo discreto de $Z (\simeq \mathbb{R}) \Rightarrow
+(0,\psi(\pi(\Gamma,\Gamma))) = \{(0,\psi(\pi(h,h'))): h,h' \in \Gamma\} = [\Gamma,\Gamma] \in (0,\beta(\Gamma) \mathbb{Z})$
+
+Es decir 
+
+$\psi(\pi(\Gamma),\pi(\Gamma))) \in \beta(\Gamma) \mathbb{Z}$ y $\psi(\Pi(\Gamma))$ es un lattice de $\mathbb{C}^n (por \cite{Ma}$)
+$\Rightarrow \psi(\pi(\Gamma),\pi(\Gamma))=l_1 \beta(\Gamma) \mathbb{Z}$ (por \ref{1.7}) $\therefore \pi(\Gamma) \in HL(\mathbb{C}^n) $
+
+
+$\supseteq)$ $D\in HL(\mathbb{C}^n) \Rightarrow D=<v_1,v_1'>\oplus ... \oplus <v_n,v_n'>$ por (\ref{1.8}) 
+
+Sea  $V:= \cup_{i=1}^n \{(v_i,0),(v_i',0)\}$
+
+Defino $\Gamma := <V>=\{(\sum_{i=1}^n a_i v_i + b_i v_i', \frac{1}{2} m l_1):a_i,b_i,m \in \mathbb{Z} \}$
+
+Afirmación:$\Gamma \in L$
+
+Queremos ver que $[\Gamma,\Gamma] \subseteq \Gamma \cap Z.  $
+Ya sabemos que $[\Gamma,\Gamma] \subseteq Z.$
+
+Sean $h,\tilde{h} \in \Gamma,$
+
+$[h,\tilde{h}]=(0,\psi(\sum_{i=1}^n a_i v_i + b_i v_i',\sum_{i=1}^n \tilde{a}_i v_i + \tilde{b}_i v_i'))
+=(0,\sum_{i=1}^n \psi(a_i v_i ,\tilde{b}_i v_i') + \sum_{i=1}^n \psi( b_i v_i',\tilde{a}_i v_i ))=(0,\sum_{i=1}^n a_i \tilde{b}_i l_i - b_i \tilde{a}_i l_i)
+= (0,\frac{1}{2} (2 \tilde{m})l_1 ) \therefore [\Gamma,\Gamma] \subseteq \Gamma$
+
+
+$H_n / \Gamma$ es compacto,pues 
+
+$H_n / \Gamma = H_n /( D \oplus l \mathbb{Z})=  H_n / \oplus_{i=1}^n P_i \oplus l \mathbb{Z} \simeq
+\mathbb{R}^{2n}\oplus_{i=1}^n P_i \oplus \mathbb{R} l \mathbb{Z} \simeq \oplus_{i=1}^n(\mathbb{R}^2/P_i) \oplus \mathbb{R}/ l \mathbb{Z}$ 
+ que es compacto.
+ 
+ En la primera igualdad estoy utilizando el hecho de que:
+ 
+ $\Gamma = \Pi(\Gamma) \oplus \mathbb{R} =\{ \sum_{i=1}^n a_i v_i + b_i v_i': a_i,b_i \in \mathbb{Z} \} \oplus \mathbb{R}=<v_1,v_1'>
+ \oplus ... \oplus <v_n,v_n'> \oplus \mathbb{R} = \oplus_{i=1}^n P_i \oplus \mathbb{R}= D\oplus \mathbb{R}= D \oplus l \mathbb{Z} $
+Fin Afirmación
+ \end{proof}
+
+ \begin{corollary}
+  Sea $\Gamma  \in L$ entonces, $\psi(\pi(\Gamma),\pi(\Gamma))=l_1 \beta(\Gamma) \mathbb{Z}$  
+ \end{corollary}
+ \begin{proof}
+  Por el corolario anterior, $D=\pi(\Gamma) \in HL(\mathbb{C}^n) \therefore \psi(D,D)=l_1 \beta \mathbb{Z}$  
+ \end{proof}
+
+
+
+ 
 
 
 
@@ -254,8 +330,10 @@ r=0$ pues $l_j$ es el más pequeño de $\psi(P_j \oplus P_j^\bot, P_j \oplus P_j
 
  \section{Referencias}
   \begin{thebibliography}{1}
-  \bibitem[To]{To} Tolimieri, R.   \emph{"Heisenberg manifolds and Theta functions"}, Trans. of the A.M.S Vol 239, 1978. (293-319)
-  \bibitem[Th]{Th} Thangavelu, S.  \emph{"Harmonic analisys on Heisenberg nilmanifolds"}, Real analisys and its applications
+  \bibitem[To]{To} Tolimieri, R.   \emph{``Heisenberg manifolds and Theta functions''}, Trans. of the A.M.S Vol 239, 1978. (293-319)
+  \bibitem[Th]{Th} Thangavelu, S.  \emph{``Harmonic analisys on Heisenberg nilmanifolds''}, Real analisys and its applications
+  \bibitem[Ma]{Ma} Malcev, A. T.  \emph{``On a class of homogeneous spaces''}, Izv. Akad. Nauk SSSR Ser. Mat. 13(1949)
+  
   \end{thebibliography}
 
 
