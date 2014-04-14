@@ -12,6 +12,7 @@
 \newtheorem{lemma}{Lema}
 \newtheorem{proposition}{Proposición}
 \newtheorem{corollary}{Corolario}
+\newtheorem{example}{Ejemplo}
 \newtheorem{note}{Nota}
 \newtheorem{definition}{Definición}
 \newenvironment{proof}{\paragraph{Demostración:}}{\hfill$\square$}
@@ -321,8 +322,86 @@ Fin Afirmación
  \end{proof}
 
 
-
+\begin{example} 
+ Sean 
+ $Z_n^{\#}:= \{ l=(l_1,l_2,...,l_n) \in \mathbb{N}^n:l_j|l_{j+1} \}$
  
+ $e_j:=(0,...,1,0...0)$ con $j 1\leq j \leq 2n (e_j \in \mathbb{C}^n)$
+ 
+ $D(l):=<e_1,....e_n,l_1 e_{n+1},l_2 e_{n+2}...,l_n e_{2n}>$
+ 
+ Afirmación 1: $D(l) \in HL(\mathbb{C}^n)$
+ 
+ Sean $v,v' \in D(l)$
+  
+  $\psi(v,v')= \psi(\sum_{i=1}^n a_i e_i + \sum_{i=n+1}^{2n}b_i l_{i-n} e_i, \sum_{i=1}^n a_i' e_i + \sum_{i=n+1}^{2n}b'_i l_{i-n}e_i )=
+  \psi(\sum_{i=1}^n a_i e_i , \sum_{i=1}^n a_i' e_i ) + \psi(\sum_{i=1}^n a_i e_i , \sum_{i=n+1}^{2n}b'_i l_{i-n} e_i) +
+  \psi( \sum_{i=n+1}^{2n}b_i l_{i-n}e_i, \sum_{i=1}^n a_i' e_i ) + \psi(\sum_{i=n+1}^{2n}b_i l_{i-n}e_i, \sum_{i=n+1}^{2n}b'_i l_{i-n}e_i)=
+   \sum_{i=1}^n \psi( a_i e_i , \sum_{i=n+1}^{2n}b'_i l_{i-n}e_i) + \sum_{i=n+1}^{2n}\psi( b_i l_{i-n}e_i, \sum_{i=1}^n a_i' e_i )=
+   \sum_{i=1}^n \psi( a_i e_i , b'_{n+i} l_{i} e_{n+i}) + \sum_{i=n+1}^{2n}\psi( b_i l_{i-n}, a_{i-n}' e_{i-n} )=
+   -\sum_{i=1}^n a_i b_{n+i}' l_i + \sum_{i=n+1}^{2n} b_i l_{i-n}a_{i-n}'=
+   -\sum_{i=1}^n a_i b_{n+i}' l_i + \sum_{j=1}^{n} b_{j+n} l_{j}a_{j}'= \sum_{i=1}^{n} l_i(-a_i b_{n+i}' + a_i' b_{i+n})$
+   
+   Dado que $l_1|l_j \forall j \Rightarrow l_1| \psi(v,v') \Rightarrow \psi(v,v') \subseteq l_1 \mathbb{Z} \Rightarrow 
+   D(l) \in HL(\mathbb{C}^n)$
+   
+ Fin Afirmación 1
+ Afirmación 2:$\psi(D(l),D(l))=l_1 \mathbb{Z}$
+ 
+ $\subseteq )$ Ya visto en Afirmación 1
+ $\supseteq )$ Sea $l_1$ m $\in l_1 \mathbb{Z}$
+ 
+ Definimos $v'=m e_1$ y  $v=l_1 e_{n+1}$
+ 
+ $\psi(v,v') = \psi(l_1,e_{n+1},m e_1)= (l_1,0,...,0) (m,0,...0) - (0,...,0) (0,...,0)=m l_1 \Rightarrow m l_1 \in \psi(D(l),D(l))$
+ 
+ Fin Afirmación  
+  
+\end{example}
+
+ Observación: En el lema $\ref{1.8}$ vimos que si $D(l) \in HL(\mathbb{C}^n)$ entonces admitía una descomposición de la forma 
+ $<v_1,v_1'>\oplus ... <v_n,v_n'>= D(l)$
+ En el ejemplo anterior, $v_i=l_i e_{i+1} y v_i'=e_i$
+ 
+
+\begin{theorem}
+ Para cada $D \in HL(\mathbb{C})$ existe una única $l \in Z_n^{\#}$, un único $d \in \mathbb{R}_{>0}$ y un $\alpha \in SP(2n,\mathbb{R})$ tal que:
+ 
+ $D=\alpha(d D(l))$
+\end{theorem}
+
+\begin{proof}
+ Sea $D \in HL(\mathbb{C}^n), \psi(D,D)=d^2 \mathbb{Z}$. Tomando un isomorfismo que $v \mapsto \frac{1}{d} v$, puedo pensar $d^2=1 (d\in \mathbb{R}_{>0})$
+ 
+ Por el lema $\ref{1.8}$, $\frac{1}{d} D = \tilde{D} = <v_1,v_1'> \oplus...\oplus <v_n,v_n'>$ con $l_i=\psi(v_i,v_i')$, únicos. 
+ Definimos $l:=(l_1,...,l_n) \in \mathbb{Z}_n^{\#}$
+ 
+ Sea $v:=(v_1,...,v_n)$ y $v'=(v_1',...,v_n')$
+ 
+ (Recordemos que $v_i,v_i' \in \mathbb{C}^n \simeq \mathbb{R}^{2n})$
+ 
+ Notación: $v_i=(v_i^1,..,v_i^{2n})$ con $v_i^j \in \mathbb{R}$ y $v_i'=((v_i')^1,..,(v_i')^{2n})$ con $(v_i')^j \in \mathbb{R}$
+ 
+ Sea 
+ $$\alpha:= \begin{bmatrix}
+ v_1^1 & ... &v_n^1 & \frac{(v_1')^1}{l_1} &... &\frac{(v_n')^1}{l_n} &\\ 
+ .& ... &. &. &... &. &\\
+ .& ... &. &. &... &. &\\
+ .& ... &. &. &... &. &\\
+ .& ... &. &. &... &. &\\
+ .& ... &. &. &... &. &\\
+ v_1^{2n}&...&v_n^{2n} &\frac{(v_1')^{2n}}{l_1}  &...&\frac{(v_n')^{2n}}{l_1}  &\\ 
+\end{bmatrix}
+$$
+Con $\alpha$ así definido , tenemos que :
+
+$\alpha \in  SP(2n,\mathbb{R})$
+
+$\tilde{D} = \alpha(d(l)) $
+
+Pero entonces, $\tilde{D}=\frac{1}{d} D = \alpha(D(l)) => D=\alpha(d D(l))$
+\end{proof}
+
 
 
 
