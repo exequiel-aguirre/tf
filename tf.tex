@@ -96,36 +96,12 @@ $$
 
 Se ve así que $\psi|_{P_1}$ es no degenerada $\Rightarrow P_1$ es un plano hiperbólico.
 
-Por Lema 1: $V=P_1 \oplus P_1^{\bot}$, con $P_1^{\bot}=\{v \in V : \psi(v,e_1)=0=\psi(v,f_1)\}$
-Por inducción, aplico la hipotesis a $\psi|P_1^{\bot}$ y obtengo los pares $(e_i,f_i)$ con $i \in \mathbb{N}$
-
-Entonces sea $\beta$ la base: $\beta={e_1,f_1,...,e_n,f_n}$.
-En esta base, 
-$$\psi = 
-\begin{bmatrix}
- 0 & 1 & & & & & & &\\ 
- -1& 0 & & & & & & &\\
- & & 0 & 1 & & & & &\\
- & & -1 & 0 & & & & &\\
- & &  &  & & \ddots & & &\\
- & &  &  & & & 0 & 1 &\\
- & &  &  & & & -1 & 0 &\\ 
-\end{bmatrix}
-$$
-
-De $\beta$ se ve que la dim(V) es par. 
-\end{proof}
-
-\begin{lemma}
- Sea V un espacio vectorial de dimensión finita, sobre un subcuerpo F del cuerpo de los números complejos y
- $\psi$ una forma bilineal alternante no degenerada, en V.
- Entonces existe un subespacio $P_1$, tal que 
+Afirmación 2: Existe un subespacio $P_1$, tal que 
  
  $V = P_1 \oplus P_1^{\bot}$
- donde $P_1^{\bot}= \{ \alpha \in V: \psi(\alpha,\beta)=0$  $\forall$  $\beta \in P_1 \} $
- \end{lemma}
+ donde $P_1^{\bot}= \{ \alpha \in V: \psi(\alpha,\beta)=0$  $\forall$  $\beta \in P_1 \} $ 
  
- \begin{proof}
+ 
  Sea v cualquier elemento en V.
  Defino 
  $$v_1:=\psi(v,f_1)e_1-\psi(v,e_1)f_1$$
@@ -145,7 +121,30 @@ De $\beta$ se ve que la dim(V) es par.
  Es decir que podemos escribir $\tilde{v}=\psi(\tilde{v},f_1) e_1 - \psi(\tilde{v},e_1) f_1=0$ pues 
  $\tilde{v} \in P_1^{\bot}.$
  Así se ve que $V = P_1 \oplus P_1^{\bot}$ 
-\end{proof} 
+
+ Fin Afirmación
+
+
+Por la afimación anterior, $V=P_1 \oplus P_1^{\bot}$, con $P_1^{\bot}=\{v \in V : \psi(v,e_1)=0=\psi(v,f_1)\}$
+Por inducción, aplico la hipotesis a $\psi|P_1^{\bot}$ y obtengo los pares $(e_i,f_i)$ con $i \in \mathbb{N}$
+
+Entonces sea $\beta$ la base: $\beta={e_1,f_1,...,e_n,f_n}$.
+En esta base, 
+$$\psi = 
+\begin{bmatrix}
+ 0 & 1 & & & & & & &\\ 
+ -1& 0 & & & & & & &\\
+ & & 0 & 1 & & & & &\\
+ & & -1 & 0 & & & & &\\
+ & &  &  & & \ddots & & &\\
+ & &  &  & & & 0 & 1 &\\
+ & &  &  & & & -1 & 0 &\\ 
+\end{bmatrix}
+$$
+
+De $\beta$ se ve que la dim(V) es par. 
+\end{proof}
+
 
 
 
