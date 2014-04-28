@@ -40,6 +40,17 @@ dimensión 2.
 
 \end{abstract}
 
+\section{Notación}
+\begin{tabular}{ l l }
+  $H_n$ & Grupo de Heisenberg \\
+  $\psi$ & Forma bilineal, alternante, no degenerada  en $\mathbb{R}^{2n}$ \\
+  $h=(v,t)$ & $h \in H_n$, $v \in \mathbb{R}^{2n}$, $t \in \mathbb{R}$ \\
+  $\Gamma$ & Subgrupo discreto $H_n$ \\
+  $L$ & Conjunto de todos los lattices de $H_n$ \\
+  $Z$ & Centro de $H_n$ \\
+  $\beta(\Gamma)$ & Real positivo unívocamente determinado, tal que $\Gamma \cap Z =\{(0,\beta(\Gamma) m): m\in \mathbb{Z} \}$ \\
+\end{tabular}
+
 
  
 
@@ -54,7 +65,7 @@ dimensión 2.
  planos hiperbólicos
 \end{definition}
 
-\begin{theorem}
+\begin{theorem} \label{Lang-8.1}
  Sea $\psi$ una forma bilineal, alternante, no degenerada, $\psi:VxV\mapsto \mathbb{R}$ con V, un espacio 
  vectorial de dimensión finita.
  Entonces: V es un espacio hiperbólico y dim(V) es par.
@@ -95,6 +106,7 @@ $$\psi|_{P_1} =
 $$
 
 Se ve así que $\psi|_{P_1}$ es no degenerada $\Rightarrow P_1$ es un plano hiperbólico.
+\newline
 
 Afirmación 2: Existe un subespacio $P_1$, tal que 
  
@@ -107,28 +119,35 @@ Afirmación 2: Existe un subespacio $P_1$, tal que
  $$v_1:=\psi(v,f_1)e_1-\psi(v,e_1)f_1$$
  $$v_2:=v-v_1$$
  Notar que $v_1 \in <e_1,f_1>=P_1$ y $v_2 \in P_1^{\bot}$, pues 
- $\psi(v_2,e_1)=\psi(v,e_1)-\psi(v_1,e_1)=\psi (v,e_1)-[\psi(v,f_1) \psi(e_1,e_1) + \psi(v,e_1) \psi(f_1,e_1)]=
- \psi(v_1,e_1)- \psi(v,e_1)=0$.
  
+ $$\begin{aligned}
+ \psi(v_2,e_1)=\psi(v,e_1)-\psi(v_1,e_1)=&\\
+ \psi (v,e_1)-[\psi(v,f_1) \psi(e_1,e_1) + \psi(v,e_1) \psi(f_1,e_1)]=&\\
+ \psi(v,e_1)- \psi(v,e_1)=&0.
+ \end{aligned}$$
  Análogamente $\psi(v_2,f_1)=0$.
  
  Es decir, que $v=v-v_1+v_1=v_2 + v_1$ con $v_2 \in P_1^{\bot}$ y $v_1 \in P_1$.
  
  Además, $P_1  \cap P_1^{\bot} = \{0\}$, pues si  $\tilde{v} \in  P_1 \cap P_1^{\bot}$ entonces
- $\tilde{v} \in P_1 \Rightarrow \tilde{v}=a e_1 + b f_1 \Rightarrow 
- \psi(\tilde{v},e_1)=\psi(a e_1 + b f_1,e_1)=-b$ y $\psi(\tilde{v},f_1)=\psi(a e_1 + b f_1,f_1)=a $
+ $$
+ \tilde{v} \in P_1 \Rightarrow \tilde{v}=a e_1 + b f_1 \Rightarrow 
+ \psi(\tilde{v},e_1)=\psi(a e_1 + b f_1,e_1)=-b$$ y $$\psi(\tilde{v},f_1)=\psi(a e_1 + b f_1,f_1)=a 
+ $$
+ 
  
  Es decir que podemos escribir $\tilde{v}=\psi(\tilde{v},f_1) e_1 - \psi(\tilde{v},e_1) f_1=0$ pues 
  $\tilde{v} \in P_1^{\bot}.$
  Así se ve que $V = P_1 \oplus P_1^{\bot}$ 
 
  Fin Afirmación
+\newline
 
+Hemos visto que, $V=P_1 \oplus P_1^{\bot}$, con $P_1^{\bot}=\{v \in V : \psi(v,e_1)=0=\psi(v,f_1)\}$
 
-Por la afimación anterior, $V=P_1 \oplus P_1^{\bot}$, con $P_1^{\bot}=\{v \in V : \psi(v,e_1)=0=\psi(v,f_1)\}$
-Por inducción, aplico la hipotesis a $\psi|P_1^{\bot}$ y obtengo los pares $(e_i,f_i)$ con $i \in \mathbb{N}$
+Por inducción, aplico la hipotesis a $\psi|_{P_1^{\bot}}$ y obtengo los pares $(e_i,f_i)$ con $i \in \mathbb{N}$
 
-Entonces sea $\beta$ la base: $\beta={e_1,f_1,...,e_n,f_n}$.
+Sea $\beta=\{e_1,f_1,...,e_n,f_n\}$.
 En esta base, 
 $$\psi = 
 \begin{bmatrix}
@@ -146,17 +165,23 @@ De $\beta$ se ve que la dim(V) es par.
 \end{proof}
 
 
+\begin{definition}
+ El grupo de Heisenberg $H_n$, es el grupo de Lie cuya variedad subyaciente es $\mathbb{R}^{2n} \times \mathbb{R}$ y 
+ cuya operación de grupo está definida por: 
+ $$(v,t)(w,s)=(v+w,t+s + \frac{1}{2} \psi(v,w))$$
+ Donde $v,w \in \mathbb{R}^{2n}$ , s,t $\in \mathbb{R}$ y $\psi$ es la forma bilineal, alternante, no degenerada vista en 
+ el Teorema $\ref{Lang-8.1}$
+\end{definition}
 
 
-\section{?}
+\section{Lattices de $H_n$}
 
 \begin{definition}
- Llamaremos una lattice de $H_n$, a un subgrupo discreto $\Gamma$ de $H_n$ tal que:
- $H_n/\Gamma$ es compacto.
+ Llamaremos una lattice de $H_n$, a un subgrupo discreto $\Gamma$ de $H_n$ tal que $H_n/\Gamma$ es compacto.
 \end{definition}
 
 \begin{definition}
- Un lattice de $\mathbb{C}^n$ es un subgrupo discreto de $\mathbb{C}^n$ donde D/$\mathbb{C}^n$ es compacto.
+ Un lattice de $\mathbb{C}^n$ es un subgrupo discreto D de $\mathbb{C}^n$ tal que $\mathbb{C}^n$/D es compacto.
 \end{definition}
 
 
@@ -175,15 +200,18 @@ De $\beta$ se ve que la dim(V) es par.
  $f:D \mapsto \tilde{D}$ donde $f(d):=d \frac{1}{\sqrt{l}}$. Entonces,
  
  $\psi(\tilde{D},\tilde{D})=\{ \psi(\tilde{d},\tilde{d}): \tilde{d} \in \tilde{D} \}=
- \{ \psi(\frac{d}{\sqrt{l}},\frac{d}{\sqrt{l}}): d \in D \}=\{ \frac{1}{l} \psi(d,d):d\in D \} \newline
+ \{ \psi(\frac{d}{\sqrt{l}},\frac{d}{\sqrt{l}}): d \in D \}=\{ \frac{1}{l} \psi(d,d):d\in D \}
  \subset \{ \frac{1}{l} l a : a \in \mathbb{Z} \}= 1 \mathbb{Z} $
  
  Sea $l_1$ el entero positivo más pequeño de $\psi(D,D)$, donde  $ l_1 = \psi(v_1,v_1')$ con $v_1, v_1' \in D$.
  Definimos $<v_1,v_1'>^\bot=\{v \in D: \psi(v,v_1)=\psi(v_1',v)=0\}$
+ \newline
  
  Afirmación 1: $D=<v_1,v_1'>\oplus <v_1,v_1'>^\bot$ .
- Pues por el algoritmo Euclideo $\psi(v_1,v)=m l_1 +r$ con $m,r \in \mathbb{Z}$ y $0 \leq r < l_1$ ($\mathbb{Z}$ es dominio Euclideo)
- $\Rightarrow r=\psi(v_1,v)-m l_1=\psi(v_1,v)-m \psi(v_1,v_1')=\psi(v_1,v-mv_1')$
+ 
+ Por el algoritmo Euclideo, $\psi(v_1,v)=m l_1 +r$ con $m,r \in \mathbb{Z}$ y $0 \leq r < l_1 \Rightarrow $
+ 
+ $r=\psi(v_1,v)-m l_1=\psi(v_1,v)-m \psi(v_1,v_1')=\psi(v_1,v-mv_1')$
  
  
  Luego r=0, pues si $r\neq 0$ entonces $0<\psi(v_1,v-mv_1')<l_1$ absurdo!
@@ -191,16 +219,27 @@ De $\beta$ se ve que la dim(V) es par.
  De esta forma $v-mv_1' \in <v_1>^\bot$.
  Analogamente, $v-m'v_1 \in <v_1'>^\bot$  con $m'\in \mathbb{Z}$ tal que  $\psi(v,v_1')=m'l_1 + r$
  
- Notar que $\psi(v-(m v_1' + m' v_1),v_1)=\psi(v-m v_1',v_1) + \psi(-m' v_1,v_1)=0=\psi(v_1',v-(m v_1'+m'v_1))=\psi(v_1',v-m'v_1)+
- \psi(v_1',-m v_1') \therefore  v-(m v_1'+m'v_1) \in <v_1,v_1'>^\bot$
- Finalmente,$v\in D, v=v-(m v_1'+ m'v_1)+(m v_1' + m'v_1)$ 
+ Notar que,
+ $$\begin{aligned}
+ \psi(v-(m v_1' + m' v_1),v_1)=\psi(v-m v_1',v_1) + \psi(-m' v_1,v_1)=0=\\
+ \psi(v_1',v-(m v_1'+m'v_1))=\psi(v_1',v-m'v_1)+ \psi(v_1',-m v_1') \therefore \\
+ v-(m v_1'+m'v_1) \in <v_1,v_1'>^\bot
+ \end{aligned}$$
+ 
+ Finalmente, para cualquier $v\in D, v=v-(m v_1'+ m'v_1)+(m v_1' + m'v_1)$ 
+ 
  Fin de la afirmación 
+ \newline
  
- Afirmación 2: $l_1 | \psi(v,v') \forall v,v' \in <v_1,v_1'>^\bot$ pues, $\psi(v,v')=m l_1 + r$ con $m,r \in \mathbb{Z}$ y 
- $0\leq r < l_1 \Rightarrow r= \psi(v,v') - m \psi(v_1,v_1')=\psi(v,v')-m\psi(v_1,v_1')+ \psi(v,-m v_1') + \psi (v_1,v')
+ Afirmación 2: $l_1 | \psi(v,v')$ $\forall v,v' \in <v_1,v_1'>^\bot$.
+ 
+ Pues, $\psi(v,v')=m l_1 + r$ con $m,r \in \mathbb{Z}$ y  $0\leq r < l_1 \Rightarrow $
+ 
+ $r= \psi(v,v') - m \psi(v_1,v_1')=\psi(v,v')-m\psi(v_1,v_1')+ \psi (v_1,v')+ \psi(v,-m v_1') 
  = \psi(v+v_1,v'-mv_1') \Rightarrow $ r=0 (por la definición de $l_1$)
- Fin de la afirmación
  
+ Fin de la afirmación
+ \newline
  
  Finalmente afirmo que $\psi(D,D)=l_1 \mathbb{Z}$ 
  
@@ -208,11 +247,13 @@ De $\beta$ se ve que la dim(V) es par.
  
  $\subseteq$) Sean w,w' $\in$ D ,por afirmación 1 ,
  
- $w = w_1 +w_2$  y $w'=w_1' +w_2'$ con $w_1,w_1' \in <v_1,v_1'>$ y  $w_2,w_2' \in <v_1,v_1'>^\bot$
- 
- $\psi(w,w')=\psi(w_1,w_1')+ \psi(w_1,w_2')+ \psi(w_2,w_1')+\psi(w_2,w_2')=\psi(w_1,w_1')+\psi(w_2,w_2')=$ \footnote{$w_1,w_2 \in <v_1,v_1'>$ y afirmación 2}
- $=\psi(n v_1+n' v_1',m v_1+m' v_1') + k l_1 = n m' \psi(v_1,v_1')+n' m \psi(v_1',v_1)+ k l_1 = (n m' - n'm+k)l_1$
- 
+ $w = w_1 +w_2$  y $w'=w_1' +w_2'$ con $w_1,w_1' \in <v_1,v_1'>$ y  $w_2,w_2' \in <v_1,v_1'>^\bot$ 
+ $\begin{aligned}
+ \psi(w,w')=\psi(w_1,w_1')+ \psi(w_1,w_2')+ \psi(w_2,w_1')+\psi(w_2,w_2')=\psi(w_1,w_1')+\psi(w_2,w_2')= \\
+ %\footnote{w_1,w_2 \in <v_1,v_1'> y afirmación 2} %
+ \psi(n v_1+n' v_1',m v_1+m' v_1') + k l_1 = n m' \psi(v_1,v_1')+n' m \psi(v_1',v_1)+ k l_1 = (n m' - n'm+k)l_1\\
+ \end{aligned}$
+ \newline 
  
  Notar que el lattice original $\psi(D,D)= l l_1 \mathbb{Z} $
 \end{proof}
@@ -220,7 +261,7 @@ De $\beta$ se ve que la dim(V) es par.
 \begin{lemma} \label{1.8}
  Un $D \in HL(\mathbb{C}^n)$ se puede escribir como una suma directa $\psi-ortogonal : D=<v_1,v_1'>\oplus<v_2,v_2'>...<v_n,v_n'>$
  de $\mathbb{Z}$-módulos bidimensionales $<v_j,v_j'>$. Sea $l_j=\psi(v_j,v_j')$, entonces la descomposición puede ser tomada 
- de forma tal que: $l_j \in \mathbb{R}^{>0} y l_j | l_{j+1}$
+ de forma tal que: $l_j \in \mathbb{R}^{>0}$ y $l_j | l_{j+1}$
  Es más, estos $l_j$ están unívocamente determinados.
 \end{lemma}
 
@@ -243,14 +284,14 @@ Como $\psi(P_1^\bot,P_1^\bot) \subseteq \mathbb{Z}$ podemos aplicar el mismo raz
 para obtener los pares $(v_j,v_j')$
 
 Como $D \in HL(\mathbb{C}^n)$ con $\mathbb{C}^n$ de dimensión finita,  obtengo una cantidad finita de pares,entonces:
-$D=<v_1,v_1'>\oplus<v_2,v_2'>...<v_n,v_n'>$
+$D=<v_1,v_1'>\oplus<v_2,v_2'>...<v_m,v_m'>$
 
 Afirmación: m=n
 
 Sabemos que $m\leq n$, veamos que $m<n$ nos conduce a un absurdo
 
 Si $m<n$ $\Rightarrow \mathbb{R}^{2n}/D=\mathbb{R}^{2n}/\oplus_{i=1}^m P_i \backsimeq \oplus_{i=1}^m (\mathbb{R}^{2n}/P_i) \oplus \mathbb{R}^{2(n-m)} $\newline
-Dado que $m<n \Rightarrow  mathbb{R}^{2(n-m)}$ no es compacto $\Rightarrow mathbb{R}^{2n}/D$ no es compacto, absurdo! pues D es un lattice
+Dado que $m<n \Rightarrow  \mathbb{R}^{2(n-m)}$ no es compacto $\Rightarrow \mathbb{R}^{2n}/D$ no es compacto, absurdo! pues D es un lattice
 Fin afirmación
 
 %Vimos en la demostración del lemma \ref{1.7}, que l_1 \ \psi(v,v') \forall v,v'  \in D
@@ -258,8 +299,10 @@ Veamos que $l_j|l_{j+1}$.
 
 Ya vimos que $D= P_1\oplus P_2 \oplus...\oplus P_j \oplus P_j^\bot$.
 
-$l_{j+1}=\psi(v_{j+1},v_{j+1}')=m \psi(v_j,v_j') +r \Rightarrow r=\psi(v_{j+1},v_{j+1}')-m \psi(v_j,v_j') + \psi(v_{j+1},v_{j+1}')
-=\psi(v_{j+1},v_{j+1}')-m \psi(v_j,v_j') + \psi(v_{j+1},v_{j+1}') + \psi(v_{j+1},-mv_j') + \psi(v_j,v_{j+1}')
+$l_{j+1}=\psi(v_{j+1},v_{j+1}')=m \psi(v_j,v_j') +r \Rightarrow$ 
+
+$r=\psi(v_{j+1},v_{j+1}')-m \psi(v_j,v_j') + 0 + 0
+=\psi(v_{j+1},v_{j+1}')-m \psi(v_j,v_j') +  \psi(v_{j+1},-mv_j') + \psi(v_j,v_{j+1}')
 =\psi(v_{j+1} + v_j, v_{j+1}'-m v_j')$ con $v_{j+1} + v_j, v_{j+1}'-m v_j' \in P_j \oplus P_j^\bot \Rightarrow
 r=0$ pues $l_j$ es el más pequeño de $\psi(P_j \oplus P_j^\bot, P_j \oplus P_j^\bot)$
 
