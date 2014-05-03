@@ -245,14 +245,17 @@ De $\beta$ se ve que la dim(V) es par.
  
  $\supseteq$) Sea $m l_1 \in l_1 \mathbb{Z} \Rightarrow \psi(v_1,m v_1') = m \psi(v_1,v_1')= m l_1$
  
- $\subseteq$) Sean w,w' $\in$ D ,por afirmación 1 ,
+ $\subseteq$) Sean w,w' $\in$ D ,por afirmación 1 ,$w = w_1 +w_2$  y $w'=w_1' +w_2'$
  
- $w = w_1 +w_2$  y $w'=w_1' +w_2'$ con $w_1,w_1' \in <v_1,v_1'>$ y  $w_2,w_2' \in <v_1,v_1'>^\bot$ 
- $\begin{aligned}
- \psi(w,w')=\psi(w_1,w_1')+ \psi(w_1,w_2')+ \psi(w_2,w_1')+\psi(w_2,w_2')=\psi(w_1,w_1')+\psi(w_2,w_2')= \\
+  con $w_1,w_1' \in <v_1,v_1'>$ y  $w_2,w_2' \in <v_1,v_1'>^\bot$ 
+ $$\begin{aligned}
+ \psi(w,w')&=\\
+ \psi(w_1,w_1')+ \psi(w_1,w_2')+ \psi(w_2,w_1')+\psi(w_2,w_2')&=\\
+ \psi(w_1,w_1')+\psi(w_2,w_2')&= \\
  %\footnote{w_1,w_2 \in <v_1,v_1'> y afirmación 2} %
- \psi(n v_1+n' v_1',m v_1+m' v_1') + k l_1 = n m' \psi(v_1,v_1')+n' m \psi(v_1',v_1)+ k l_1 = (n m' - n'm+k)l_1\\
- \end{aligned}$
+ \psi(n v_1+n' v_1',m v_1+m' v_1') + k l_1 &=\\
+ n m' \psi(v_1,v_1')+n' m \psi(v_1',v_1)+ k l_1 &= (n m' - n'm+k)l_1\\
+ \end{aligned}$$
  \newline 
  
  Notar que el lattice original $\psi(D,D)= l l_1 \mathbb{Z} $
@@ -260,9 +263,10 @@ De $\beta$ se ve que la dim(V) es par.
 
 \begin{lemma} \label{1.8}
  Un $D \in HL(\mathbb{C}^n)$ se puede escribir como una suma directa $\psi-ortogonal : D=<v_1,v_1'>\oplus<v_2,v_2'>...<v_n,v_n'>$
- de $\mathbb{Z}$-módulos bidimensionales $<v_j,v_j'>$. Sea $l_j=\psi(v_j,v_j')$, entonces la descomposición puede ser tomada 
- de forma tal que: $l_j \in \mathbb{R}^{>0}$ y $l_j | l_{j+1}$
- Es más, estos $l_j$ están unívocamente determinados.
+ de $\mathbb{Z}$-módulos bidimensionales $<v_j,v_j'>$. Sea $l_j=\psi(v_j,v_j')$; entonces la descomposición puede ser tomada 
+ de forma tal que $l_j \in \mathbb{R}^{>0}$ y $l_j | l_{j+1}$.
+ 
+ Es más, estos $l_j$ están unívocamente determinados por D.
 \end{lemma}
 
 \begin{proof}
@@ -279,11 +283,12 @@ Notar que $$
                              \end{bmatrix}
 $$
 
-En la prueba del lema \ref{1.7} vimos que $D=<v_1,v_1'> \oplus <v_1,v_1'>^\bot$
+En la prueba del lema \ref{1.7} vimos que $D=<v_1,v_1'> \oplus <v_1,v_1'>^\bot$.
+
 Como $\psi(P_1^\bot,P_1^\bot) \subseteq \mathbb{Z}$ podemos aplicar el mismo razonamiento del principio a $P_1^\bot$ 
 para obtener los pares $(v_j,v_j')$
 
-Como $D \in HL(\mathbb{C}^n)$ con $\mathbb{C}^n$ de dimensión finita,  obtengo una cantidad finita de pares,entonces:
+Dado que D tiene dimensión finita, obtengo una cantidad finita de pares $v_j,v_j'$, tales que:
 $D=<v_1,v_1'>\oplus<v_2,v_2'>...<v_m,v_m'>$
 
 Afirmación: m=n
@@ -292,7 +297,9 @@ Sabemos que $m\leq n$, veamos que $m<n$ nos conduce a un absurdo
 
 Si $m<n$ $\Rightarrow \mathbb{R}^{2n}/D=\mathbb{R}^{2n}/\oplus_{i=1}^m P_i \backsimeq \oplus_{i=1}^m (\mathbb{R}^{2n}/P_i) \oplus \mathbb{R}^{2(n-m)} $\newline
 Dado que $m<n \Rightarrow  \mathbb{R}^{2(n-m)}$ no es compacto $\Rightarrow \mathbb{R}^{2n}/D$ no es compacto, absurdo! pues D es un lattice
+
 Fin afirmación
+\newline
 
 %Vimos en la demostración del lemma \ref{1.7}, que l_1 \ \psi(v,v') \forall v,v'  \in D
 Veamos que $l_j|l_{j+1}$.
@@ -301,9 +308,12 @@ Ya vimos que $D= P_1\oplus P_2 \oplus...\oplus P_j \oplus P_j^\bot$.
 
 $l_{j+1}=\psi(v_{j+1},v_{j+1}')=m \psi(v_j,v_j') +r \Rightarrow$ 
 
-$r=\psi(v_{j+1},v_{j+1}')-m \psi(v_j,v_j') + 0 + 0
-=\psi(v_{j+1},v_{j+1}')-m \psi(v_j,v_j') +  \psi(v_{j+1},-mv_j') + \psi(v_j,v_{j+1}')
-=\psi(v_{j+1} + v_j, v_{j+1}'-m v_j')$ con $v_{j+1} + v_j, v_{j+1}'-m v_j' \in P_j \oplus P_j^\bot \Rightarrow
+$$\begin{aligned}
+r&=\psi(v_{j+1},v_{j+1}')-m \psi(v_j,v_j') + 0 + 0\\
+&=\psi(v_{j+1},v_{j+1}')-m \psi(v_j,v_j') +  \psi(v_{j+1},-mv_j') + \psi(v_j,v_{j+1}')\\
+&=\psi(v_{j+1} + v_j, v_{j+1}'-m v_j') \\
+\end{aligned}$$ 
+con $v_{j+1} + v_j, v_{j+1}'-m v_j' \in P_j \oplus P_j^\bot \Rightarrow
 r=0$ pues $l_j$ es el más pequeño de $\psi(P_j \oplus P_j^\bot, P_j \oplus P_j^\bot)$
 
 
