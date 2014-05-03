@@ -48,7 +48,8 @@ dimensión 2.
   $\Gamma$ & Subgrupo discreto $H_n$ \\
   $L$ & Conjunto de todos los lattices de $H_n$ \\
   $Z$ & Centro de $H_n$ \\
-  $\beta(\Gamma)$ & Real positivo unívocamente determinado, tal que $\Gamma \cap Z =\{(0,\beta(\Gamma) m): m\in \mathbb{Z} \}$ \\
+  $\beta(\Gamma)$ & Real positivo unívocamente determinado,\\  
+  & tal que $\Gamma \cap Z =\{(0,\beta(\Gamma) m): m\in \mathbb{Z} \}$ \\
 \end{tabular}
 
 
@@ -82,9 +83,11 @@ Afirmación 1: $e_1,f_1$, son linealmente independientes.
 Supongamos que  $c_1 e_1 +c_2 f_1 = 0$ con $c_1,c_2 \in \mathbb{R}$  donde $c_1\neq0$ o  $c_2\neq0$
 
 Caso $c_1\neq0$:
-Entonces tenemos que,
-$0=\psi(e_1,e_1)=\psi(e_1,- \frac{c_2}{c_1} f_1)= - \frac{c_2}{c_1} \psi(e_1,f_1)=- \frac{c_2}{c_1} \Rightarrow c_2=0$
-$\Rightarrow c_1 e_1 = 0$ absurdo!
+
+Tenemos que,
+
+ $0=\psi(e_1,e_1)=\psi(e_1,- \frac{c_2}{c_1} f_1)= - \frac{c_2}{c_1} \psi(e_1,f_1)=- \frac{c_2}{c_1} \Rightarrow c_2=0$
+ $\Rightarrow c_1 e_1 = 0$ absurdo!
 Análogamente se puede comprobar que el caso $c_2\neq0$ también conduce a un absurdo, por lo que queda probada la
 afimación.
 
@@ -313,7 +316,7 @@ r&=\psi(v_{j+1},v_{j+1}')-m \psi(v_j,v_j') + 0 + 0\\
 &=\psi(v_{j+1},v_{j+1}')-m \psi(v_j,v_j') +  \psi(v_{j+1},-mv_j') + \psi(v_j,v_{j+1}')\\
 &=\psi(v_{j+1} + v_j, v_{j+1}'-m v_j') \\
 \end{aligned}$$ 
-con $v_{j+1} + v_j, v_{j+1}'-m v_j' \in P_j \oplus P_j^\bot \Rightarrow
+con ($v_{j+1} + v_j) $, $(v_{j+1}'-m v_j') \in P_j \oplus P_j^\bot \Rightarrow
 r=0$ pues $l_j$ es el más pequeño de $\psi(P_j \oplus P_j^\bot, P_j \oplus P_j^\bot)$
 
 
@@ -326,20 +329,27 @@ r=0$ pues $l_j$ es el más pequeño de $\psi(P_j \oplus P_j^\bot, P_j \oplus P_j
  \begin{proof}
 $\subseteq)$ Sea $\Gamma \in L$
 
-$[\Gamma,\Gamma] \subseteq \Gamma \cap Z \Rightarrow$ es un subgrupo discreto de $Z (\simeq \mathbb{R}) \Rightarrow
-(0,\psi(\pi(\Gamma,\Gamma))) = \{(0,\psi(\pi(h,h'))): h,h' \in \Gamma\} = [\Gamma,\Gamma] \in (0,\beta(\Gamma) \mathbb{Z})$
+$[\Gamma,\Gamma] \subseteq \Gamma \cap Z \Rightarrow$ es un subgrupo discreto de $Z (\simeq \mathbb{R})$
 
-Es decir 
+Además, $(0,\psi(\pi(\Gamma),\pi(\Gamma))) = \{(0,\psi(\pi(h),\pi(h'))): h,h' \in \Gamma\} = [\Gamma,\Gamma] \subseteq (0,\beta(\Gamma) \mathbb{Z})$
 
-$\psi(\pi(\Gamma),\pi(\Gamma))) \in \beta(\Gamma) \mathbb{Z}$ y $\psi(\Pi(\Gamma))$ es un lattice de $\mathbb{C}^n (por \cite{Ma}$)
-$\Rightarrow \psi(\pi(\Gamma),\pi(\Gamma))=l_1 \beta(\Gamma) \mathbb{Z}$ (por \ref{1.7}) $\therefore \pi(\Gamma) \in HL(\mathbb{C}^n) $
+Entonces tenemos que:
+\begin{itemize}
+ \item $\psi(\pi(\Gamma),\pi(\Gamma)) \subseteq \beta(\Gamma) \mathbb{Z}$
+ \item $\psi(\pi(\Gamma),\pi(\Gamma))$ es un lattice de $\mathbb{C}^n (por \cite{Ma}$)
+\end{itemize}
 
+Con lo cual, estamos en condiciones de aplicar el lema\ref{1.7}, y concluir que 
+
+$\psi(\pi(\Gamma),\pi(\Gamma))=l_1 \beta(\Gamma) \mathbb{Z} \therefore \pi(\Gamma) \in HL(\mathbb{C}^n) $
+\newline
 
 $\supseteq)$ $D\in HL(\mathbb{C}^n) \Rightarrow D=<v_1,v_1'>\oplus ... \oplus <v_n,v_n'>$ por (\ref{1.8}) 
 
 Sea  $V:= \cup_{i=1}^n \{(v_i,0),(v_i',0)\}$
 
 Defino $\Gamma := <V>=\{(\sum_{i=1}^n a_i v_i + b_i v_i', \frac{1}{2} m l_1):a_i,b_i,m \in \mathbb{Z} \}$
+\newline
 
 Afirmación:$\Gamma \in L$
 
@@ -348,21 +358,30 @@ Ya sabemos que $[\Gamma,\Gamma] \subseteq Z.$
 
 Sean $h,\tilde{h} \in \Gamma,$
 
-$[h,\tilde{h}]=(0,\psi(\sum_{i=1}^n a_i v_i + b_i v_i',\sum_{i=1}^n \tilde{a}_i v_i + \tilde{b}_i v_i'))
-=(0,\sum_{i=1}^n \psi(a_i v_i ,\tilde{b}_i v_i') + \sum_{i=1}^n \psi( b_i v_i',\tilde{a}_i v_i ))=(0,\sum_{i=1}^n a_i \tilde{b}_i l_i - b_i \tilde{a}_i l_i)
-= (0,\frac{1}{2} (2 \tilde{m})l_1 ) \therefore [\Gamma,\Gamma] \subseteq \Gamma$
+$$ \begin{aligned}
+\left[ h ,\tilde{h} \right] =&\\
+(0,\psi(\sum_{i=1}^n a_i v_i + b_i v_i',\sum_{i=1}^n \tilde{a}_i v_i + \tilde{b}_i v_i'))=&\\
+(0,\sum_{i=1}^n \psi(a_i v_i ,\tilde{b}_i v_i') + \sum_{i=1}^n \psi( b_i v_i',\tilde{a}_i v_i ))=&\\
+(0,\sum_{i=1}^n a_i \tilde{b}_i l_i - b_i \tilde{a}_i l_i)=& (0,\frac{1}{2} (2 \tilde{m})l_1 )
+\end{aligned}$$
+
+$\therefore [\Gamma,\Gamma] \subseteq \Gamma$
 
 
 $H_n / \Gamma$ es compacto,pues 
 
-$H_n / \Gamma = H_n /( D \oplus l \mathbb{Z})=  H_n / \oplus_{i=1}^n P_i \oplus l \mathbb{Z} \simeq
-\mathbb{R}^{2n}\oplus_{i=1}^n P_i \oplus \mathbb{R} l \mathbb{Z} \simeq \oplus_{i=1}^n(\mathbb{R}^2/P_i) \oplus \mathbb{R}/ l \mathbb{Z}$ 
+$H_n / \Gamma = H_n /( D \oplus l \mathbb{Z})=  H_n / (\oplus_{i=1}^n P_i \oplus l \mathbb{Z}) \simeq$
+
+$(\mathbb{R}^{2n} / \oplus_{i=1}^n P_i) \oplus (\mathbb{R} / l \mathbb{Z}) \simeq \oplus_{i=1}^n(\mathbb{R}^2/P_i) \oplus \mathbb{R}/ l \mathbb{Z}$ 
+
  que es compacto.
  
  En la primera igualdad estoy utilizando el hecho de que:
  
- $\Gamma = \Pi(\Gamma) \oplus \mathbb{R} =\{ \sum_{i=1}^n a_i v_i + b_i v_i': a_i,b_i \in \mathbb{Z} \} \oplus \mathbb{R}=<v_1,v_1'>
- \oplus ... \oplus <v_n,v_n'> \oplus \mathbb{R} = \oplus_{i=1}^n P_i \oplus \mathbb{R}= D\oplus \mathbb{R}= D \oplus l \mathbb{Z} $
+ $\Gamma = \pi(\Gamma) \oplus \mathbb{R} =\{ \sum_{i=1}^n a_i v_i + b_i v_i': a_i,b_i \in \mathbb{Z} \} \oplus \mathbb{R}=$
+ 
+ $<v_1,v_1'>\oplus ... \oplus <v_n,v_n'> \oplus \mathbb{R} = \oplus_{i=1}^n P_i \oplus \mathbb{R}= D\oplus \mathbb{R}= D \oplus l \mathbb{Z} $
+ 
 Fin Afirmación
  \end{proof}
 
@@ -385,15 +404,16 @@ Fin Afirmación
  Afirmación 1: $D(l) \in HL(\mathbb{C}^n)$
  
  Sean $v,v' \in D(l)$
-  
-  $\psi(v,v')= \psi(\sum_{i=1}^n a_i e_i + \sum_{i=n+1}^{2n}b_i l_{i-n} e_i, \sum_{i=1}^n a_i' e_i + \sum_{i=n+1}^{2n}b'_i l_{i-n}e_i )=
-  \psi(\sum_{i=1}^n a_i e_i , \sum_{i=1}^n a_i' e_i ) + \psi(\sum_{i=1}^n a_i e_i , \sum_{i=n+1}^{2n}b'_i l_{i-n} e_i) +
-  \psi( \sum_{i=n+1}^{2n}b_i l_{i-n}e_i, \sum_{i=1}^n a_i' e_i ) + \psi(\sum_{i=n+1}^{2n}b_i l_{i-n}e_i, \sum_{i=n+1}^{2n}b'_i l_{i-n}e_i)=
-   \sum_{i=1}^n \psi( a_i e_i , \sum_{i=n+1}^{2n}b'_i l_{i-n}e_i) + \sum_{i=n+1}^{2n}\psi( b_i l_{i-n}e_i, \sum_{i=1}^n a_i' e_i )=
-   \sum_{i=1}^n \psi( a_i e_i , b'_{n+i} l_{i} e_{n+i}) + \sum_{i=n+1}^{2n}\psi( b_i l_{i-n}, a_{i-n}' e_{i-n} )=
-   -\sum_{i=1}^n a_i b_{n+i}' l_i + \sum_{i=n+1}^{2n} b_i l_{i-n}a_{i-n}'=
-   -\sum_{i=1}^n a_i b_{n+i}' l_i + \sum_{j=1}^{n} b_{j+n} l_{j}a_{j}'= \sum_{i=1}^{n} l_i(-a_i b_{n+i}' + a_i' b_{i+n})$
-   
+  $$\begin{aligned}
+  \psi(v,v')&= \\
+  \psi(\sum_{i=1}^n a_i e_i + \sum_{i=n+1}^{2n}b_i l_{i-n} e_i, \sum_{i=1}^n a_i' e_i + \sum_{i=n+1}^{2n}b'_i l_{i-n}e_i )&=\\
+  \psi(\sum_{i=1}^n a_i e_i , \sum_{i=1}^n a_i' e_i ) + \psi(\sum_{i=1}^n a_i e_i , \sum_{i=n+1}^{2n}b'_i l_{i-n} e_i)  & + \\
+  \psi( \sum_{i=n+1}^{2n}b_i l_{i-n}e_i, \sum_{i=1}^n a_i' e_i ) + \psi(\sum_{i=n+1}^{2n}b_i l_{i-n}e_i, \sum_{i=n+1}^{2n}b'_i l_{i-n}e_i)&=\\
+   \sum_{i=1}^n \psi( a_i e_i , \sum_{i=n+1}^{2n}b'_i l_{i-n}e_i) + \sum_{i=n+1}^{2n}\psi( b_i l_{i-n}e_i, \sum_{i=1}^n a_i' e_i )&=\\
+   \sum_{i=1}^n \psi( a_i e_i , b'_{n+i} l_{i} e_{n+i}) + \sum_{i=n+1}^{2n}\psi( b_i l_{i-n}, a_{i-n}' e_{i-n} )&=\\
+   -\sum_{i=1}^n a_i b_{n+i}' l_i + \sum_{i=n+1}^{2n} b_i l_{i-n}a_{i-n}'&=\\
+   -\sum_{i=1}^n a_i b_{n+i}' l_i + \sum_{j=1}^{n} b_{j+n} l_{j}a_{j}' &=\sum_{i=1}^{n} l_i(-a_i b_{n+i}' + a_i' b_{i+n})\\
+  \end{aligned}$$ 
    Dado que $l_1|l_j \forall j \Rightarrow l_1| \psi(v,v') \Rightarrow \psi(v,v') \subseteq l_1 \mathbb{Z} \Rightarrow 
    D(l) \in HL(\mathbb{C}^n)$
    
