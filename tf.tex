@@ -48,6 +48,7 @@ dimensión 2.
   $\Gamma$ & Subgrupo discreto $H_n$ \\
   $L$ & Conjunto de todos los lattices de $H_n$ \\
   $Z$ & Centro de $H_n$ \\
+  $<v_1,...,v_n>$ & $\mathbb{Z}$-módulo generado por los elementos $v_1,...,v_n$\\
   $\beta(\Gamma)$ & Real positivo unívocamente determinado,\\  
   & tal que $\Gamma \cap Z =\{(0,\beta(\Gamma) m): m\in \mathbb{Z} \}$ \\
 \end{tabular}
@@ -394,14 +395,15 @@ Fin Afirmación
 
 
 \begin{example} 
- Sean 
- $Z_n^{\#}:= \{ l=(l_1,l_2,...,l_n) \in \mathbb{N}^n:l_j|l_{j+1} \}$
+ Definimos,
+ $$Z_n^{\#}:= \{ l=(l_1,l_2,...,l_n) \in \mathbb{N}^n:l_j|l_{j+1} \}$$
  
- $e_j:=(0,...,1,0...0)$ con $j 1\leq j \leq 2n (e_j \in \mathbb{C}^n)$
+ Sea $e_j$, $1\leq j \leq 2n $,  la 2n-upla que consiste de todos ceros excepto por un uno, en el j-èsimo lugar.Para l, definimos:
  
- $D(l):=<e_1,....e_n,l_1 e_{n+1},l_2 e_{n+2}...,l_n e_{2n}>$
+ $$D(l):=<e_1,....e_n,l_1 e_{n+1},l_2 e_{n+2}...,l_n e_{2n}>$$
+  \newpage
  
- Afirmación 1: $D(l) \in HL(\mathbb{C}^n)$
+ Afirmación 1: $D(l) \in HL(\mathbb{C}^n)$ 
  
  Sean $v,v' \in D(l)$
   $$\begin{aligned}
@@ -414,18 +416,21 @@ Fin Afirmación
    -\sum_{i=1}^n a_i b_{n+i}' l_i + \sum_{i=n+1}^{2n} b_i l_{i-n}a_{i-n}'&=\\
    -\sum_{i=1}^n a_i b_{n+i}' l_i + \sum_{j=1}^{n} b_{j+n} l_{j}a_{j}' &=\sum_{i=1}^{n} l_i(-a_i b_{n+i}' + a_i' b_{i+n})\\
   \end{aligned}$$ 
-   Dado que $l_1|l_j \forall j \Rightarrow l_1| \psi(v,v') \Rightarrow \psi(v,v') \subseteq l_1 \mathbb{Z} \Rightarrow 
+   Dado que $l_1|l_j$ $\forall$ j $\Rightarrow l_1| \psi(v,v') \Rightarrow \psi(v,v') \subseteq l_1 \mathbb{Z} \Rightarrow 
    D(l) \in HL(\mathbb{C}^n)$
    
  Fin Afirmación 1
- Afirmación 2:$\psi(D(l),D(l))=l_1 \mathbb{Z}$
+ \newline
+ 
+ Afirmación 2: $\psi(D(l),D(l))=l_1 \mathbb{Z}$
  
  $\subseteq )$ Ya visto en Afirmación 1
+ 
  $\supseteq )$ Sea $l_1$ m $\in l_1 \mathbb{Z}$
  
  Definimos $v'=m e_1$ y  $v=l_1 e_{n+1}$
  
- $\psi(v,v') = \psi(l_1,e_{n+1},m e_1)= (l_1,0,...,0) (m,0,...0) - (0,...,0) (0,...,0)=m l_1 \Rightarrow m l_1 \in \psi(D(l),D(l))$
+ $\psi(v,v') = \psi(l_1 e_{n+1},m e_1)= (l_1,0,...,0) (m,0,...0) - (0,...,0) (0,...,0)=m l_1 \Rightarrow m l_1 \in \psi(D(l),D(l))$
  
  Fin Afirmación  
   
@@ -433,11 +438,12 @@ Fin Afirmación
 
  Observación: En el lema $\ref{1.8}$ vimos que si $D(l) \in HL(\mathbb{C}^n)$ entonces admitía una descomposición de la forma 
  $<v_1,v_1'>\oplus ... <v_n,v_n'>= D(l)$
- En el ejemplo anterior, $v_i=l_i e_{i+1} y v_i'=e_i$
+ 
+ En el ejemplo anterior, $v_i=l_i e_{i+1}$ y $v_i'=e_i$
  
 
 \begin{theorem}
- Para cada $D \in HL(\mathbb{C})$ existe una única $l \in Z_n^{\#}$, un único $d \in \mathbb{R}_{>0}$ y un $\alpha \in SP(2n,\mathbb{R})$ tal que:
+ Para cada $D \in HL(\mathbb{C}^n)$ existe una única $l \in Z_n^{\#}$, un único $d \in \mathbb{R}_{>0}$ y un $\alpha \in SP(2n,\mathbb{R})$ tal que:
  
  $D=\alpha(d D(l))$
 \end{theorem}
@@ -445,12 +451,13 @@ Fin Afirmación
 \begin{proof}
  Sea $D \in HL(\mathbb{C}^n), \psi(D,D)=d^2 \mathbb{Z}$. Tomando un isomorfismo que $v \mapsto \frac{1}{d} v$, puedo pensar $d^2=1 (d\in \mathbb{R}_{>0})$
  
- Por el lema $\ref{1.8}$, $\frac{1}{d} D = \tilde{D} = <v_1,v_1'> \oplus...\oplus <v_n,v_n'>$ con $l_i=\psi(v_i,v_i')$, únicos. 
+ Por el lema $\ref{1.8}$, $\tilde{D}:= \frac{1}{d} D =  <v_1,v_1'> \oplus...\oplus <v_n,v_n'>$ con $l_i=\psi(v_i,v_i')$, únicos. 
+ 
  Definimos $l:=(l_1,...,l_n) \in \mathbb{Z}_n^{\#}$
  
- Sea $v:=(v_1,...,v_n)$ y $v'=(v_1',...,v_n')$
+ %Sea $v:=(v_1,...,v_n)$ y $v'=(v_1',...,v_n')$
  
- (Recordemos que $v_i,v_i' \in \mathbb{C}^n \simeq \mathbb{R}^{2n})$
+ Recordemos que $v_i,v_i' \in \mathbb{C}^n \simeq \mathbb{R}^{2n}$
  
  Notación: $v_i=(v_i^1,..,v_i^{2n})$ con $v_i^j \in \mathbb{R}$ y $v_i'=((v_i')^1,..,(v_i')^{2n})$ con $(v_i')^j \in \mathbb{R}$
  
@@ -469,7 +476,7 @@ Con $\alpha$ así definido , tenemos que :
 
 $\alpha \in  SP(2n,\mathbb{R})$
 
-$\tilde{D} = \alpha(d(l)) $
+$\tilde{D} = \alpha(D(l)) $
 
 Pero entonces, $\tilde{D}=\frac{1}{d} D = \alpha(D(l)) => D=\alpha(d D(l))$
 \end{proof}
