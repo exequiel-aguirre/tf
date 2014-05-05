@@ -17,7 +17,7 @@
 \newtheorem{definition}{Definición}
 \newenvironment{proof}{\paragraph{Demostración:}}{\hfill$\square$}
 
-\author{Exequiel Aguirre}
+%\author{Exequiel Aguirre}
 \title{Subgrupos discretos del grupo de Heisenberg }
 \date{}
 % document start
@@ -102,14 +102,14 @@ Dado que $\psi(e_1,f_1)=1$ y $\psi$ es alternante, tenemos que:
 \end{itemize}
 
 Por lo que, 
-$$\psi|_{P_1} = 
+$$\psi_{|P_1} = 
 \begin{bmatrix}
  1 & 0 &\\ 
  0& -1&
 \end{bmatrix}
 $$
 
-Se ve así que $\psi|_{P_1}$ es no degenerada $\Rightarrow P_1$ es un plano hiperbólico.
+Se ve así que $\psi_{|P_1}$ es no degenerada $\Rightarrow P_1$ es un plano hiperbólico.
 \newline
 
 Afirmación 2: Existe un subespacio $P_1$, tal que 
@@ -255,12 +255,13 @@ De $\beta$ se ve que la dim(V) es par.
  $$\begin{aligned}
  \psi(w,w')&=\\
  \psi(w_1,w_1')+ \psi(w_1,w_2')+ \psi(w_2,w_1')+\psi(w_2,w_2')&=\\
- \psi(w_1,w_1')+\psi(w_2,w_2')&= \\
- %\footnote{w_1,w_2 \in <v_1,v_1'> y afirmación 2} %
+ \psi(w_1,w_1')+\psi(w_2,w_2')& \stackrel{*}{=} \\ 
  \psi(n v_1+n' v_1',m v_1+m' v_1') + k l_1 &=\\
  n m' \psi(v_1,v_1')+n' m \psi(v_1',v_1)+ k l_1 &= (n m' - n'm+k)l_1\\
  \end{aligned}$$
  \newline 
+ 
+ (*) $w_1,w_2 \in <v_1,v_1'>$ y afirmación 2
  
  Notar que el lattice original $\psi(D,D)= l l_1 \mathbb{Z} $
 \end{proof}
@@ -352,7 +353,7 @@ Sea  $V:= \cup_{i=1}^n \{(v_i,0),(v_i',0)\}$
 Defino $\Gamma := <V>=\{(\sum_{i=1}^n a_i v_i + b_i v_i', \frac{1}{2} m l_1):a_i,b_i,m \in \mathbb{Z} \}$
 \newline
 
-Afirmación:$\Gamma \in L$
+Afirmación: $\Gamma \in L$
 
 Queremos ver que $[\Gamma,\Gamma] \subseteq \Gamma \cap Z.  $
 Ya sabemos que $[\Gamma,\Gamma] \subseteq Z.$
