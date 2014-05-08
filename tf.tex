@@ -320,9 +320,26 @@ r&=\psi(v_{j+1},v_{j+1}')-m \psi(v_j,v_j') + 0 + 0\\
 \end{aligned}$$ 
 con ($v_{j+1} + v_j) $, $(v_{j+1}'-m v_j') \in P_j \oplus P_j^\bot \Rightarrow
 r=0$ pues $l_j$ es el más pequeño de $\psi(P_j \oplus P_j^\bot, P_j \oplus P_j^\bot)$
+\newline
 
+Queda por ver la unicidad.
 
-{\color{red} Queda por ver la unicidad}
+Primero veamos que $l_1$ es único. Supongamos que  existe un $\tilde{l}_1$ tal que: 
+
+$\psi(D,D)=\tilde{l}_1 \mathbb{Z}$ $\Rightarrow$ $\tilde{l}_1 | l_1$ y $l_1 | \tilde{l}_1$ $\therefore$ $\tilde{l}_1=l_1$
+
+La prueba continua por inducción sobre la dimensión de D.
+
+Caso base: Dim(D)=2
+
+Este caso se reduce a lo visto en el párrafo anterior.
+
+Paso inductivo: Dado n $\in \mathbb{N}$ , supongamos que los $l_i$ son únicos para los lattice de Heisenberg de dimensión 2n-2.
+Para D con dimensión 2n, defino 
+$$\tilde{D}:=D/(v_1 \mathbb{Z} \oplus v_1' \mathbb{Z})$$
+$\tilde{D}$ es un lattice de Heisenberg, de dimensión 2n-2, por lo que sus $2\leq l_i\leq n$ asociados son únicos
+(por hipótesis inductiva). Además el $l_1$ es único por lo visto en el primer párrafo de la unicidad.
+
  \end{proof}
  
  \begin{corollary}
