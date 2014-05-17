@@ -22,7 +22,6 @@
 \date{}
 % document start
 \begin{document}
-\linenumbers
 \maketitle
 
 \begin{abstract}
@@ -34,12 +33,11 @@ Si en lugar de $\mathbb{R}^n$ , consideramos el grupo de Heisenberg 2n+1 dimensi
 de interés actual es desarrollar el análisis armónico asociado a $H_n/\Gamma$, donde $\Gamma$ 
 denota el subgrupo discreto de $H_n$. Ver \cite{Th} 
 
-El objetivo primero de este trabajo es estudiar la descripción hecha por R. Tolimieri \cite{To}.
-Posteriormente dar ejemplos de subgrupos discretos en el grupo de tipo Heisenberg, cuyo centro tiene
-dimensión 2.
+El objetivo de este trabajo es estudiar la descripción hecha por R. Tolimieri \cite{To}.
 
 \end{abstract}
 
+\textcolor{red}{lo mandabamos al final ?}
 \section{Notación}
 \begin{tabular}{ l l }
   $H_n$ & Grupo de Heisenberg \\
@@ -57,9 +55,16 @@ dimensión 2.
  
 
 \section{Preliminares}
+En esta sección describimos la forma canónica de una forma bilineal,
+alternante, no degenerada sobre un espacio vectorial real $V$ de dimensión finita. 
+Recordamos que una tal forma bilineal $\psi :V\times V\rightarrow R$
+es alternante si $\psi(v,v)=0$ $\forall v \in V$  y se dice no degenerada si 
+$\psi(v,v')=0$ $\forall v' \in V \Rightarrow v = 0$  y 
+$\psi(v,v')=0$ $\forall v \in V \Rightarrow v' = 0$
+
 \begin{definition} 
  Un plano hiperbólico para una forma alternante es un espacio vectorial de dimensión 2 no degenerado,
-  i.e. $\psi|_P$ sea no degenerada. 
+  i.e. $\psi|_P$ es no degenerada. 
 \end{definition}
 
 \begin{definition}   
@@ -68,31 +73,21 @@ dimensión 2.
 \end{definition}
 
 \begin{theorem} \label{Lang-8.1}
- Sea $\psi$ una forma bilineal, alternante, no degenerada, $\psi:VxV\mapsto \mathbb{R}$ con V, un espacio 
- vectorial de dimensión finita.
- Entonces: V es un espacio hiperbólico y dim(V) es par.
+ Sea V, un espacio vectorial real de dimensión finita, $\psi$ una forma bilineal, alternante, no degenerada, 
+ $\psi:VxV\mapsto \mathbb{R}$. Entonces V es un espacio hiperbólico y dim(V) es par.
 \end{theorem}
 
 \begin{proof}
-Como $\psi$ es no degenerada entonces puedo asumir que $\psi \neq 0$.
+Como $\psi$ es no degenerada entonces podemos asumir que $\psi \neq 0$.
 Existen entonces, $\tilde{e}_1$ y $f_1$ no nulos, tales que $\psi(\tilde{e}_1,f_1)=c\neq0$.
 
-Defino, $e_1=\frac{\tilde{e}_1}{c}$ entonces, $\psi(e_1,f_1)=1$
+Definimos, $e_1:=\frac{\tilde{e}_1}{c}$ entonces, $\psi(e_1,f_1)=1$.
 
-Afirmación 1: $e_1,f_1$, son linealmente independientes.
+Notar que $e_1$ y $f_1$, son linealmente independientes, pues si $e_1=c f_1$ con $c\neq 0$,
+entonces $\psi(e_1,f_1)=\psi(c f_1,f_1)=0$
 
-Supongamos que  $c_1 e_1 +c_2 f_1 = 0$ con $c_1,c_2 \in \mathbb{R}$  donde $c_1\neq0$ o  $c_2\neq0$
 
-Caso $c_1\neq0$:
-
-Tenemos que,
-
- $0=\psi(e_1,e_1)=\psi(e_1,- \frac{c_2}{c_1} f_1)= - \frac{c_2}{c_1} \psi(e_1,f_1)=- \frac{c_2}{c_1} \Rightarrow c_2=0$
- $\Rightarrow c_1 e_1 = 0$ absurdo!
-Análogamente se puede comprobar que el caso $c_2\neq0$ también conduce a un absurdo, por lo que queda probada la
-afimación.
-
-Entonces tiene sentido definir $P_1=<e_1,f_1>$
+Sea $P_1=<e_1,f_1>$ el $\mathbb{Z}$-módulo generado por los elementos $e_1,f_1$
     
 Dado que $\psi(e_1,f_1)=1$ y $\psi$ es alternante, tenemos que:
 \begin{itemize}
@@ -112,14 +107,11 @@ $$
 Se ve así que $\psi_{|P_1}$ es no degenerada $\Rightarrow P_1$ es un plano hiperbólico.
 \newline
 
-Afirmación 2: Existe un subespacio $P_1$, tal que 
- 
- $V = P_1 \oplus P_1^{\bot}$
- donde $P_1^{\bot}= \{ \alpha \in V: \psi(\alpha,\beta)=0$  $\forall$  $\beta \in P_1 \} $ 
- 
- 
- Sea v cualquier elemento en V.
- Defino 
+Afirmación 2: Se tiene que  $V = P_1 \oplus P_1^{\bot}$
+
+ donde $P_1^{\bot}= \{ \alpha \in V: \psi(\alpha,\beta)=0$  $\forall$  $\beta \in P_1 \} $ .En efecto,  
+ sea v cualquier elemento en V.
+ Definimos 
  $$v_1:=\psi(v,f_1)e_1-\psi(v,e_1)f_1$$
  $$v_2:=v-v_1$$
  Notar que $v_1 \in <e_1,f_1>=P_1$ y $v_2 \in P_1^{\bot}$, pues 
@@ -131,27 +123,21 @@ Afirmación 2: Existe un subespacio $P_1$, tal que
  \end{aligned}$$
  Análogamente $\psi(v_2,f_1)=0$.
  
- Es decir, que $v=v-v_1+v_1=v_2 + v_1$ con $v_2 \in P_1^{\bot}$ y $v_1 \in P_1$.
  
- Además, $P_1  \cap P_1^{\bot} = \{0\}$, pues si  $\tilde{v} \in  P_1 \cap P_1^{\bot}$ entonces
- $$
- \tilde{v} \in P_1 \Rightarrow \tilde{v}=a e_1 + b f_1 \Rightarrow 
- \psi(\tilde{v},e_1)=\psi(a e_1 + b f_1,e_1)=-b$$ y $$\psi(\tilde{v},f_1)=\psi(a e_1 + b f_1,f_1)=a 
- $$
+ Además, $P_1  \cap P_1^{\bot} = \{0\}$, pues si  $\tilde{v} \in  P_1 \cap P_1^{\bot}$, entonces
+ $$\begin{aligned}
+ \psi(\tilde{v},v_1)&=0 \;\forall v_1 \in P_1\\ 
+ \psi(\tilde{v},v_2)&=0 \;\forall v_2 \in P_1^{\bot},
+ \end{aligned}$$
+ 
+ con lo cual, $\psi(\tilde{v},v)=0$ $\forall v \in V=P_1 + P_1^{\bot}$
  
  
- Es decir que podemos escribir $\tilde{v}=\psi(\tilde{v},f_1) e_1 - \psi(\tilde{v},e_1) f_1=0$ pues 
- $\tilde{v} \in P_1^{\bot}.$
- Así se ve que $V = P_1 \oplus P_1^{\bot}$ 
-
- Fin Afirmación
-\newline
-
 Hemos visto que, $V=P_1 \oplus P_1^{\bot}$, con $P_1^{\bot}=\{v \in V : \psi(v,e_1)=0=\psi(v,f_1)\}$
 
-Por inducción, aplico la hipotesis a $\psi|_{P_1^{\bot}}$ y obtengo los pares $(e_i,f_i)$ con $i \in \mathbb{N}$
+Por inducción, aplicamos la hipótesis a $\psi|_{P_1^{\bot}}$ obteniendo los pares $(e_i,f_i)$ con $i \in \mathbb{N}$
 
-Sea $\beta=\{e_1,f_1,...,e_n,f_n\}$.
+Como $V$ tiene dimensión finita, existe un $n \in \mathbb{N}$ tal que  $\beta=\{e_1,f_1,...,e_n,f_n\}$ es una base de $V$.
 En esta base, 
 $$\psi = 
 \begin{bmatrix}
@@ -165,7 +151,7 @@ $$\psi =
 \end{bmatrix}
 $$
 
-De $\beta$ se ve que la dim(V) es par. 
+y se ve que la $dim(V)$ es par. 
 \end{proof}
 
 
