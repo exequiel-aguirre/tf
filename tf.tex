@@ -44,6 +44,7 @@ El objetivo de este trabajo es estudiar la descripción hecha por R. Tolimieri \
   $\psi$ & Forma bilineal, alternante, no degenerada  en $\mathbb{R}^{2n}$ \\
   $h=(x,y,t)=(v,t)$ & $h \in H_n$, $x,y \in \mathbb{R}^n,v \in \mathbb{R}^{2n}$, $t \in \mathbb{R}$ \\
   $\Gamma$ & Subgrupo discreto $H_n$ \\
+  ${[}\Gamma,\Gamma{]}$ & Subgrupo conmutador de $\Gamma$ \\
   $L$ & Conjunto de todos los lattices de $H_n$ \\
   $Z$ & Centro de $H_n$ \\
   $<v_1,...,v_n>$ & $\mathbb{Z}$-módulo generado por los elementos $v_1,...,v_n$\\
@@ -172,7 +173,7 @@ donde $x,y,x',y' \in \mathbb{R}^n$ con  $x.y$ el producto escalar usual de $\mat
 
 
 Observación:
-El grupo de Heisenberg también puede ser visto como  $C^{n}\times R,$ con
+El grupo de Heisenberg también puede ser visto como  $\mathbb{C}^{n}\times R,$ con
 ley de grupo dada por 
 $$\begin{aligned}
 (v,t)(v',s)=(v+v',t+s+ \frac{1}{2} \psi(v,v')),
@@ -181,7 +182,7 @@ donde $v=(x,y),v'=(x',y') \in \mathbb{C}^n$ y $\psi (v,v')=v.\overline{v'}.$
 
 El centro de $H_{n}$ viene dado por Z=(0,t), t $\in \mathbb{R}.$
 
-\textcolor{red}{agregar el grupo de automorfismos ?}
+\textcolor{red}{agregar el grupo de automorfismos }
 
 \section{Lattices de $H_n$}
 
@@ -193,7 +194,7 @@ El centro de $H_{n}$ viene dado por Z=(0,t), t $\in \mathbb{R}.$
  Llamaremos una lattice de $H_n$, a un subgrupo discreto $\Gamma$ de $H_n$ tal que $H_n/\Gamma$ es compacto.
 \end{definition}
 
-Notemos, que  $\Gamma \cap Z$ es un subgrupo, no trivial, discreto, de $Z$ y 
+Notemos, que  $\Gamma \cap Z$ es un subgrupo,discreto, no trivial, de $Z$ y 
 por ende existe un único real positivo $\beta(\Gamma)$ tal que:
 $$
 \Gamma \cap Z=\beta(\Gamma) \mathbb{Z}.
@@ -210,41 +211,41 @@ impone algunas condiciones especiales a $\pi(\Gamma)$.
 Sean $h=(v,t),g=(v',s) \in \Gamma$, entonces ${[}h,g{]}=h^{-1}g^{-1}hg=(0,\psi(v,v'))$ 
 y por ende $\psi(v,v') \in  \beta(\Gamma) \mathbb{Z}$.
 Es más, despues veremos que $\psi(\pi(\Gamma),\pi(\Gamma))=\beta(\Gamma) \mathbb{Z}$.
-Esto motiva la siguiente definicion:
+Esto motiva la siguiente definición:
 
 \begin{definition}
- Llamaremos a un lattice D de $\mathbb{C}^n$, lattice de Heisenberg, cuando $\psi(D,D)=l \mathbb{Z} $ para algún $l > 0$.
+ Llamaremos a una lattice D de $\mathbb{C}^n$, lattice de Heisenberg, cuando $\psi(D,D)=l \mathbb{Z} $ para algún $l > 0$.
  Denotaremos a los lattice de Heisenberg de $\mathbb{C}^n$ como el conjunto $HL(\mathbb{C}^n)$
 \end{definition}
 
 
 
 \begin{lemma} \label{1.7}
- Si un lattice D de $\mathbb{C}^n$  satisface que $\psi(D,D) \subseteq  l \mathbb{Z}$, $l>0$ entonces D $\in HL(\mathbb{C}^n)$
+ Si una lattice D de $\mathbb{C}^n$  satisface que $\psi(D,D) \subseteq  l \mathbb{Z}$, $l>0$, entonces 
+ $\psi (D,D)=l\mathbb{Z}$, es decir D $\in HL(\mathbb{C}^{n}).$
 \end{lemma}
 \begin{proof}
- Sin pérdida de generalidad podemos asumir que l=1, pues si $l\neq1$,tomo un isomorfismo 
- $f:D \mapsto \tilde{D}$ donde $f(d):=d \frac{1}{\sqrt{l}}$. Entonces,
+ Sin pérdida de generalidad podemos asumir que l=1, pues si $l\neq1$, definimos  
+ $f:D\mapsto \tilde{D}$ por $f(d):=d\frac{1}{\sqrt{l}}$
+y luego $\psi (\tilde{D},\tilde{D})\subseteq \mathbb{Z}$
  
- $\psi(\tilde{D},\tilde{D})=\{ \psi(\tilde{d},\tilde{d}): \tilde{d} \in \tilde{D} \}=
- \{ \psi(\frac{d}{\sqrt{l}},\frac{d}{\sqrt{l}}): d \in D \}=\{ \frac{1}{l} \psi(d,d):d\in D \}
- \subset \{ \frac{1}{l} l a : a \in \mathbb{Z} \}= 1 \mathbb{Z} $
- 
- Sea $l_1$ el entero positivo más pequeño de $\psi(D,D)$, donde  $ l_1 = \psi(v_1,v_1')$ con $v_1, v_1' \in D$.
+Sea $l_1$ el menor entero positivo para el cual existen $
+v_1,v_1' \in D$ tal que, $l_1=\psi (v_1,v_1')$ con 
+$v_1,v_1' \in D$.
  Definimos $<v_1,v_1'>^\bot=\{v \in D: \psi(v,v_1)=\psi(v_1',v)=0\}$
  \newline
  
- Afirmación 1: $D=<v_1,v_1'>\oplus <v_1,v_1'>^\bot$ .
+ Afirmación 1: $D=<v_1,v_1'>\oplus <v_1,v_1'>^\bot$ . En efecto, sea $v \in D$,
  
- Por el algoritmo Euclideo, $\psi(v_1,v)=m l_1 +r$ con $m,r \in \mathbb{Z}$ y $0 \leq r < l_1 \Rightarrow $
+ por el algoritmo Euclideo, $\psi(v_1,v)=m l_1 +r$ con $m,r \in \mathbb{Z}$ y $0 \leq r < l_1 \Rightarrow $
  
  $r=\psi(v_1,v)-m l_1=\psi(v_1,v)-m \psi(v_1,v_1')=\psi(v_1,v-mv_1')$
  
  
- Luego r=0, pues si $r\neq 0$ entonces $0<\psi(v_1,v-mv_1')<l_1$ absurdo!
+Luego $r=0$, por la elección de $l_1$, esto es $\psi(v_1,v-mv_1')=0$
  
  De esta forma $v-mv_1' \in <v_1>^\bot$.
- Analogamente, $v-m'v_1 \in <v_1'>^\bot$  con $m'\in \mathbb{Z}$ tal que  $\psi(v,v_1')=m'l_1 + r$
+ Analogamente, $v-m'v_1 \in <v_1'>^\bot$  con $m'\in \mathbb{Z}$.
  
  Notar que,
  $$\begin{aligned}
@@ -254,25 +255,21 @@ Esto motiva la siguiente definicion:
  \end{aligned}$$
  
  Finalmente, para cualquier $v\in D, v=v-(m v_1'+ m'v_1)+(m v_1' + m'v_1)$ 
- 
- Fin de la afirmación 
  \newline
+  
  
  Afirmación 2: $l_1 | \psi(v,v')$ $\forall v,v' \in <v_1,v_1'>^\bot$.
  
  Pues, $\psi(v,v')=m l_1 + r$ con $m,r \in \mathbb{Z}$ y  $0\leq r < l_1 \Rightarrow $
  
  $r= \psi(v,v') - m \psi(v_1,v_1')=\psi(v,v')-m\psi(v_1,v_1')+ \psi (v_1,v')+ \psi(v,-m v_1') 
- = \psi(v+v_1,v'-mv_1') \Rightarrow $ r=0 (por la definición de $l_1$)
- 
- Fin de la afirmación
- \newline
+ = \psi(v+v_1,v'-mv_1') \Rightarrow $ r=0 (por la elección de $l_1$) 
  
  Finalmente afirmo que $\psi(D,D)=l_1 \mathbb{Z}$ 
  
- $\supseteq$) Sea $m l_1 \in l_1 \mathbb{Z} \Rightarrow \psi(v_1,m v_1') = m \psi(v_1,v_1')= m l_1$
+ $\supseteq$)Esta inclusión es inmediata: pues si $m \in \mathbb{Z} \Rightarrow \psi(v_1,m v_1') = m l_1$
  
- $\subseteq$) Sean w,w' $\in$ D ,por afirmación 1 ,$w = w_1 +w_2$  y $w'=w_1' +w_2'$
+ $\subseteq$) Sean $w,w' \in D$ ,por afirmación 1 ,$w = w_1 +w_2$  y $w'=w_1' +w_2'$
  
   con $w_1,w_1' \in <v_1,v_1'>$ y  $w_2,w_2' \in <v_1,v_1'>^\bot$ 
  $$\begin{aligned}
