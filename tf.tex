@@ -42,7 +42,7 @@ El objetivo de este trabajo es estudiar la descripción hecha por R. Tolimieri \
 \begin{tabular}{ l l }
   $H_n$ & Grupo de Heisenberg \\
   $\psi$ & Forma bilineal, alternante, no degenerada  en $\mathbb{R}^{2n}$ \\
-  $h=(v,t)$ & $h \in H_n$, $v \in \mathbb{R}^{2n}$, $t \in \mathbb{R}$ \\
+  $h=(x,y,t)=(v,t)$ & $h \in H_n$, $x,y \in \mathbb{R}^n,v \in \mathbb{R}^{2n}$, $t \in \mathbb{R}$ \\
   $\Gamma$ & Subgrupo discreto $H_n$ \\
   $L$ & Conjunto de todos los lattices de $H_n$ \\
   $Z$ & Centro de $H_n$ \\
@@ -153,27 +153,64 @@ $$
 
 y se ve que la $dim(V)$ es par. 
 \end{proof}
+\newline
 
+
+De ahora en adelante, sea $\psi :\mathbb{R}^{2n} \times \mathbb{R}^{2n}\mapsto \mathbb{R}$ dada por 
+$$ \begin{aligned}
+\psi((x,y),(x',y'))=y.x'-x.y' ,
+\end{aligned}$$
+donde $x,y,x',y' \in \mathbb{R}^n$ con  $x.y$ el producto escalar usual de $\mathbb{R}^n$.
 
 \begin{definition}
- El grupo de Heisenberg $H_n$, es el grupo de Lie cuya variedad subyaciente es $\mathbb{R}^{2n} \times \mathbb{R}$ y 
+ El grupo de Heisenberg $H_n$, es el grupo de Lie cuya variedad subyacente es $\mathbb{R}^{2n} \times \mathbb{R}$ y 
  cuya operación de grupo está definida por: 
- $$(v,t)(w,s)=(v+w,t+s + \frac{1}{2} \psi(v,w))$$
- Donde $v,w \in \mathbb{R}^{2n}$ , s,t $\in \mathbb{R}$ y $\psi$ es la forma bilineal, alternante, no degenerada vista en 
- el Teorema $\ref{Lang-8.1}$
+ $$(x,y,t)(x',y',s)=(x+x'+y+y',t+s + \frac{1}{2} \psi((x,y),(x',y'))),$$
+ donde $x,x',y,y' \in \mathbb{R}^{n}$ , s,t $\in \mathbb{R}$.
 \end{definition}
 
 
+
+Observación:
+El grupo de Heisenberg también puede ser visto como  $C^{n}\times R,$ con
+ley de grupo dada por 
+$$\begin{aligned}
+(v,t)(v',s)=(v+v',t+s+ \frac{1}{2} \psi(v,v')),
+\end{aligned}$$
+donde $v=(x,y),v'=(x',y') \in \mathbb{C}^n$ y $\psi (v,v')=v.\overline{v'}.$
+
+El centro de $H_{n}$ viene dado por Z=(0,t), t $\in \mathbb{R}.$
+
+\textcolor{red}{agregar el grupo de automorfismos ?}
+
 \section{Lattices de $H_n$}
+
+\begin{definition}
+ Recordemos que una lattice de $\mathbb{C}^n$ es un subgrupo discreto D de $\mathbb{C}^n$ tal que $\mathbb{C}^n$/D es compacto.
+\end{definition}
 
 \begin{definition}
  Llamaremos una lattice de $H_n$, a un subgrupo discreto $\Gamma$ de $H_n$ tal que $H_n/\Gamma$ es compacto.
 \end{definition}
 
-\begin{definition}
- Un lattice de $\mathbb{C}^n$ es un subgrupo discreto D de $\mathbb{C}^n$ tal que $\mathbb{C}^n$/D es compacto.
-\end{definition}
+Notemos, que  $\Gamma \cap Z$ es un subgrupo, no trivial, discreto, de $Z$ y 
+por ende existe un único real positivo $\beta(\Gamma)$ tal que:
+$$
+\Gamma \cap Z=\beta(\Gamma) \mathbb{Z}.
+$$
 
+Consideremos $\pi :H_{n}\rightarrow \mathbb{C}^{n}$  definida por $\pi (v,t)=v$,
+entonces por \cite{Ma}, $\pi(\Gamma)$ es una lattice de $\mathbb{C}^n$.
+
+Además, el hecho de que
+$$\begin{aligned}
+{[} \Gamma,\Gamma {]} \subseteq \Gamma \cap Z = \beta(\Gamma) \mathbb{Z}
+\end{aligned}$$
+impone algunas condiciones especiales a $\pi(\Gamma)$.
+Sean $h=(v,t),g=(v',s) \in \Gamma$, entonces ${[}h,g{]}=h^{-1}g^{-1}hg=(0,\psi(v,v'))$ 
+y por ende $\psi(v,v') \in  \beta(\Gamma) \mathbb{Z}$.
+Es más, despues veremos que $\psi(\pi(\Gamma),\pi(\Gamma))=\beta(\Gamma) \mathbb{Z}$.
+Esto motiva la siguiente definicion:
 
 \begin{definition}
  Llamaremos a un lattice D de $\mathbb{C}^n$, lattice de Heisenberg, cuando $\psi(D,D)=l \mathbb{Z} $ para algún $l > 0$.
