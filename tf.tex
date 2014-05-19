@@ -178,11 +178,53 @@ ley de grupo dada por
 $$\begin{aligned}
 (v,t)(v',s)=(v+v',t+s+ \frac{1}{2} \psi(v,v')),
 \end{aligned}$$
-donde $v=(x,y),v'=(x',y') \in \mathbb{C}^n$ y $\psi (v,v')=v.\overline{v'}.$
+donde $v=(x,y),v'=(x',y') \in \mathbb{C}^n$ y $\psi (v,v')=Im(v.\overline{v'}).$
 
 El centro de $H_{n}$ viene dado por Z=(0,t), t $\in \mathbb{R}.$
 
 \textcolor{red}{agregar el grupo de automorfismos }
+\begin{definition}
+ Recordemos que un automorfismo $f: H_n \mapsto H_n$ es un isomorfismo lineal tal que 
+ $$\begin{aligned}
+    f({[}(v,t),(v',s){]})={[}f(v,t),f(v',s){]}
+ \end{aligned}$$
+ 
+ \textcolor{red}{ '[' los corchetes de Lie, puede ser confuso con el conmutador}
+\end{definition}
+
+Sea $A \in GL(2n,\mathbb{R})$ tal que  $\psi(v,v')=\psi(Av, Av')$, y  $f:H_n \mapsto H_n$ el mapeo
+que tiene como matriz asociada :
+$$[f] = 
+\begin{bmatrix}
+A & 0\\
+0 & 1
+\end{bmatrix}$$
+
+Notar que f es un automorfismo, pues,
+
+$$\begin{aligned}
+f((v,t) (v',s))=f(v+v',t+s+ \frac{1}{2} \psi(v,v'))&=\\
+(A(v+v'),t+s+ \frac{1}{2} \psi(v,v'))&=\\
+(Av+Av',t+s+ \frac{1}{2} \psi(Av,Av'))&=\\
+(Av,t)(Av',s)&=f(v,t) f(v',s).\\
+\end{aligned}$$
+
+Dado que $A \in GL(2n,\mathbb{R})$, f es biyectiva
+
+Y finalmente,
+$$\begin{aligned}
+f({[}(v,t),(v',s){]})=f(0,\psi(v,v'))&=\\
+(0,\psi(v,v'))=(0,\psi(Av,Av'))&=\\
+{[}(Av,t),(Av',s){]}&={[}f(v,t),f(v',s){]}.\\
+\end{aligned}$$
+
+Esta última observación motiva la siguiente definición \textcolor{red}{(?)}
+\begin{definition}
+ Definimos el grupo simpléctico $Sp(2n,\mathbb{R})$ como ,
+ $$
+ Sp(2n,\mathbb{R})=\{ A \in GL(2n,\mathbb{R}): \psi(v,v')=\psi(Av,Av') \forall v,v' \in \mathbb{C}^n\}.
+ $$
+\end{definition}
 
 \section{Lattices de $H_n$}
 
@@ -326,7 +368,7 @@ Dado que $m<n \Rightarrow  \mathbb{R}^{2(n-m)}$ no es compacto $\Rightarrow \mat
 Fin afirmación
 \newline
 
-%Vimos en la demostración del lemma \ref{1.7}, que l_1 \ \psi(v,v') \forall v,v'  \in D
+
 Veamos que $l_j|l_{j+1}$.
 
 Ya vimos que $D= P_1\oplus P_2 \oplus...\oplus P_j \oplus P_j^\bot$.
