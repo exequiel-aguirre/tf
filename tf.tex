@@ -40,6 +40,7 @@ El objetivo de este trabajo es estudiar la descripción hecha por R. Tolimieri \
 \textcolor{red}{lo mandabamos al final ?}
 \section{Notación}
 \begin{tabular}{ l l }
+  $GL(2n,\mathbb{R})$ & Grupo simpléctico\\
   $H_n$ & Grupo de Heisenberg \\
   $\psi$ & Forma bilineal, alternante, no degenerada  en $\mathbb{R}^{2n}$ \\
   $h=(x,y,t)=(v,t)$ & $h \in H_n$, $x,y \in \mathbb{R}^n,v \in \mathbb{R}^{2n}$, $t \in \mathbb{R}$ \\
@@ -193,14 +194,14 @@ El centro de $H_{n}$ viene dado por Z=(0,t), t $\in \mathbb{R}.$
 \end{definition}
 
 Sea $A \in GL(2n,\mathbb{R})$ tal que  $\psi(v,v')=\psi(Av, Av')$, y  $f:H_n \mapsto H_n$ el mapeo
-que tiene como matriz asociada :
+que tiene como matriz asociada 
 $$[f] = 
 \begin{bmatrix}
 A & 0\\
 0 & 1
-\end{bmatrix}$$
+\end{bmatrix},$$
 
-Notar que f es un automorfismo, pues,
+entonces f es un automorfismo, pues,
 
 $$\begin{aligned}
 f((v,t) (v',s))=f(v+v',t+s+ \frac{1}{2} \psi(v,v'))&=\\
@@ -209,7 +210,7 @@ f((v,t) (v',s))=f(v+v',t+s+ \frac{1}{2} \psi(v,v'))&=\\
 (Av,t)(Av',s)&=f(v,t) f(v',s).\\
 \end{aligned}$$
 
-Dado que $A \in GL(2n,\mathbb{R})$, f es biyectiva
+Dado que $A \in GL(2n,\mathbb{R})$, f es biyectiva.
 
 Y finalmente,
 $$\begin{aligned}
