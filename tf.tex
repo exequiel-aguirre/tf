@@ -29,9 +29,9 @@ La teoría de series de Fourier es la versión clásica del análisis armónico 
 $\mathbb{R}^n /\mathbb{Z}^n$, donde $\mathbb{Z}^n$ denota el subgrupo discreto de $\mathbb{R}^n$ de
 las n-uplas de números enteros.
 
-Si en lugar de $\mathbb{R}^n$ , consideramos el grupo de Heisenberg 2n+1 dimensional $H_n$, un tema
-de interés actual es desarrollar el análisis armónico asociado a $H_n/\Gamma$, donde $\Gamma$ 
-denota el subgrupo discreto de $H_n$. Ver \cite{Th} 
+Si en lugar de $\mathbb{R}^n$ , consideramos el grupo de Heisenberg 2n+1 dimensional $\mathbb{H}_n$, un tema
+de interés actual es desarrollar el análisis armónico asociado a $\mathbb{H}_n/\Gamma$, donde $\Gamma$ 
+denota el subgrupo discreto de $\mathbb{H}_n$. Ver \cite{Th} 
 
 El objetivo de este trabajo es estudiar la descripción hecha por R. Tolimieri \cite{To}.
 
@@ -41,15 +41,17 @@ El objetivo de este trabajo es estudiar la descripción hecha por R. Tolimieri \
 \section{Notación}
 \begin{tabular}{ l l }
   $GL(2n,\mathbb{R})$ & Grupo simpléctico\\
-  $H_n$ & Grupo de Heisenberg \\
+  $\mathbb{H}_n$ & Grupo de Heisenberg \\
+  $\mathbb{A}_n$ & Grupo de automorfismos de $\mathbb{H}_n$\\
   $\psi$ & Forma bilineal, alternante, no degenerada  en $\mathbb{R}^{2n}$ \\
-  $h=(x,y,t)=(v,t)$ & $h \in H_n$, $x,y \in \mathbb{R}^n,v \in \mathbb{R}^{2n}$, $t \in \mathbb{R}$ \\
-  $\Gamma$ & Subgrupo discreto $H_n$ \\
+  $h=(x,y,t)=(v,t)$ & $h \in \mathbb{H}_n$, $x,y \in \mathbb{R}^n,v \in \mathbb{R}^{2n}$, $t \in \mathbb{R}$ \\
+  $\Gamma$ & Subgrupo discreto $\mathbb{H}_n$ \\
   ${[}\Gamma,\Gamma{]}$ & Subgrupo conmutador de $\Gamma$ \\
-  $L$ & Conjunto de todos los lattices de $H_n$ \\
-  $Z$ & Centro de $H_n$ \\
+  $L$ & Conjunto de todos los lattices de $\mathbb{H}_n$ \\
+  $Z$ & Centro de $\mathbb{H}_n$ \\
   $<v_1,...,v_n>$ & $\mathbb{Z}$-módulo generado por los elementos $v_1,...,v_n$\\
-  $\beta(\Gamma)$ & Real positivo unívocamente determinado,\\  
+  $\beta(\Gamma)$ & Real positivo unívocamente determinado,\\
+  $\Gamma(l)$ & Grupo generado por $(e_1,0)...(e_n,0),(l_1 e_{n+1},0),...,(l_n e_{2n},0)$\\  
   & tal que $\Gamma \cap Z =\{(0,\beta(\Gamma) m): m\in \mathbb{Z} \}$ \\
 \end{tabular}
 
@@ -165,7 +167,7 @@ $$ \begin{aligned}
 donde $x,y,x',y' \in \mathbb{R}^n$ con  $x.y$ el producto escalar usual de $\mathbb{R}^n$.
 
 \begin{definition}
- El grupo de Heisenberg $H_n$, es el grupo de Lie cuya variedad subyacente es $\mathbb{R}^{2n} \times \mathbb{R}$ y 
+ El grupo de Heisenberg $\mathbb{H}_n$, es el grupo de Lie cuya variedad subyacente es $\mathbb{R}^{2n} \times \mathbb{R}$ y 
  cuya operación de grupo está definida por: 
  $$(x,y,t)(x',y',s)=(x+x'+y+y',t+s + \frac{1}{2} \psi((x,y),(x',y'))),$$
  donde $x,x',y,y' \in \mathbb{R}^{n}$ , s,t $\in \mathbb{R}$.
@@ -183,10 +185,19 @@ donde $v=(x,y),v'=(x',y') \in \mathbb{C}^n$ y $\psi (v,v')=Im(v.\overline{v'}).$
 
 El centro de $H_{n}$ viene dado por Z=(0,t), t $\in \mathbb{R}.$
 
-\textcolor{red}{Ponerlo en una sección aparte.poner $H_n$ con la letra que va, y definir el conmutador  y poner la cuenta de $ghg^{-1} h^{-1}=(0,psi(v,v'))$ }
-\textcolor{red}{para lo del grupo de automorfismos, primero ver como son todos los auto y despues ver que esa se puede formar multiplicando las otras tres}
 \begin{definition}
- Recordemos que un automorfismo $\Phi: H_n \mapsto H_n$ es un isomorfismo lineal tal que 
+ Recordemos que, dados dos elementos $g,h$ en un grupo $G$, el conmutador de $g$ y $h$ es ${[}g,h{]}:=g h g^{-1} h^{-1}$.
+ 
+ Llamaremos subgrupo conmutador $[G,G]$ al grupo generado por todos los conmutadores.
+\end{definition}
+Notemos que, dados $g=(v,t),h=(v',s) \in \mathbb{H}_n$
+$$
+{[}g,h{]}=g h g^{-1} h^{-1}=(v+v',t+s+\frac{1}{2}\psi(v,v')) (-v-v',-t-s + \frac{1}{2}\psi(v,v'))=(0,\psi(v,v'))
+$$
+
+\section{Automorfismos del grupo de Heisenberg}
+\begin{definition}
+ Recordemos que un automorfismo $\Phi: \mathbb{H}_n \mapsto \mathbb{H}_n$ es un isomorfismo lineal tal que 
  $$\begin{aligned}
     f({[}(v,t),(v',s){]})={[}f(v,t),f(v',s){]}
  \end{aligned}$$
@@ -194,7 +205,7 @@ El centro de $H_{n}$ viene dado por Z=(0,t), t $\in \mathbb{R}.$
 % \textcolor{red}{ '[' los corchetes de Lie, puede ser confuso con el conmutador}
 \end{definition}
 
-Sea $A \in GL(2n,\mathbb{R})$ tal que  $\psi(v,v')=\psi(Av, Av')$, y  $f:H_n \mapsto H_n$ la aplicación
+Sea $A \in GL(2n,\mathbb{R})$ tal que  $\psi(v,v')=\psi(Av, Av')$, y  $f:\mathbb{H}_n \mapsto \mathbb{H}_n$ la aplicación
 que tiene como matriz asociada 
 $$[f] = 
 \begin{bmatrix}
@@ -222,16 +233,95 @@ Esta última observación motiva la siguiente definición
  Sp(2n,\mathbb{R})=\{ A \in GL(2n,\mathbb{R}): \psi(v,v')=\psi(Av,Av') \forall v,v' \in \mathbb{C}^n\}.
  $$
 \end{definition}
-Observemos que este es el subgrupo de automorfismos que actuan trivialmente ene l centro.
+Observemos que este es el subgrupo de automorfismos que actuan trivialmente en el centro.
 
-\section{Lattices de $H_n$}
+
+Veremos más en detalle, el grupo de automorfismos de $\mathbb{H}_n$, $\mathbb{A}_n$.
+Todo $\alpha \in \mathbb{A}_n$ se puede ver como una transformación lineal en $\mathbb{R}^{2n}$,
+
+$$\alpha=
+\begin{bmatrix}
+A & c\\
+b & a
+\end{bmatrix},$$
+con $A \in  \mathbb{R}^{2n} \times \mathbb{R}^{2n}$, $a \in \mathbb{R}$, $b,c \in \mathbb{R}^{2n}$.
+
+El hecho de que $\alpha$ es un autormofismo, nos brinda más información sobre estos elementos.
+
+Sabemos que, $\alpha(h) \in Z \forall h \in Z$ , donde $Z$ denota el centro de $\mathbb{H}_n$.
+Esto nos indica que $c=0$.
+Además, dado que $\alpha$ es inyectiva, $a\neq0$.
+
+Sobre $A$, tenemos la condición $a \psi(v,v')=\psi(A v,A v')$, pues
+$$\begin{aligned}
+(0,\psi(A v,A v'))={[}\alpha(v,t),\alpha(v',s){]}=\alpha{[}(v,t),(v',s){]}=(0,a \psi(v,v')).
+\end{aligned}$$
+Además, dado que $\alpha$ es invertible, $A \in GL(2n,\mathbb{R})$.
+
+Ahora veamos el caso en que $a >0$.
+
+Si definimos $\delta_a (v,t) :=(a v,a^2 t)$, tenemos que 
+$$\alpha=
+\begin{bmatrix}
+A & 0\\
+b & a
+\end{bmatrix}=
+\delta_{a^{1/2}}
+\begin{bmatrix}
+S & 0\\
+0 & 1
+\end{bmatrix}
+\begin{bmatrix}
+I & 0\\
+\tilde{b} & 1
+\end{bmatrix},
+$$
+con $\tilde{b}=\frac{b}{a}$ y  $S$ tal que $S(v)=a^{-1/2} A(v)$.
+De esta última condición sobre $S$, se sigue que $S \in Sp(2n,\mathbb{R}).$
+
+Para el caso, donde $a<0$, introducimos $\theta(v,t):=(\overline{v},-t)$.
+
+Dado que $\theta=\theta^{-1}$,
+$$\alpha=
+\begin{bmatrix}
+A & 0\\
+b & a
+\end{bmatrix}=
+\theta 
+\theta
+\begin{bmatrix}
+A & 0\\
+b & a
+\end{bmatrix}=
+\theta
+\begin{bmatrix}
+\tilde{A} & 0\\
+b & -a
+\end{bmatrix}.
+$$
+Dado que $\alpha$ y $\theta$ son automorfismos, $\theta \alpha$ lo es. Además $-a>0$, por lo que tenemos que $\theta \alpha$ es 
+un automorfismo como el visto en el caso anterior, y por ende,
+$$\alpha=
+\theta
+\delta_{a^{1/2}}
+\begin{bmatrix}
+S & 0\\
+0 & 1
+\end{bmatrix}
+\begin{bmatrix}
+I & 0\\
+\tilde{b} & 1
+\end{bmatrix}.
+$$
+
+\section{Descripción de lattices en el grupo de Heisenberg}
 
 \begin{definition}
  Recordemos que una lattice de $\mathbb{C}^n$ es un subgrupo discreto D de $\mathbb{C}^n$ tal que $\mathbb{C}^n$/D es compacto.
 \end{definition}
 
 \begin{definition}
- Llamaremos una lattice de $H_n$, a un subgrupo discreto $\Gamma$ de $H_n$ tal que $H_n/\Gamma$ es compacto.
+ Llamaremos una lattice de $\mathbb{H}_n$, a un subgrupo discreto $\Gamma$ de $\mathbb{H}_n$ tal que $\mathbb{H}_n/\Gamma$ es compacto.
 \end{definition}
 
 Notemos, que  $\Gamma \cap Z$ es un subgrupo,discreto, no trivial, de $Z$ y 
@@ -414,13 +504,12 @@ $\psi(\pi(\Gamma),\pi(\Gamma))=l_1 \beta(\Gamma) \mathbb{Z} \therefore \pi(\Gamm
 
 $\supseteq)$ $D\in HL(\mathbb{C}^n) \Rightarrow D=<v_1,v_1'>\oplus ... \oplus <v_n,v_n'>$ por (\ref{1.8}) 
 
-Sea  $V:= \cup_{i=1}^n \{(v_i,0),(v_i',0)\}$
+Defino $\Gamma$  como el grupo generado por
+$${(v_1,0),(v_2,0),...,(v_n,0),(v_1',0),(v_2',0),...,(v_n',0)}.$$
 
-Defino $\Gamma := <V>=\{(\sum_{i=1}^n a_i v_i + b_i v_i', \frac{1}{2} m l_1):a_i,b_i,m \in \mathbb{Z} \}$
-\newline
-\textcolor{red}{No usar <V>, poner el generado por...}
+Más explicitamente, $\Gamma=\{(\sum_{i=1}^n a_i v_i + b_i v_i', \frac{1}{2} m l_1):a_i,b_i,m \in \mathbb{Z} \}$
 
-Es inmediato ver que $\Gamma$ es un subgrupo discreto y que $H_n / \Gamma$ es compacto.
+Es inmediato ver que $\Gamma$ es un subgrupo discreto y que $\mathbb{H}_n / \Gamma$ es compacto.
 
  \end{proof}
 
@@ -434,36 +523,35 @@ Es inmediato ver que $\Gamma$ es un subgrupo discreto y que $H_n / \Gamma$ es co
 
 \begin{example} 
  Definimos,
- $$Z_n^{\#}:= \{ \pounds=(l_1,l_2,...,l_n) \in \mathbb{N}^n:l_j|l_{j+1} \}$$
+ $$Z_n^{\#}:= \{ \ell=(l_1,l_2,...,l_n) \in \mathbb{N}^n:l_j|l_{j+1} \}$$
  
- Sea $e_j$, $1\leq j \leq 2n $,  la base canónica de $\mathbb{R}^{2n}$.Para $\pounds$, definimos:
+ Sea $e_j$, $1\leq j \leq 2n $,  la base canónica de $\mathbb{R}^{2n}$.Para $\ell$, definimos:
  
- $$D(\pounds):=<e_1,....e_n,l_1 e_{n+1},l_2 e_{n+2}...,l_n e_{2n}>$$
-  \newpage
+ $$D(\ell):=<e_1,....e_n,l_1 e_{n+1},l_2 e_{n+2}...,l_n e_{2n}>$$
+  
  
  Se ve facilmente que $\psi(e_j,e_{j+n})=1$ para $j=1...n$
 \end{example}
 
- Observación: En el lema $\ref{1.8}$ vimos que si $D(\pounds) \in HL(\mathbb{C}^n)$ entonces admitía una descomposición de la forma 
- $<v_1,v_1'>\oplus ... <v_n,v_n'>= D(\pounds)$
+ Observación: En el lema $\ref{1.8}$ vimos que si $D(\ell) \in HL(\mathbb{C}^n)$ entonces admitía una descomposición de la forma 
+ $<v_1,v_1'>\oplus ... <v_n,v_n'>= D(\ell)$
  
  En el ejemplo anterior, $v_i=e_i$ y $v_i'=l_i e_{i+1}$
  
 
 \begin{theorem}
- Para cada $D \in HL(\mathbb{C}^n)$ existe una única $\pounds \in Z_n^{\#}$, un único $d \in \mathbb{R}_{>0}$ y un $\alpha \in SP(2n,\mathbb{R})$ tal que:
+ Para cada $D \in HL(\mathbb{C}^n)$ existe un único $\ell \in Z_n^{\#}$, un único $l \in \mathbb{R}_{>0}$ y un $\alpha \in SP(2n,\mathbb{R})$ tal que:
  
- $D=\alpha(d D(\pounds))$
+ $D=\alpha(l^{1/2} D(\ell))$
 \end{theorem}
 
 \begin{proof}
- Si $D \in HL(\mathbb{C}^n)$,entonces $ \psi(D,D)=l l_1 \mathbb{Z}$, con $l \in \mathbb{R}_{>0}$ y $l_1 \in \mathbb{N}$
- Sea $d=\sqrt{l}$. 
+ Si $D \in HL(\mathbb{C}^n)$,entonces $ \psi(D,D)=l l_1 \mathbb{Z}$, con $l \in \mathbb{R}_{>0}$ y $l_1 \in \mathbb{N}$ 
  
- Por el lema $\ref{1.8}$, $\tilde{D}:= \frac{1}{d} D =  <v_1,v_1'> \oplus...\oplus <v_n,v_n'>$
+ Por el lema $\ref{1.8}$, $\tilde{D}:= \frac{1}{l^{1/2}} D =  <v_1,v_1'> \oplus...\oplus <v_n,v_n'>$
  con los números naturales $l_i=\psi(v_i,v_i')$ univocamente determinados.
 
- Definimos $\pounds:=(l_1,...,l_n) \in \mathbb{Z}_n^{\#}$
+ Definimos $\ell:=(l_1,...,l_n) \in \mathbb{Z}_n^{\#}$
  
  %Sea $v:=(v_1,...,v_n)$ y $v'=(v_1',...,v_n')$
   
@@ -480,14 +568,56 @@ Es inmediato ver que $\Gamma$ es un subgrupo discreto y que $H_n / \Gamma$ es co
  
 Es fácil ver que $\psi(\alpha e_k,\alpha e_{k+n})=\psi(e_k,e_{k+n})$, luego $\alpha \in  SP(2n,\mathbb{R})$.
 
-Con lo que $\tilde{D} = \alpha(D(\pounds)) $
+Con lo que $\tilde{D} = \alpha(D(\ell)) $
 
-Pero entonces, $\tilde{D}=\frac{1}{d} D = \alpha(D(\pounds)) => D=\alpha(d D(\pounds))$
-
-
-Sea $\Gamma_{\pounds}$ = $<\cup_{i=1}^n \{(v_i,0),(v_i',0)\}>$
+Pero entonces, $\tilde{D}=\frac{1}{l^{1/2}} D = \alpha(D(\ell)) \Rightarrow D=\alpha(l^{1/2} D(\ell))$
 \end{proof}
 
+\begin{definition}
+ Llamaremos $\Gamma(\ell)$ al grupo generado por,
+ $${(e_1,0),(e_2,0),...,(e_n,0),(l_1 e_{n+1},0),(l_2 e_{n+2},0),...,(l_n e_{2n},0)},$$
+ con $\ell=(l_1,...l_n) \in \mathbb{Z}_n^{\#}$
+\end{definition}
+
+\begin{corollary}
+ Sea $\Gamma \in L(\mathbb{H}_n)$, entonces existe un único $\ell \in  \mathbb{Z}_n^{\#}$, un único $l> 0$  y $\alpha \in Sp(2n,\mathbb{R})$ 
+ tal que:
+ 
+ $\Gamma = \delta_{l^{\frac{1}{2}}} \alpha (\Gamma(\ell))$
+\end{corollary}
+\begin{proof}
+ Recordemos que ${[}\Gamma,\Gamma{]}=\beta(\Gamma) \mathbb{Z}=l l_1 \mathbb{Z}$.
+ 
+ Sea $D:=\pi(\Gamma)=\alpha(l^{1/2} D(\ell))$.
+ Proponemos, 
+ $$
+ \tilde{\Gamma}=   
+  \delta_{l^{1/2}}
+  \begin{bmatrix}  
+    \alpha & 0\\ 
+    0& 1
+  \end{bmatrix}
+  \Gamma(\ell).
+$$
+ Con $\tilde{\Gamma}$ asi definida, tenemos que,
+ 
+ $$  \pi(\tilde{\Gamma})= 
+ \pi(
+ \delta_{l^{1/2}}
+ \begin{bmatrix}
+    \alpha & 0\\ 
+    0& 1
+  \end{bmatrix}
+  \Gamma(\ell)
+  )=
+  l^{1/2}\alpha(\pi(\Gamma(\ell)))=
+  l^{1/2}\alpha(D(\ell))=D=\pi(\Gamma)
+  $$
+  
+  $${[}\tilde{\Gamma},\tilde{\Gamma}{]}=l l_1 \mathbb{Z}, $$
+ 
+ por lo que concluimos que $\tilde{\Gamma}=\Gamma$.
+\end{proof}
 
 
 
@@ -495,37 +625,13 @@ Sea $\Gamma_{\pounds}$ = $<\cup_{i=1}^n \{(v_i,0),(v_i',0)\}>$
 
  \newpage
   \begin{thebibliography}{1}
-  \bibitem[To]{To} Tolimieri, R.   \emph{``Heisenberg manifolds and Theta functions''}, Trans. of the A.M.S Vol 239, 1978. (293-319)
-  \bibitem[Th]{Th} Thangavelu, S.  \emph{``Harmonic analisys on Heisenberg nilmanifolds''}, Real analisys and its applications
+  \bibitem[To]{To} Tolimieri R.   \emph{``Heisenberg manifolds and Theta functions''}, Trans. of the A.M.S Vol 239, 1978. (293-319)
+  \bibitem[Th]{Th} Thangavelu S.  \emph{``Harmonic analisys on Heisenberg nilmanifolds''}, Real analisys and its applications
   \bibitem[Ma]{Ma} Malcev, A. T.  \emph{``On a class of homogeneous spaces''}, Izv. Akad. Nauk SSSR Ser. Mat. 13(1949)
-  
+  \bibitem[La]{La} Lang S.  \emph{``Algebra''},3. ed., Springer, 2004
+  \bibitem[Hu]{Hu} HungerfordT. W.  \emph{``Algebra''},V. 73,Springer, 2003
+  \bibitem[Ho]{Ho} Hoffman K.,Kunze R.  \emph{``Linear Algebra''},Prentice-Hall, 1973  
   \end{thebibliography}
-
-$$\begin{aligned}
-f((v,t) (v',s))&=\\
-f(v+v',t+s+ \frac{1}{2} \psi(v,v'))&=\\
-(A(v+v'),t+s+ \frac{1}{2} \psi(v,v'))&=\\
-(Av+Av',t+s+ \frac{1}{2} \psi(Av,Av'))&=\\
-(Av,t)(Av',s)&=f(v,t) f(v',s).\\
-\end{aligned}$$
-
-Afirmación 1: $D(l) \in HL(\mathbb{C}^n)$ 
- 
- Sean $v,v' \in D(l)$
-  $$\begin{aligned}
-  \psi(v,v')&= \\
-  \psi(\sum_{i=1}^n a_i e_i + \sum_{i=n+1}^{2n}b_i l_{i-n} e_i, \sum_{i=1}^n a_i' e_i + \sum_{i=n+1}^{2n}b'_i l_{i-n}e_i )&=\\
-  \psi(\sum_{i=1}^n a_i e_i , \sum_{i=1}^n a_i' e_i ) + \psi(\sum_{i=1}^n a_i e_i , \sum_{i=n+1}^{2n}b'_i l_{i-n} e_i)  & + \\
-  \psi( \sum_{i=n+1}^{2n}b_i l_{i-n}e_i, \sum_{i=1}^n a_i' e_i ) + \psi(\sum_{i=n+1}^{2n}b_i l_{i-n}e_i, \sum_{i=n+1}^{2n}b'_i l_{i-n}e_i)&=\\
-   \sum_{i=1}^n \psi( a_i e_i , \sum_{i=n+1}^{2n}b'_i l_{i-n}e_i) + \sum_{i=n+1}^{2n}\psi( b_i l_{i-n}e_i, \sum_{i=1}^n a_i' e_i )&=\\
-   \sum_{i=1}^n \psi( a_i e_i , b'_{n+i} l_{i} e_{n+i}) + \sum_{i=n+1}^{2n}\psi( b_i l_{i-n}, a_{i-n}' e_{i-n} )&=\\
-   -\sum_{i=1}^n a_i b_{n+i}' l_i + \sum_{i=n+1}^{2n} b_i l_{i-n}a_{i-n}'&=\\
-   -\sum_{i=1}^n a_i b_{n+i}' l_i + \sum_{j=1}^{n} b_{j+n} l_{j}a_{j}' &=\sum_{i=1}^{n} l_i(-a_i b_{n+i}' + a_i' b_{i+n})\\
-  \end{aligned}$$ 
-   Dado que $l_1|l_j$ $\forall$ j $\Rightarrow l_1| \psi(v,v') \Rightarrow \psi(v,v') \subseteq l_1 \mathbb{Z} \Rightarrow 
-   D(l) \in HL(\mathbb{C}^n)$
-   
- Fin Afirmación 1
 \end{document}
 
 
