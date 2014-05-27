@@ -1,8 +1,6 @@
 \documentclass[12pt]{article}
-\usepackage{lineno}
 \usepackage[spanish]{babel}
 \usepackage{amsmath}
-\usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{color}
 \usepackage[utf8]{inputenc}
@@ -20,6 +18,8 @@
 %\author{Exequiel Aguirre}
 \title{Subgrupos discretos del grupo de Heisenberg }
 \date{}
+
+\makeindex
 % document start
 \begin{document}
 \maketitle
@@ -29,15 +29,22 @@ La teoría de series de Fourier es la versión clásica del análisis armónico 
 $\mathbb{R}^n /\mathbb{Z}^n$, donde $\mathbb{Z}^n$ denota el subgrupo discreto de $\mathbb{R}^n$ de
 las n-uplas de números enteros.
 
-Si en lugar de $\mathbb{R}^n$ , consideramos el grupo de Heisenberg 2n+1 dimensional $\mathbb{H}_n$, un tema
+Si en lugar de $\mathbb{R}^n$ , consideramos el \index{grupo de Heisenberg} 2n+1 dimensional $\mathbb{H}_n$, un tema
 de interés actual es desarrollar el análisis armónico asociado a $\mathbb{H}_n/\Gamma$, donde $\Gamma$ 
 denota el subgrupo discreto de $\mathbb{H}_n$. Ver \cite{Th} 
 
 El objetivo de este trabajo es estudiar la descripción hecha por R. Tolimieri \cite{To}.
-
 \end{abstract}
 
-\textcolor{red}{agregar palabras clave y el código de clasificación,índice gral}
+\textbf{Palabras Clave:} Heisenberg,Lattice,grupo,discretos
+
+
+\textbf{Código de clasificación:}
+
+\clearpage
+\tableofcontents
+\clearpage
+
 \section{Notación}
 \begin{tabular}{ l l }
   $GL(2n,\mathbb{R})$ & Grupo simpléctico\\
@@ -56,9 +63,8 @@ El objetivo de este trabajo es estudiar la descripción hecha por R. Tolimieri \
 \end{tabular}
 
 
- 
-
 \section{Preliminares}
+\subsection{Formas bilineales}
 En esta sección describimos la forma canónica de una forma bilineal,
 alternante, no degenerada sobre un espacio vectorial real $V$ de dimensión finita. 
 Recordamos que una tal forma bilineal $\psi :V\times V\rightarrow R$
@@ -166,6 +172,7 @@ $$ \begin{aligned}
 \end{aligned}$$
 donde $x,y,x',y' \in \mathbb{R}^n$ con  $x.y$ el producto escalar usual de $\mathbb{R}^n$.
 
+\subsection{Grupo de Heisenberg}
 \begin{definition}
  El grupo de Heisenberg $\mathbb{H}_n$, es el grupo de Lie cuya variedad subyacente es $\mathbb{R}^{2n} \times \mathbb{R}$ y 
  cuya operación de grupo está definida por: 
@@ -202,7 +209,7 @@ $$
     f({[}(v,t),(v',s){]})={[}f(v,t),f(v',s){]}
  \end{aligned}$$
  
-% \textcolor{red}{ '[' los corchetes de Lie, puede ser confuso con el conmutador}
+
 \end{definition}
 
 Sea $A \in GL(2n,\mathbb{R})$ tal que  $\psi(v,v')=\psi(Av, Av')$, y  $f:\mathbb{H}_n \mapsto \mathbb{H}_n$ la aplicación
@@ -352,7 +359,7 @@ Esto motiva la siguiente definición:
 
 \begin{lemma} \label{1.7}
  Si una lattice D de $\mathbb{C}^n$  satisface que $\psi(D,D) \subseteq  l \mathbb{Z}$, $l>0$, entonces 
- $\psi (D,D)=l\mathbb{Z}$, es decir D $\in HL(\mathbb{C}^{n}).$
+ existe un entero positivo $l_1$ tal que $\psi (D,D)=l l_1 \mathbb{Z}$, es decir D $\in HL(\mathbb{C}^{n}).$
 \end{lemma}
 \begin{proof}
  Sin pérdida de generalidad podemos asumir que l=1, pues si $l\neq1$, definimos  
@@ -586,7 +593,7 @@ Pero entonces, $\tilde{D}=\frac{1}{l^{1/2}} D = \alpha(D(\ell)) \Rightarrow D=\a
  $\Gamma = \delta_{l^{\frac{1}{2}}} \alpha (\Gamma(\ell))$
 \end{corollary}
 \begin{proof}
- Recordemos que ${[}\Gamma,\Gamma{]}=\beta(\Gamma) \mathbb{Z}=l l_1 \mathbb{Z}$.
+ Recordemos que ${[}\Gamma,\Gamma{]}=l l_1 \mathbb{Z}$.
  
  Sea $D:=\pi(\Gamma)=\alpha(l^{1/2} D(\ell))$.
  Proponemos, 
@@ -623,7 +630,7 @@ $$
 
 
 
- \newpage
+ \clearpage
   \begin{thebibliography}{1}
   \bibitem[To]{To} Tolimieri R.   \emph{``Heisenberg manifolds and Theta functions''}, Trans. of the A.M.S Vol 239, 1978. (293-319)
   \bibitem[Th]{Th} Thangavelu S.  \emph{``Harmonic analisys on Heisenberg nilmanifolds''}, Real analisys and its applications
@@ -632,6 +639,9 @@ $$
   \bibitem[Hu]{Hu} HungerfordT. W.  \emph{``Algebra''},V. 73,Springer, 2003
   \bibitem[Ho]{Ho} Hoffman K.,Kunze R.  \emph{``Linear Algebra''},Prentice-Hall, 1973  
   \end{thebibliography}
+  
+  
+  
 \end{document}
 
 
