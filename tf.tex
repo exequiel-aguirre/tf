@@ -109,8 +109,8 @@ Dado que $\psi(e_1,f_1)=1$ y $\psi$ es alternante, tenemos que:
 Por lo que, 
 $$\psi_{|P_1} = 
 \begin{bmatrix}
- 1 & 0 &\\ 
- 0& -1&
+ 0 & 1\\ 
+ -1& 0
 \end{bmatrix}
 $$
 
@@ -190,7 +190,7 @@ $$\begin{aligned}
 \end{aligned}$$
 donde $v=(x,y),v'=(x',y') \in \mathbb{C}^n$ y $\psi (v,v')=Im(v.\overline{v'}).$
 
-El centro de $H_{n}$ viene dado por Z=(0,t), t $\in \mathbb{R}.$
+El centro de $\mathbb{H}_n$ viene dado por Z=(0,t), t $\in \mathbb{R}.$
 
 \begin{definition}
  Recordemos que, dados dos elementos $g,h$ en un grupo $G$, el conmutador de $g$ y $h$ es ${[}g,h{]}:=g h g^{-1} h^{-1}$.
@@ -204,33 +204,29 @@ $$
 
 \section{Automorfismos del grupo de Heisenberg}
 \begin{definition}
- Recordemos que un automorfismo $\Phi: \mathbb{H}_n \mapsto \mathbb{H}_n$ es un isomorfismo lineal tal que 
+ Recordemos que un automorfismo $\alpha: \mathbb{H}_n \mapsto \mathbb{H}_n$ es un isomorfismo lineal tal que 
  $$\begin{aligned}
-    f({[}(v,t),(v',s){]})={[}f(v,t),f(v',s){]}
+    \alpha({[}(v,t),(v',s){]})={[}\alpha(v,t),\alpha(v',s){]}
  \end{aligned}$$
  
 
 \end{definition}
 
-Sea $A \in GL(2n,\mathbb{R})$ tal que  $\psi(v,v')=\psi(Av, Av')$, y  $f:\mathbb{H}_n \mapsto \mathbb{H}_n$ la aplicación
+Sea $A \in GL(2n,\mathbb{R})$ tal que  $\psi(v,v')=\psi(Av, Av')$, y  $\Phi:\mathbb{H}_n \mapsto \mathbb{H}_n$ la aplicación
 que tiene como matriz asociada 
-$$[f] = 
+$$[\Phi] = 
 \begin{bmatrix}
 A & 0\\
 0 & 1
 \end{bmatrix},$$
 
-entonces f es un automorfismo, pues,
+entonces $\Phi$ es un automorfismo, pues,
 
-
-
-Dado que $A \in GL(2n,\mathbb{R})$, f es biyectiva.
-
-Y finalmente,
+dado que $A \in GL(2n,\mathbb{R})$,$\Phi$ es biyectiva y además,
 $$\begin{aligned}
-f({[}(v,t),(v',s){]})=f(0,\psi(v,v'))&=\\
+\Phi({[}(v,t),(v',s){]})=\Phi(0,\psi(v,v'))&=\\
 (0,\psi(v,v'))=(0,\psi(Av,Av'))&=\\
-{[}(Av,t),(Av',s){]}&={[}f(v,t),f(v',s){]}.\\
+{[}(Av,t),(Av',s){]}&={[}\Phi(v,t),\Phi(v',s){]}.\\
 \end{aligned}$$
 
 Esta última observación motiva la siguiente definición 
@@ -337,7 +333,7 @@ $$
 \Gamma \cap Z=\beta(\Gamma) \mathbb{Z}.
 $$
 
-Consideremos $\pi :H_{n}\rightarrow \mathbb{C}^{n}$  definida por $\pi (v,t)=v$,
+Consideremos $\pi :\mathbb{H}_{n}\rightarrow \mathbb{C}^{n}$  definida por $\pi (v,t)=v$,
 entonces por \cite{Ma}, $\pi(\Gamma)$ es una lattice de $\mathbb{C}^n$.
 
 Además, el hecho de que
@@ -347,11 +343,11 @@ $$\begin{aligned}
 impone algunas condiciones especiales a $\pi(\Gamma)$.
 Sean $h=(v,t),g=(v',s) \in \Gamma$, entonces ${[}h,g{]}=h^{-1}g^{-1}hg=(0,\psi(v,v'))$ 
 y por ende $\psi(v,v') \in  \beta(\Gamma) \mathbb{Z}$.
-Es más, despues veremos que $\psi(\pi(\Gamma),\pi(\Gamma))=\beta(\Gamma) \mathbb{Z}$.
+Es más, despues veremos que $\psi(\pi(\Gamma),\pi(\Gamma))=l_1 \beta(\Gamma) \mathbb{Z}$ para un entero positivo $l_1$ .
 Esto motiva la siguiente definición:
 
 \begin{definition}
- Llamaremos a una lattice D de $\mathbb{C}^n$, lattice de Heisenberg, cuando $\psi(D,D)=l \mathbb{Z} $ para algún $l > 0$.
+ Llamaremos a una lattice D de $\mathbb{C}^n$, lattice de Heisenberg, cuando $\psi(D,D)=r \mathbb{Z} $ para algún $r > 0$.
  Denotaremos a los lattice de Heisenberg de $\mathbb{C}^n$ como el conjunto $HL(\mathbb{C}^n)$
 \end{definition}
 
@@ -524,7 +520,7 @@ Es inmediato ver que $\Gamma$ es un subgrupo discreto y que $\mathbb{H}_n / \Gam
   Sea $\Gamma  \in L$ entonces, $\psi(\pi(\Gamma),\pi(\Gamma))=l_1 \beta(\Gamma) \mathbb{Z}$  
  \end{corollary}
  \begin{proof}
-  Por el corolario anterior, $D=\pi(\Gamma) \in HL(\mathbb{C}^n) \therefore \psi(D,D)=l_1 \beta \mathbb{Z}$  
+  Por el corolario anterior, $D=\pi(\Gamma) \in HL(\mathbb{C}^n) \therefore \psi(D,D)=l_1 \beta(\Gamma) \mathbb{Z}$  
  \end{proof}
 
 
@@ -583,7 +579,7 @@ Pero entonces, $\tilde{D}=\frac{1}{l^{1/2}} D = \alpha(D(\ell)) \Rightarrow D=\a
 \begin{definition}
  Llamaremos $\Gamma(\ell)$ al grupo generado por,
  $${(e_1,0),(e_2,0),...,(e_n,0),(l_1 e_{n+1},0),(l_2 e_{n+2},0),...,(l_n e_{2n},0)},$$
- con $\ell=(l_1,...l_n) \in \mathbb{Z}_n^{\#}$
+ con $\ell=(l_1,...l_n) \in \mathbb{Z}_n^{\#}$.
 \end{definition}
 
 \begin{corollary}
