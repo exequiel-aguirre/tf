@@ -29,14 +29,15 @@ La teoría de series de Fourier es la versión clásica del análisis armónico 
 $\mathbb{R}^n /\mathbb{Z}^n$, donde $\mathbb{Z}^n$ denota el subgrupo discreto de $\mathbb{R}^n$ de
 las n-uplas de números enteros.
 
-Si en lugar de $\mathbb{R}^n$ , consideramos el \index{grupo de Heisenberg} 2n+1 dimensional $\mathbb{H}_n$, un tema
+Si en lugar de $\mathbb{R}^n$ , consideramos el grupo de Heisenberg 2n+1 dimensional $\mathbb{H}_n$, un tema
 de interés actual es desarrollar el análisis armónico asociado a $\mathbb{H}_n/\Gamma$, donde $\Gamma$ 
-denota el subgrupo discreto de $\mathbb{H}_n$. Ver \cite{Th} 
+denota un subgrupo discreto de $\mathbb{H}_n$. Ver \cite{Th} 
 
-El objetivo de este trabajo es estudiar la descripción hecha por R. Tolimieri \cite{To}.
+El objetivo de este trabajo es estudiar la descripción hecha por R. Tolimieri \cite{To} de los subgrupos discretos
+del grupo de Heisenberg.
 \end{abstract}
 
-\textbf{Palabras Clave:} Heisenberg,Lattice,grupo,discretos
+\textbf{Palabras Clave:} Heisenberg,Lattice,grupos discretos
 
 
 \textbf{Código de clasificación:}
@@ -45,7 +46,7 @@ El objetivo de este trabajo es estudiar la descripción hecha por R. Tolimieri \
 \tableofcontents
 \clearpage
 
-\section{Notación}
+Notación
 \begin{tabular}{ l l }
   $GL(2n,\mathbb{R})$ & Grupo simpléctico\\
   $\mathbb{H}_n$ & Grupo de Heisenberg \\
@@ -192,6 +193,9 @@ donde $v=(x,y),v'=(x',y') \in \mathbb{C}^n$ y $\psi (v,v')=Im(v.\overline{v'}).$
 
 El centro de $\mathbb{H}_n$ viene dado por Z=(0,t), t $\in \mathbb{R}.$
 
+Denotaremos como $H_n$(con letra de lie, francfurt) el álgebra de Lie, de $H_n$.
+Luego $H_n$(lie) es $C^n x R$  con corchete de Lie dado por....$[(v,t),(v',s)]=(0,\psi(v,v'))$
+EEs inmediato ver que la aplicación exponencial exp:$H_n(lie) \mapsto H_n$(grupo) es la identidad.
 \begin{definition}
  Recordemos que, dados dos elementos $g,h$ en un grupo $G$, el conmutador de $g$ y $h$ es ${[}g,h{]}:=g h g^{-1} h^{-1}$.
  
@@ -202,9 +206,9 @@ $$
 {[}g,h{]}=g h g^{-1} h^{-1}=(v+v',t+s+\frac{1}{2}\psi(v,v')) (-v-v',-t-s + \frac{1}{2}\psi(v,v'))=(0,\psi(v,v'))
 $$
 
-\section{Automorfismos del grupo de Heisenberg}
+\section{Automorfismos del grupo de Heisenberg}(acá todo el algebra de lie)
 \begin{definition}
- Recordemos que un automorfismo $\alpha: \mathbb{H}_n \mapsto \mathbb{H}_n$ es un isomorfismo lineal tal que 
+ Recordemos que un automorfismo $\alpha: \mathbb{H}_n(lie) \mapsto \mathbb{H}_n(lie)$ es un isomorfismo lineal tal que 
  $$\begin{aligned}
     \alpha({[}(v,t),(v',s){]})={[}\alpha(v,t),\alpha(v',s){]}
  \end{aligned}$$
@@ -220,9 +224,9 @@ A & 0\\
 0 & 1
 \end{bmatrix},$$
 
-entonces $\Phi$ es un automorfismo, pues,
+entonces $\Phi$ es un automorfismo pues,
 
-dado que $A \in GL(2n,\mathbb{R})$,$\Phi$ es biyectiva y además,
+dado que como $A \in GL(2n,\mathbb{R})$ $\Phi$ es biyectiva y además,
 $$\begin{aligned}
 \Phi({[}(v,t),(v',s){]})=\Phi(0,\psi(v,v'))&=\\
 (0,\psi(v,v'))=(0,\psi(Av,Av'))&=\\
@@ -236,11 +240,11 @@ Esta última observación motiva la siguiente definición
  Sp(2n,\mathbb{R})=\{ A \in GL(2n,\mathbb{R}): \psi(v,v')=\psi(Av,Av') \forall v,v' \in \mathbb{C}^n\}.
  $$
 \end{definition}
-Observemos que este es el subgrupo de automorfismos que actuan trivialmente en el centro.
+Observemos que este es el subgrupo de automorfismos que actúan trivialmente en el centro.
 
 
-Veremos más en detalle, el grupo de automorfismos de $\mathbb{H}_n$, $\mathbb{A}_n$.
-Todo $\alpha \in \mathbb{A}_n$ se puede ver como una transformación lineal en $\mathbb{R}^{2n}$,
+Describamos más en detalle el grupo de automorfismos $\mathbb{A}_n$ de $\mathbb{H}_n(lie)$.
+Todo $\alpha \in \mathbb{A}_n$ viene en principio dada por una transformación lineal  $\mathbb{R}^{2n+1}$ en $\mathbb{R}^{2n+1}$,
 
 $$\alpha=
 \begin{bmatrix}
@@ -255,7 +259,7 @@ Sabemos que, $\alpha(h) \in Z \forall h \in Z$ , donde $Z$ denota el centro de $
 Esto nos indica que $c=0$.
 Además, dado que $\alpha$ es inyectiva, $a\neq0$.
 
-Sobre $A$, tenemos la condición $a \psi(v,v')=\psi(A v,A v')$, pues
+Sobre $A$ tenemos la condición $a \psi(v,v')=\psi(A v,A v')$, pues
 $$\begin{aligned}
 (0,\psi(A v,A v'))={[}\alpha(v,t),\alpha(v',s){]}=\alpha{[}(v,t),(v',s){]}=(0,a \psi(v,v')).
 \end{aligned}$$
@@ -316,6 +320,13 @@ I & 0\\
 \tilde{b} & 1
 \end{bmatrix}.
 $$
+Observemos que sobre $\tilde{b}$ no hay ninguna condición, y que por lo tanto el grupo generado por
+$\begin{bmatrix}
+I & 0\\
+\tilde{b} & 1
+\end{bmatrix}
+$
+es un subgrupo abeliano de $A_n$ isomorfo a $R^{2n}$.
 
 \section{Descripción de lattices en el grupo de Heisenberg}
 
@@ -327,14 +338,14 @@ $$
  Llamaremos una lattice de $\mathbb{H}_n$, a un subgrupo discreto $\Gamma$ de $\mathbb{H}_n$ tal que $\mathbb{H}_n/\Gamma$ es compacto.
 \end{definition}
 
-Notemos, que  $\Gamma \cap Z$ es un subgrupo,discreto, no trivial, de $Z$ y 
+Notemos, que  $\Gamma \cap Z$ es un subgrupo discreto, no trivial, de $Z$ y 
 por ende existe un único real positivo $\beta(\Gamma)$ tal que:
 $$
 \Gamma \cap Z=\beta(\Gamma) \mathbb{Z}.
 $$
 
-Consideremos $\pi :\mathbb{H}_{n}\rightarrow \mathbb{C}^{n}$  definida por $\pi (v,t)=v$,
-entonces por \cite{Ma}, $\pi(\Gamma)$ es una lattice de $\mathbb{C}^n$.
+Consideremos $\pi :\mathbb{H}_{n}\rightarrow \mathbb{C}^{n}$  definida por $\pi (v,t)=v$
+entonces $\pi(\Gamma)$ es una lattice de $\mathbb{C}^n$.
 
 Además, el hecho de que
 $$\begin{aligned}
@@ -347,8 +358,8 @@ Es más, despues veremos que $\psi(\pi(\Gamma),\pi(\Gamma))=l_1 \beta(\Gamma) \m
 Esto motiva la siguiente definición:
 
 \begin{definition}
- Llamaremos a una lattice D de $\mathbb{C}^n$, lattice de Heisenberg, cuando $\psi(D,D)=r \mathbb{Z} $ para algún $r > 0$.
- Denotaremos a los lattice de Heisenberg de $\mathbb{C}^n$ como el conjunto $HL(\mathbb{C}^n)$
+ Llamaremos a una lattice D de $\mathbb{C}^n$ lattice de Heisenberg, cuando $\psi(D,D)=r \mathbb{Z} $ para algún $r > 0$.
+ Denotaremos al conjunto de las lattices de Heisenberg  por $HL(\mathbb{C}^n)$.
 \end{definition}
 
 
@@ -421,7 +432,7 @@ Luego $r=0$, por la elección de $l_1$, esto es $\psi(v_1,v-mv_1')=0$
 
 \begin{lemma} \label{1.8}
  Un $D \in HL(\mathbb{C}^n)$ se puede escribir como una suma directa $\psi-ortogonal : D=<v_1,v_1'>\oplus<v_2,v_2'>...<v_n,v_n'>$
- de $\mathbb{Z}$-módulos bidimensionales $<v_j,v_j'>$. Sea $l_j=\psi(v_j,v_j')$; entonces la descomposición puede ser tomada 
+ de $\mathbb{Z}$-módulos bidimensionales $<v_j,v_j'>$. Sea $l_j=\psi(v_j,v_j')$. Entonces la descomposición puede ser tomada 
  de forma tal que $l_j \in \mathbb{R}^{>0}$ y $\frac{l_{j+1}}{l_j}  \in \mathbb{Z}$.
  
  Es más, estos $l_j$ están unívocamente determinados por D.
@@ -497,7 +508,7 @@ Además, $(0,\psi(\pi(\Gamma),\pi(\Gamma))) = \{(0,\psi(\pi(h),\pi(h'))): h,h' \
 Entonces tenemos que:
 \begin{itemize}
  \item $\psi(\pi(\Gamma),\pi(\Gamma)) \subseteq \beta(\Gamma) \mathbb{Z}$
- \item $\psi(\pi(\Gamma),\pi(\Gamma))$ es un lattice de $\mathbb{C}^n (por \cite{Ma}$)
+ \item $\psi(\pi(\Gamma),\pi(\Gamma))$ es un lattice de $\mathbb{C}^n$
 \end{itemize}
 
 Con lo cual, estamos en condiciones de aplicar el lema\ref{1.7}, y concluir que 
@@ -510,7 +521,8 @@ $\supseteq)$ $D\in HL(\mathbb{C}^n) \Rightarrow D=<v_1,v_1'>\oplus ... \oplus <v
 Defino $\Gamma$  como el grupo generado por
 $${(v_1,0),(v_2,0),...,(v_n,0),(v_1',0),(v_2',0),...,(v_n',0)}.$$
 
-Más explicitamente, $\Gamma=\{(\sum_{i=1}^n a_i v_i + b_i v_i', \frac{1}{2} m l_1):a_i,b_i,m \in \mathbb{Z} \}$
+Más explicitamente, $\Gamma=\{(\sum_{i=1}^n a_i v_i + b_i v_i', \frac{1}{2} m l_1):a_i,b_i,m \in \mathbb{Z} \}$.
+Observemos que $\Gamma$ satisface la condición adicional: ${[}\Gamma,\Gamma{]}= \Gamma \cap Z$
 
 Es inmediato ver que $\Gamma$ es un subgrupo discreto y que $\mathbb{H}_n / \Gamma$ es compacto.
 
@@ -533,7 +545,7 @@ Es inmediato ver que $\Gamma$ es un subgrupo discreto y que $\mathbb{H}_n / \Gam
  $$D(\ell):=<e_1,....e_n,l_1 e_{n+1},l_2 e_{n+2}...,l_n e_{2n}>$$
   
  
- Se ve facilmente que $\psi(e_j,e_{j+n})=1$ para $j=1...n$
+ Se ve facilmente que $\psi(e_j,e_{j+n})=1$ para $j=1,...,n$
 \end{example}
 
  Observación: En el lema $\ref{1.8}$ vimos que si $D(\ell) \in HL(\mathbb{C}^n)$ entonces admitía una descomposición de la forma 
@@ -566,12 +578,12 @@ Es inmediato ver que $\Gamma$ es un subgrupo discreto y que $\mathbb{H}_n / \Gam
  \alpha(e_{j+n})=\frac{v_{j+1}}{l_j},\\
  \end{aligned}$$
  
- con j=1..n.
+ con j=1,...,n.
  
  
 Es fácil ver que $\psi(\alpha e_k,\alpha e_{k+n})=\psi(e_k,e_{k+n})$, luego $\alpha \in  SP(2n,\mathbb{R})$.
 
-Con lo que $\tilde{D} = \alpha(D(\ell)) $
+Por lo cual  $\tilde{D} = \alpha(D(\ell)) $
 
 Pero entonces, $\tilde{D}=\frac{1}{l^{1/2}} D = \alpha(D(\ell)) \Rightarrow D=\alpha(l^{1/2} D(\ell))$
 \end{proof}
@@ -583,7 +595,7 @@ Pero entonces, $\tilde{D}=\frac{1}{l^{1/2}} D = \alpha(D(\ell)) \Rightarrow D=\a
 \end{definition}
 
 \begin{corollary}
- Sea $\Gamma \in L(\mathbb{H}_n)$, entonces existe un único $\ell \in  \mathbb{Z}_n^{\#}$, un único $l> 0$  y $\alpha \in Sp(2n,\mathbb{R})$ 
+ Sea $\Gamma \in L(\mathbb{H}_n)$ tal que ${[}\Gamma,\Gamma{]}=\Gamma \cap Z$. Entonces existe un único $\ell \in  \mathbb{Z}_n^{\#}$, un único $l> 0$  y $\alpha \in Sp(2n,\mathbb{R})$ 
  tal que:
  
  $\Gamma = \delta_{l^{\frac{1}{2}}} \alpha (\Gamma(\ell))$
@@ -592,7 +604,7 @@ Pero entonces, $\tilde{D}=\frac{1}{l^{1/2}} D = \alpha(D(\ell)) \Rightarrow D=\a
  Recordemos que ${[}\Gamma,\Gamma{]}=l l_1 \mathbb{Z}$.
  
  Sea $D:=\pi(\Gamma)=\alpha(l^{1/2} D(\ell))$.
- Proponemos, 
+ Sea 
  $$
  \tilde{\Gamma}=   
   \delta_{l^{1/2}}
@@ -628,12 +640,13 @@ $$
 
  \clearpage
   \begin{thebibliography}{1}
-  \bibitem[To]{To} Tolimieri R.   \emph{``Heisenberg manifolds and Theta functions''}, Trans. of the A.M.S Vol 239, 1978. (293-319)
-  \bibitem[Th]{Th} Thangavelu S.  \emph{``Harmonic analisys on Heisenberg nilmanifolds''}, Real analisys and its applications
-  \bibitem[Ma]{Ma} Malcev, A. T.  \emph{``On a class of homogeneous spaces''}, Izv. Akad. Nauk SSSR Ser. Mat. 13(1949)
-  \bibitem[La]{La} Lang S.  \emph{``Algebra''},3. ed., Springer, 2004
-  \bibitem[Hu]{Hu} HungerfordT. W.  \emph{``Algebra''},V. 73,Springer, 2003
-  \bibitem[Ho]{Ho} Hoffman K.,Kunze R.  \emph{``Linear Algebra''},Prentice-Hall, 1973  
+ \bibitem[Fo]{Fo} Folland G.  \emph{``Compact Heisenberg Manifolds as CR Manifolds''},The Journal of Geometric Analysis, Vol. 14 N. 3, 2004.(521-532)
+ \bibitem[Ho]{Ho} Hoffman K.,Kunze R.  \emph{``Linear Algebra''},Prentice-Hall, 1973  
+ \bibitem[Hu]{Hu} HungerfordT. W.  \emph{``Algebra''}.Graduate Text in Mathematics, V. 73,Springer, 2003
+ \bibitem[La]{La} Lang S.  \emph{``Algebra''},3. ed., Springer, 2004
+ \bibitem[Th]{Th} Thangavelu S.  \emph{``Harmonic analysis on Heisenberg nilmanifolds''}.Revista de la Unión Matemática Argentina,V. 50, N. 2 , 2009. (75-93)
+ \bibitem[To]{To} Tolimieri R.   \emph{``Heisenberg manifolds and Theta functions''}, Trans. of the A.M.S Vol 239, 1978. (293-319)
+  
   \end{thebibliography}
   
   
