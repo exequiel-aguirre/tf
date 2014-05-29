@@ -64,6 +64,29 @@ Notación
 \end{tabular}
 
 
+\section{Introducción}
+El estudio de los subgrupos discretos de un grupo de Lie aparece en àreas
+centrales de la matemática, tales como geometría diferencial y
+algebraica, análisis armónico, y teoría de números ( formas
+automorfas.)\bigskip .
+
+En este trabajo se estudian los subgrupos discretos del grupo de Heisenberg 
+$\mathbb{H}_n$, siguiendo la descripción hecha por R. Tolimieri en \cite{To}.
+La misma se basa en la obtención de ciertos subgrupos
+discretos canónicos, para luego probar que cualquier otro está en la 
+órbita de uno de ellos, bajo la acción del grupo de automorfismos de 
+$\mathbb{H}_n.$
+
+Para tal fin en la sección 3 de este trabajo se describe este grupo de
+automorfismos .
+
+En nuestro caso particular, el estudio de lattices $\Gamma $ en $\mathbb{H}_n,$ est%
+á motivado por su conexión al análisis armónico. Como una
+aplicación de inter\'{e}s mencionamos la descomposición en
+representaciones irreducibles de la representación regular a derecha de
+$\mathbb{H}_n$ en $L^2(\Gamma /\mathbb{H}_n)$, pudiendo calcularse
+explicitamente sus multiplicidades. ( Ver \cite{Fo} ,\cite{Th}).
+
 \section{Preliminares}
 \subsection{Formas bilineales}
 En esta sección describimos la forma canónica de una forma bilineal,
@@ -193,9 +216,12 @@ donde $v=(x,y),v'=(x',y') \in \mathbb{C}^n$ y $\psi (v,v')=Im(v.\overline{v'}).$
 
 El centro de $\mathbb{H}_n$ viene dado por Z=(0,t), t $\in \mathbb{R}.$
 
-Denotaremos como $H_n$(con letra de lie, francfurt) el álgebra de Lie, de $H_n$.
-Luego $H_n$(lie) es $C^n x R$  con corchete de Lie dado por....$[(v,t),(v',s)]=(0,\psi(v,v'))$
-EEs inmediato ver que la aplicación exponencial exp:$H_n(lie) \mapsto H_n$(grupo) es la identidad.
+Denotaremos como $\mathfrak{h}_n$ el álgebra de Lie, de $\mathbb{H}_n$.
+Luego $\mathfrak{h}_n$ es $\mathbb{C}^n \times \mathbb{R}$  con el corchete de Lie dado por 
+$$
+[(v,t),(v',s)]=(0,\psi(v,v')).
+$$
+Es inmediato ver que la aplicación exponencial $exp: \mathfrak{h}_n \mapsto \mathbb{H}_n$ es la identidad.
 \begin{definition}
  Recordemos que, dados dos elementos $g,h$ en un grupo $G$, el conmutador de $g$ y $h$ es ${[}g,h{]}:=g h g^{-1} h^{-1}$.
  
@@ -206,9 +232,9 @@ $$
 {[}g,h{]}=g h g^{-1} h^{-1}=(v+v',t+s+\frac{1}{2}\psi(v,v')) (-v-v',-t-s + \frac{1}{2}\psi(v,v'))=(0,\psi(v,v'))
 $$
 
-\section{Automorfismos del grupo de Heisenberg}(acá todo el algebra de lie)
+\section{Automorfismos del grupo de Heisenberg}
 \begin{definition}
- Recordemos que un automorfismo $\alpha: \mathbb{H}_n(lie) \mapsto \mathbb{H}_n(lie)$ es un isomorfismo lineal tal que 
+ Recordemos que un automorfismo $\alpha: \mathfrak{h}_n \mapsto \mathfrak{h}_n$ es un isomorfismo lineal tal que 
  $$\begin{aligned}
     \alpha({[}(v,t),(v',s){]})={[}\alpha(v,t),\alpha(v',s){]}
  \end{aligned}$$
@@ -216,7 +242,7 @@ $$
 
 \end{definition}
 
-Sea $A \in GL(2n,\mathbb{R})$ tal que  $\psi(v,v')=\psi(Av, Av')$, y  $\Phi:\mathbb{H}_n \mapsto \mathbb{H}_n$ la aplicación
+Sea $A \in GL(2n,\mathbb{R})$ tal que  $\psi(v,v')=\psi(Av, Av')$, y  $\Phi:\mathfrak{h}_n \mapsto \mathfrak{h}_n$ la aplicación
 que tiene como matriz asociada 
 $$[\Phi] = 
 \begin{bmatrix}
@@ -233,7 +259,7 @@ $$\begin{aligned}
 {[}(Av,t),(Av',s){]}&={[}\Phi(v,t),\Phi(v',s){]}.\\
 \end{aligned}$$
 
-Esta última observación motiva la siguiente definición 
+Esta última observación motiva la siguiente definición. 
 \begin{definition}
  Definimos el grupo simpléctico $Sp(2n,\mathbb{R})$ como ,
  $$
@@ -243,7 +269,7 @@ Esta última observación motiva la siguiente definición
 Observemos que este es el subgrupo de automorfismos que actúan trivialmente en el centro.
 
 
-Describamos más en detalle el grupo de automorfismos $\mathbb{A}_n$ de $\mathbb{H}_n(lie)$.
+Describamos más en detalle el grupo de automorfismos $\mathbb{A}_n$ de $\mathfrak{h}_n$.
 Todo $\alpha \in \mathbb{A}_n$ viene en principio dada por una transformación lineal  $\mathbb{R}^{2n+1}$ en $\mathbb{R}^{2n+1}$,
 
 $$\alpha=
