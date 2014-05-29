@@ -15,9 +15,9 @@
 \newtheorem{definition}{Definición}
 \newenvironment{proof}{\paragraph{Demostración:}}{\hfill$\square$}
 
-%\author{Exequiel Aguirre}
+\author{ Alumno: Exequiel Aguirre \\ Directora: Linda V. Saal}
 \title{Subgrupos discretos del grupo de Heisenberg }
-\date{}
+\date{Julio de 2014}
 
 \makeindex
 % document start
@@ -46,26 +46,30 @@ del grupo de Heisenberg.
 \tableofcontents
 \clearpage
 
-Notación
+\textbf{Notación}
+\newline
+
+
 \begin{tabular}{ l l }
   $GL(2n,\mathbb{R})$ & Grupo simpléctico\\
+  $\mathfrak{h}_n$ & Álgebra de Heisenberg \\
   $\mathbb{H}_n$ & Grupo de Heisenberg \\
-  $\mathbb{A}_n$ & Grupo de automorfismos de $\mathbb{H}_n$\\
+  $\mathbb{A}_n$ & Grupo de automorfismos de $\mathfrak{h}_n$\\
   $\psi$ & Forma bilineal, alternante, no degenerada  en $\mathbb{R}^{2n}$ \\
   $h=(x,y,t)=(v,t)$ & $h \in \mathbb{H}_n$, $x,y \in \mathbb{R}^n,v \in \mathbb{R}^{2n}$, $t \in \mathbb{R}$ \\
-  $\Gamma$ & Subgrupo discreto $\mathbb{H}_n$ \\
+  $\Gamma$ & Subgrupo discreto de $\mathbb{H}_n$ \\
   ${[}\Gamma,\Gamma{]}$ & Subgrupo conmutador de $\Gamma$ \\
   $L$ & Conjunto de todos los lattices de $\mathbb{H}_n$ \\
   $Z$ & Centro de $\mathbb{H}_n$ \\
   $<v_1,...,v_n>$ & $\mathbb{Z}$-módulo generado por los elementos $v_1,...,v_n$\\
-  $\beta(\Gamma)$ & Real positivo unívocamente determinado,\\
   $\Gamma(l)$ & Grupo generado por $(e_1,0)...(e_n,0),(l_1 e_{n+1},0),...,(l_n e_{2n},0)$\\  
+  $\beta(\Gamma)$ & Real positivo unívocamente determinado,\\  
   & tal que $\Gamma \cap Z =\{(0,\beta(\Gamma) m): m\in \mathbb{Z} \}$ \\
 \end{tabular}
 
 
 \section{Introducción}
-El estudio de los subgrupos discretos de un grupo de Lie aparece en àreas
+El estudio de los subgrupos discretos de un grupo de Lie aparece en áreas
 centrales de la matemática, tales como geometría diferencial y
 algebraica, análisis armónico, y teoría de números ( formas
 automorfas.)\bigskip .
@@ -85,7 +89,7 @@ En nuestro caso particular, el estudio de lattices $\Gamma $ en $\mathbb{H}_n,$ 
 aplicación de inter\'{e}s mencionamos la descomposición en
 representaciones irreducibles de la representación regular a derecha de
 $\mathbb{H}_n$ en $L^2(\Gamma /\mathbb{H}_n)$, pudiendo calcularse
-explicitamente sus multiplicidades. ( Ver \cite{Fo} ,\cite{Th}).
+explícitamente sus multiplicidades. ( Ver \cite{Fo} ,\cite{Th}).
 
 \section{Preliminares}
 \subsection{Formas bilineales}
@@ -198,29 +202,35 @@ donde $x,y,x',y' \in \mathbb{R}^n$ con  $x.y$ el producto escalar usual de $\mat
 
 \subsection{Grupo de Heisenberg}
 \begin{definition}
- El grupo de Heisenberg $\mathbb{H}_n$, es el grupo de Lie cuya variedad subyacente es $\mathbb{R}^{2n} \times \mathbb{R}$ y 
- cuya operación de grupo está definida por: 
- $$(x,y,t)(x',y',s)=(x+x'+y+y',t+s + \frac{1}{2} \psi((x,y),(x',y'))),$$
- donde $x,x',y,y' \in \mathbb{R}^{n}$ , s,t $\in \mathbb{R}$.
+Denotaremos con $\mathfrak{h}_n$ el álgebra de Heisenberg,definida sobre
+$\mathbb{C}^n \times \mathbb{R}$  con el corchete de Lie dado por 
+$$
+[(v,t),(v',s)]=(0,\psi(v,v')),
+$$
+donde  $\psi (v,v')=Im(v.\overline{v'}).$
 \end{definition}
 
-
-
-Observación:
-El grupo de Heisenberg también puede ser visto como  $\mathbb{C}^{n}\times R,$ con
+\begin{definition}
+El grupo de Heisenberg es como variedad subyacente $\mathbb{C}^{n}\times \mathbb{R},$ con
 ley de grupo dada por 
 $$\begin{aligned}
 (v,t)(v',s)=(v+v',t+s+ \frac{1}{2} \psi(v,v')),
 \end{aligned}$$
-donde $v=(x,y),v'=(x',y') \in \mathbb{C}^n$ y $\psi (v,v')=Im(v.\overline{v'}).$
+según la fórmula de Baker-Campbell-Hausdorff.
+\end{definition}
+
+Observación:
+ El grupo de Heisenberg $\mathbb{H}_n$, también puede ser visto como $\mathbb{R}^{n} \times \mathbb{R}^{n} \times \mathbb{R}$ munido
+ de la operación de grupo definida por: 
+ $$(x,y,t)(x',y',s)=(x+x'+y+y',t+s + \frac{1}{2} \psi((x,y),(x',y'))),$$
+ donde $x,x',y,y' \in \mathbb{R}^{n}$ , s,t $\in \mathbb{R}$.
+
+
+
 
 El centro de $\mathbb{H}_n$ viene dado por Z=(0,t), t $\in \mathbb{R}.$
 
-Denotaremos como $\mathfrak{h}_n$ el álgebra de Lie, de $\mathbb{H}_n$.
-Luego $\mathfrak{h}_n$ es $\mathbb{C}^n \times \mathbb{R}$  con el corchete de Lie dado por 
-$$
-[(v,t),(v',s)]=(0,\psi(v,v')).
-$$
+
 Es inmediato ver que la aplicación exponencial $exp: \mathfrak{h}_n \mapsto \mathbb{H}_n$ es la identidad.
 \begin{definition}
  Recordemos que, dados dos elementos $g,h$ en un grupo $G$, el conmutador de $g$ y $h$ es ${[}g,h{]}:=g h g^{-1} h^{-1}$.
@@ -268,8 +278,8 @@ Esta última observación motiva la siguiente definición.
 \end{definition}
 Observemos que este es el subgrupo de automorfismos que actúan trivialmente en el centro.
 
-
-Describamos más en detalle el grupo de automorfismos $\mathbb{A}_n$ de $\mathfrak{h}_n$.
+\subsection{Descripción del grupo de automorfismos}
+Sea $\mathbb{A}_n$ el grupo de automorfismos  de $\mathfrak{h}_n$.
 Todo $\alpha \in \mathbb{A}_n$ viene en principio dada por una transformación lineal  $\mathbb{R}^{2n+1}$ en $\mathbb{R}^{2n+1}$,
 
 $$\alpha=
@@ -352,7 +362,7 @@ I & 0\\
 \tilde{b} & 1
 \end{bmatrix}
 $
-es un subgrupo abeliano de $A_n$ isomorfo a $R^{2n}$.
+es un subgrupo abeliano de $\mathbb{A}_n$ isomorfo a $R^{2n}$.
 
 \section{Descripción de lattices en el grupo de Heisenberg}
 
@@ -400,8 +410,7 @@ Esto motiva la siguiente definición:
 y luego $\psi (\tilde{D},\tilde{D})\subseteq \mathbb{Z}$
  
 Sea $l_1$ el menor entero positivo para el cual existen $
-v_1,v_1' \in D$ tal que, $l_1=\psi (v_1,v_1')$ con 
-$v_1,v_1' \in D$.
+v_1,v_1' \in D$ tal que, $l_1=\psi (v_1,v_1')$.
  Definimos $<v_1,v_1'>^\bot=\{v \in D: \psi(v,v_1)=\psi(v_1',v)=0\}$
  \newline
  
@@ -435,23 +444,11 @@ Luego $r=0$, por la elección de $l_1$, esto es $\psi(v_1,v-mv_1')=0$
  $r= \psi(v,v') - m \psi(v_1,v_1')=\psi(v,v')-m\psi(v_1,v_1')+ \psi (v_1,v')+ \psi(v,-m v_1') 
  = \psi(v+v_1,v'-mv_1') \Rightarrow $ r=0 (por la elección de $l_1$) 
  
- Finalmente afirmo que $\psi(D,D)=l_1 \mathbb{Z}$ 
+ Finalmente afirmamos que $\psi(D,D)=l_1 \mathbb{Z}$ 
  
  $\supseteq$)Esta inclusión es inmediata: pues si $m \in \mathbb{Z} \Rightarrow \psi(v_1,m v_1') = m l_1$
  
- $\subseteq$) Sean $w,w' \in D$ ,por afirmación 1 ,$w = w_1 +w_2$  y $w'=w_1' +w_2'$
- 
-  con $w_1,w_1' \in <v_1,v_1'>$ y  $w_2,w_2' \in <v_1,v_1'>^\bot$ 
- $$\begin{aligned}
- \psi(w,w')&=\\
- \psi(w_1,w_1')+ \psi(w_1,w_2')+ \psi(w_2,w_1')+\psi(w_2,w_2')&=\\
- \psi(w_1,w_1')+\psi(w_2,w_2')& \stackrel{*}{=} \\ 
- \psi(n v_1+n' v_1',m v_1+m' v_1') + k l_1 &=\\
- n m' \psi(v_1,v_1')+n' m \psi(v_1',v_1)+ k l_1 &= (n m' - n'm+k)l_1\\
- \end{aligned}$$
- \newline 
- 
- (*) $w_1,w_2 \in <v_1,v_1'>$ y afirmación 2
+ $\subseteq$) Esta contención se sigue de la bilinealidad de la $\psi$ y la  afirmación 2.
  
  Notar que el lattice original $\psi(D,D)= l l_1 \mathbb{Z} $
 \end{proof}
@@ -668,7 +665,7 @@ $$
   \begin{thebibliography}{1}
  \bibitem[Fo]{Fo} Folland G.  \emph{``Compact Heisenberg Manifolds as CR Manifolds''},The Journal of Geometric Analysis, Vol. 14 N. 3, 2004.(521-532)
  \bibitem[Ho]{Ho} Hoffman K.,Kunze R.  \emph{``Linear Algebra''},Prentice-Hall, 1973  
- \bibitem[Hu]{Hu} HungerfordT. W.  \emph{``Algebra''}.Graduate Text in Mathematics, V. 73,Springer, 2003
+ \bibitem[Hu]{Hu} Hungerford T. W.  \emph{``Algebra''},Graduate Text in Mathematics, V. 73,Springer, 2003
  \bibitem[La]{La} Lang S.  \emph{``Algebra''},3. ed., Springer, 2004
  \bibitem[Th]{Th} Thangavelu S.  \emph{``Harmonic analysis on Heisenberg nilmanifolds''}.Revista de la Unión Matemática Argentina,V. 50, N. 2 , 2009. (75-93)
  \bibitem[To]{To} Tolimieri R.   \emph{``Heisenberg manifolds and Theta functions''}, Trans. of the A.M.S Vol 239, 1978. (293-319)
