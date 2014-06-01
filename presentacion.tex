@@ -1,0 +1,123 @@
+\documentclass{beamer}
+
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+\usetheme{Boadilla}
+
+\newtheorem{teorema}{Teorema}
+%\newtheorem{lemma}{Lema}
+%\newtheorem{proposition}{Proposición}
+%\newtheorem{corollary}{Corolario}
+%\newtheorem{example}{Ejemplo}
+%\newtheorem{note}{Nota}
+\newtheorem{definicion}{Definición}
+%\newenvironment{proof}{\paragraph{Demostración:}}{\hfill$\square$}
+
+\author{Alumno: Exequiel Aguirre \\ Directora: Dra. Linda V. Saal}
+\title{Subgrupos discretos del grupo de Heisenberg }
+\date{Julio 2014}
+
+\begin{document}
+\maketitle
+
+
+\begin{frame}{Introducción}
+\framesubtitle{Motivación}
+La teoría de series de Fourier es la versión clásica del análisis armónico en el toro,
+$\mathbb{R}^n /\mathbb{Z}^n$, donde $\mathbb{Z}^n$ denota el subgrupo discreto de $\mathbb{R}^n$ de
+las n-uplas de números enteros.
+
+Si en lugar de $\mathbb{R}^n$ , consideramos el grupo de Heisenberg 2n+1 dimensional $\mathbb{H}_n$, un tema
+de interés actual es desarrollar el análisis armónico asociado a $\mathbb{H}_n/\Gamma$, donde $\Gamma$ 
+denota un subgrupo discreto de $\mathbb{H}_n$. Ver \cite{Th} 
+
+El objetivo de este trabajo es estudiar la descripción hecha por R. Tolimieri \cite{To} de los subgrupos discretos
+del grupo de Heisenberg.
+\end{frame}
+
+
+\begin{frame}{Preliminares}
+\framesubtitle{Formas bilineales}
+Recordamos que una forma bilineal sobre un espacio vectorial real $V$ de dimensión finita,$\psi :V\times V\rightarrow R$
+es alternante si $\psi(v,v)=0$ $\forall v \in V$  y se dice no degenerada si 
+$\psi(v,v')=0$ $\forall v' \in V \Rightarrow v = 0$  y 
+$\psi(v,v')=0$ $\forall v \in V \Rightarrow v' = 0$
+\end{frame}
+
+\begin{frame}{Preliminares}
+\framesubtitle{Formas bilineales}
+\begin{teorema} \label{Lang-8.1}
+ Sea V, un espacio vectorial real de dimensión finita, $\psi$ una forma bilineal, alternante, no degenerada, 
+ $\psi:VxV\mapsto \mathbb{R}$. Entonces dim(V) es par y existirá una base ordenada de V en la que la matriz de $\psi$,
+ 
+$$\psi = 
+\begin{bmatrix}
+ 0 & 1 & & & & & & &\\ 
+ -1& 0 & & & & & & &\\
+ & & 0 & 1 & & & & &\\
+ & & -1 & 0 & & & & &\\
+ & &  &  & & \ddots & & &\\
+ & &  &  & & & 0 & 1 &\\
+ & &  &  & & & -1 & 0 &\\ 
+\end{bmatrix}
+$$
+\end{teorema}
+
+De ahora en adelante, sea $\psi :\mathbb{R}^{2n} \times \mathbb{R}^{2n}\mapsto \mathbb{R}$ dada por 
+$$ \begin{aligned}
+\psi((x,y),(x',y'))=y.x'-x.y' ,
+\end{aligned}$$
+donde $x,y,x',y' \in \mathbb{R}^n$ con  $x.y$ el producto escalar usual de $\mathbb{R}^n$.
+\end{frame}
+
+\begin{frame}{Grupo de Heisenberg}
+\begin{definicion}
+Denotaremos con $\mathfrak{h}_n$ el álgebra de Heisenberg,definida sobre
+$\mathbb{C}^n \times \mathbb{R}$  con el corchete de Lie dado por 
+$$
+[(v,t),(v',s)]=(0,\psi(v,v')),
+$$
+donde  $\psi (v,v')=Im(v.\overline{v'}).$
+\end{definicion} 
+\end{frame}
+
+
+\begin{frame}{Grupo de Heisenberg}
+\begin{definicion}
+El grupo de Heisenberg es como variedad subyacente $\mathbb{C}^{n}\times \mathbb{R},$ con
+ley de grupo dada por 
+$$\begin{aligned}
+(v,t)(v',s)=(v+v',t+s+ \frac{1}{2} \psi(v,v')),
+\end{aligned}$$
+según la fórmula de Baker-Campbell-Hausdorff.
+\end{definicion}
+\end{frame}
+
+\begin{frame}{Grupo de Heisenberg}
+\begin{definicion}
+ Recordemos que, dados dos elementos $g,h$ en un grupo $G$, el conmutador de $g$ y $h$ es ${[}g,h{]}:=g h g^{-1} h^{-1}$.
+ 
+ Llamaremos subgrupo conmutador $[G,G]$ al grupo generado por todos los conmutadores.
+\end{definicion}
+Notemos que, dados $g=(v,t),h=(v',s) \in \mathbb{H}_n$
+$$
+{[}g,h{]}=g h g^{-1} h^{-1}=(0,\psi(v,v'))
+$$
+\end{frame}
+
+
+ \begin{frame}{Referencias}
+  \begin{thebibliography}{1}
+  \bibitem[Fo]{Fo} Folland G.  \emph{``Compact Heisenberg Manifolds as CR Manifolds''},The Journal of Geometric Analysis, Vol. 14 N. 3, 2004.(521-532)
+  \bibitem[Ho]{Ho} Hoffman K.,Kunze R.  \emph{``Linear Algebra''},Prentice-Hall, 1973  
+  \bibitem[Hu]{Hu} Hungerford T. W.  \emph{``Algebra''},Graduate Text in Mathematics, V. 73,Springer, 2003
+  \bibitem[La]{La} Lang S.  \emph{``Algebra''},3. ed., Springer, 2004
+  \bibitem[Th]{Th} Thangavelu S.  \emph{``Harmonic analysis on Heisenberg nilmanifolds''}.Revista de la Unión Matemática Argentina,V. 50, N. 2 , 2009. (75-93)
+  \bibitem[To]{To} Tolimieri R.   \emph{``Heisenberg manifolds and Theta functions''}, Trans. of the A.M.S Vol 239, 1978. (293-319)  
+  \end{thebibliography}
+\end{frame}
+
+
+
+\end{document}
