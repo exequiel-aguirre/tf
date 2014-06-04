@@ -25,20 +25,15 @@
 \begin{frame}{Introducción}
 \framesubtitle{Motivación}
 La teoría de series de Fourier es la versión clásica del análisis armónico en el toro,
-$\mathbb{R}^n /\mathbb{Z}^n$, donde $\mathbb{Z}^n$ denota el subgrupo discreto de $\mathbb{R}^n$ de
-las n-uplas de números enteros.
+$\mathbb{R}^n /\mathbb{Z}^n$.
 
 Si en lugar de $\mathbb{R}^n$ , consideramos el grupo de Heisenberg 2n+1 dimensional $\mathbb{H}_n$, un tema
 de interés actual es desarrollar el análisis armónico asociado a $\mathbb{H}_n/\Gamma$, donde $\Gamma$ 
-denota un subgrupo discreto de $\mathbb{H}_n$. Ver \cite{Th} 
-
-El objetivo de este trabajo es estudiar la descripción hecha por R. Tolimieri \cite{To} de los subgrupos discretos
-del grupo de Heisenberg.
+denota un subgrupo discreto de $\mathbb{H}_n$. 
 \end{frame}
 
 
 \begin{frame}{Preliminares}
-\framesubtitle{Formas bilineales}
 Recordamos que una forma bilineal sobre un espacio vectorial real $V$ de dimensión finita,$\psi :V\times V\rightarrow R$
 es alternante si $\psi(v,v)=0$ $\forall v \in V$  y se dice no degenerada si 
 $\psi(v,v')=0$ $\forall v' \in V \Rightarrow v = 0$  y 
@@ -46,7 +41,6 @@ $\psi(v,v')=0$ $\forall v \in V \Rightarrow v' = 0$
 \end{frame}
 
 \begin{frame}{Preliminares}
-\framesubtitle{Formas bilineales}
 \begin{teorema} \label{Lang-8.1}
  Sea V, un espacio vectorial real de dimensión finita, $\psi$ una forma bilineal, alternante, no degenerada, 
  $\psi:VxV\mapsto \mathbb{R}$. Entonces dim(V) es par y existirá una base ordenada de V en la que la matriz de $\psi$,
@@ -80,10 +74,7 @@ $$
 $$
 donde  $\psi (v,v')=Im(v.\overline{v'}).$
 \end{definicion} 
-\end{frame}
 
-
-\begin{frame}{Grupo de Heisenberg}
 \begin{definicion}
 El grupo de Heisenberg es como variedad subyacente $\mathbb{C}^{n}\times \mathbb{R},$ con
 ley de grupo dada por 
@@ -93,6 +84,7 @@ $$\begin{aligned}
 según la fórmula de Baker-Campbell-Hausdorff.
 \end{definicion}
 \end{frame}
+
 
 \begin{frame}{Grupo de Heisenberg}
 \begin{definicion}
@@ -105,6 +97,81 @@ $$
 {[}g,h{]}=g h g^{-1} h^{-1}=(0,\psi(v,v'))
 $$
 \end{frame}
+
+\begin{frame}{Automorfismos del grupo de Heisenberg}
+ \begin{definition}
+ Recordemos que un automorfismo $\alpha: \mathfrak{h}_n \mapsto \mathfrak{h}_n$ es un isomorfismo lineal tal que 
+ $$\begin{aligned}
+    \alpha({[}(v,t),(v',s){]})={[}\alpha(v,t),\alpha(v',s){]}
+ \end{aligned}$$
+\end{definition}
+\begin{definition}
+ Definimos el grupo simpléctico $Sp(2n,\mathbb{R})$ como ,
+ $$
+ Sp(2n,\mathbb{R})=\{ A \in GL(2n,\mathbb{R}): \psi(v,v')=\psi(Av,Av') \forall v,v' \in \mathbb{C}^n\}.
+ $$
+\end{definition}
+
+\end{frame}
+
+\begin{frame}{Automorfismos del grupo de Heisenberg}
+$$\alpha=
+\begin{bmatrix}
+A & c\\
+b & a
+\end{bmatrix},$$
+con $A \in  \mathbb{R}^{2n} \times \mathbb{R}^{2n}$, $a \in \mathbb{R}$, $b,c \in \mathbb{R}^{2n}$.
+
+\begin{itemize}
+\item <2-> $c=0$
+\item <2-> $a\neq0$
+\item <2-> $a \psi(v,v')=\psi(A v,A v')$
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Automorfismos del grupo de Heisenberg}
+Caso $a>0$:
+ $$\alpha=
+ \begin{bmatrix}
+A & 0\\
+b & a
+\end{bmatrix}=
+\delta_{a^{1/2}}
+\begin{bmatrix}
+S & 0\\
+0 & 1
+\end{bmatrix}
+\begin{bmatrix}
+I & 0\\
+\tilde{b} & 1
+\end{bmatrix}.
+$$
+
+Caso $a<0$:
+$$\alpha=
+ \begin{bmatrix}
+A & 0\\
+b & a
+\end{bmatrix}=
+\theta
+\delta_{(-a)^{1/2}}
+\begin{bmatrix}
+S & 0\\
+0 & 1
+\end{bmatrix}
+\begin{bmatrix}
+I & 0\\
+\tilde{b} & 1
+\end{bmatrix}.
+$$
+
+Con, 
+\begin{itemize}
+\item $\delta_a (v,t) :=(a v,a^2 t)$
+\item $\theta(v,t):=(\overline{v},-t)$
+\end{itemize}
+\end{frame}
+
 
 
  \begin{frame}{Referencias}
