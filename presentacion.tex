@@ -35,15 +35,15 @@ denota un subgrupo discreto de $\mathbb{H}_n$.
 
 \begin{frame}{Preliminares}
 Recordamos que una forma bilineal sobre un espacio vectorial real $V$ de dimensión finita,$\psi :V\times V\rightarrow R$
-es alternante si $\psi(v,v)=0$ $\forall v \in V$  y se dice no degenerada si 
+es antisimétrica si $\psi(v,w)=-\psi(w,v)$ $\forall v,w \in V$  y se dice no degenerada si 
 $\psi(v,v')=0$ $\forall v' \in V \Rightarrow v = 0$  y 
 $\psi(v,v')=0$ $\forall v \in V \Rightarrow v' = 0$
 \end{frame}
 
 \begin{frame}{Preliminares}
 \begin{teorema} \label{Lang-8.1}
- Sea V, un espacio vectorial real de dimensión finita, $\psi$ una forma bilineal, alternante, no degenerada, 
- $\psi:VxV\mapsto \mathbb{R}$. Entonces dim(V) es par y existirá una base ordenada de V en la que la matriz de $\psi$,
+ Sea V, un espacio vectorial real de dimensión finita, $\psi :V\times V\rightarrow R$ una forma bilineal, antisimétrica, no degenerada.
+  Entonces dim(V) es par y existe una base ordenada de V en la que la matriz de $\psi$,
  
 $$\psi = 
 \begin{bmatrix}
@@ -60,7 +60,7 @@ $$
 
 De ahora en adelante, sea $\psi :\mathbb{R}^{2n} \times \mathbb{R}^{2n}\mapsto \mathbb{R}$ dada por 
 $$ \begin{aligned}
-\psi((x,y),(x',y'))=y.x'-x.y' ,
+\psi((x,y),(x',y'))=x.y'-y.x' ,
 \end{aligned}$$
 donde $x,y,x',y' \in \mathbb{R}^n$ con  $x.y$ el producto escalar usual de $\mathbb{R}^n$.
 \end{frame}
@@ -99,18 +99,18 @@ $$
 \end{frame}
 
 \begin{frame}{Automorfismos del grupo de Heisenberg}
- \begin{definition}
- Recordemos que un automorfismo $\alpha: \mathfrak{h}_n \mapsto \mathfrak{h}_n$ es un isomorfismo lineal tal que 
+ \begin{definicion}
+ Recordemos que un automorfismo de álgebras de Lie $\alpha: \mathfrak{h}_n \mapsto \mathfrak{h}_n$ es un isomorfismo lineal tal que 
  $$\begin{aligned}
     \alpha({[}(v,t),(v',s){]})={[}\alpha(v,t),\alpha(v',s){]}
  \end{aligned}$$
-\end{definition}
-\begin{definition}
+\end{definicion}
+\begin{definicion}
  Definimos el grupo simpléctico $Sp(2n,\mathbb{R})$ como ,
  $$
  Sp(2n,\mathbb{R})=\{ A \in GL(2n,\mathbb{R}): \psi(v,v')=\psi(Av,Av') \forall v,v' \in \mathbb{C}^n\}.
  $$
-\end{definition}
+\end{definicion}
 
 \end{frame}
 
@@ -172,7 +172,7 @@ Con,
 \end{itemize}
 \end{frame}
 
-
+poner antisimetrica
 
  \begin{frame}{Referencias}
   \begin{thebibliography}{1}
