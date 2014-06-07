@@ -1,18 +1,18 @@
 \documentclass{beamer}
+\uselanguage{spanish}
+\languagepath{spanish}
+\deftranslation[to=spanish]{Definition}{Definici\'{o}n}
+\deftranslation[to=spanish]{Theorem}{Teorema}
+\deftranslation[to=spanish]{Corollary}{Corolario}
+\deftranslation[to=spanish]{Lemma}{Lema}
+\deftranslation[to=spanish]{Example}{Ejemplo}
+
 
 \usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage[utf8]{inputenc}
 \usetheme{Boadilla}
 
-\newtheorem{teorema}{Teorema}
-%\newtheorem{lemma}{Lema}
-%\newtheorem{proposition}{Proposición}
-%\newtheorem{corollary}{Corolario}
-%\newtheorem{example}{Ejemplo}
-%\newtheorem{note}{Nota}
-\newtheorem{definicion}{Definición}
-%\newenvironment{proof}{\paragraph{Demostración:}}{\hfill$\square$}
 
 \author{Alumno: Exequiel Aguirre \\ Directora: Dra. Linda V. Saal}
 \title{Subgrupos discretos del grupo de Heisenberg }
@@ -41,7 +41,7 @@ $\psi(v,v')=0$ $\forall v \in V \Rightarrow v' = 0$
 \end{frame}
 
 \begin{frame}{Preliminares}
-\begin{teorema} \label{Lang-8.1}
+\begin{theorem} \label{Lang-8.1}
  Sea V, un espacio vectorial real de dimensión finita, $\psi :V\times V\rightarrow R$ una forma bilineal, antisimétrica, no degenerada.
   Entonces dim(V) es par y existe una base ordenada de V en la que la matriz de $\psi$,
  
@@ -56,7 +56,7 @@ $$\psi =
  & &  &  & & & -1 & 0 &\\ 
 \end{bmatrix}
 $$
-\end{teorema}
+\end{theorem}
 
 De ahora en adelante, sea $\psi :\mathbb{R}^{2n} \times \mathbb{R}^{2n}\mapsto \mathbb{R}$ dada por 
 $$ \begin{aligned}
@@ -66,32 +66,32 @@ donde $x,y,x',y' \in \mathbb{R}^n$ con  $x.y$ el producto escalar usual de $\mat
 \end{frame}
 
 \begin{frame}{Grupo de Heisenberg}
-\begin{definicion}
+\begin{definition}
 Denotaremos con $\mathfrak{h}_n$ el álgebra de Heisenberg,definida sobre
 $\mathbb{C}^n \times \mathbb{R}$  con el corchete de Lie dado por 
 $$
 [(v,t),(v',s)]=(0,\psi(v,v')),
 $$
 donde  $\psi (v,v')=Im(v.\overline{v'}).$
-\end{definicion} 
+\end{definition} 
 
-\begin{definicion}
+\begin{definition}
 El grupo de Heisenberg es como variedad subyacente $\mathbb{C}^{n}\times \mathbb{R},$ con
 ley de grupo dada por 
 $$\begin{aligned}
 (v,t)(v',s)=(v+v',t+s+ \frac{1}{2} \psi(v,v')),
 \end{aligned}$$
 según la fórmula de Baker-Campbell-Hausdorff.
-\end{definicion}
+\end{definition}
 \end{frame}
 
 
 \begin{frame}{Grupo de Heisenberg}
-\begin{definicion}
+\begin{definition}
  Recordemos que, dados dos elementos $g,h$ en un grupo $G$, el conmutador de $g$ y $h$ es ${[}g,h{]}:=g h g^{-1} h^{-1}$.
  
  Llamaremos subgrupo conmutador $[G,G]$ al grupo generado por todos los conmutadores.
-\end{definicion}
+\end{definition}
 Notemos que, dados $g=(v,t),h=(v',s) \in \mathbb{H}_n$
 $$
 {[}g,h{]}=g h g^{-1} h^{-1}=(0,\psi(v,v'))
@@ -99,18 +99,18 @@ $$
 \end{frame}
 
 \begin{frame}{Automorfismos del grupo de Heisenberg}
- \begin{definicion}
+ \begin{definition}
  Recordemos que un automorfismo de álgebras de Lie $\alpha: \mathfrak{h}_n \mapsto \mathfrak{h}_n$ es un isomorfismo lineal tal que 
  $$\begin{aligned}
     \alpha({[}(v,t),(v',s){]})={[}\alpha(v,t),\alpha(v',s){]}
  \end{aligned}$$
-\end{definicion}
-\begin{definicion}
+\end{definition}
+\begin{definition}
  Definimos el grupo simpléctico $Sp(2n,\mathbb{R})$ como ,
  $$
  Sp(2n,\mathbb{R})=\{ A \in GL(2n,\mathbb{R}): \psi(v,v')=\psi(Av,Av') \forall v,v' \in \mathbb{C}^n\}.
  $$
-\end{definicion}
+\end{definition}
 
 \end{frame}
 
@@ -172,7 +172,113 @@ Con,
 \end{itemize}
 \end{frame}
 
-poner antisimetrica
+\begin{frame}
+ \begin{definition}
+ Recordemos que una lattice de $\mathbb{C}^n$ es un subgrupo discreto D de $\mathbb{C}^n$ tal que $\mathbb{C}^n$/D es compacto.
+\end{definition}
+
+\begin{definition}
+ Llamaremos una lattice de $\mathbb{H}_n$, a un subgrupo discreto $\Gamma$ de $\mathbb{H}_n$ tal que $\mathbb{H}_n/\Gamma$ es compacto.
+\end{definition}
+
+\end{frame}
+
+\begin{frame}
+ Notemos, que  $\Gamma \cap Z$ es un subgrupo discreto, no trivial, de $Z$ y 
+por ende existe un único real positivo $\beta(\Gamma)$ tal que:
+$$
+\Gamma \cap Z=\beta(\Gamma) \mathbb{Z}.
+$$
+
+Consideremos $\pi :\mathbb{H}_{n}\rightarrow \mathbb{C}^{n}$  definida por $\pi (v,t)=v$
+entonces $\pi(\Gamma)$ es una lattice de $\mathbb{C}^n$.
+
+\end{frame}
+\begin{frame}
+ Además, el hecho de que
+$$\begin{aligned}
+{[} \Gamma,\Gamma {]} \subseteq \Gamma \cap Z = \beta(\Gamma) \mathbb{Z}
+\end{aligned}$$
+impone algunas condiciones especiales a $\pi(\Gamma)$.
+Sean $h=(v,t),g=(v',s) \in \Gamma$, entonces ${[}h,g{]}=h^{-1}g^{-1}hg=(0,\psi(v,v'))$ 
+y por ende $\psi(v,v') \in  \beta(\Gamma) \mathbb{Z}$.
+Es más, despues veremos que $\psi(\pi(\Gamma),\pi(\Gamma))=l_1 \beta(\Gamma) \mathbb{Z}$ para un entero positivo $l_1$ .
+Esto motiva la siguiente definición:
+
+\begin{definition}
+ Llamaremos a una lattice D de $\mathbb{C}^n$ lattice de Heisenberg, cuando $\psi(D,D)=r \mathbb{Z} $ para algún $r > 0$.
+ Denotaremos al conjunto de las lattices de Heisenberg  por $HL(\mathbb{C}^n)$.
+\end{definition}
+\end{frame}
+\begin{frame}
+ \begin{lemma} \label{1.7}
+ Si una lattice D de $\mathbb{C}^n$  satisface que $\psi(D,D) \subseteq  l \mathbb{Z}$, $l>0$, entonces 
+ existe un entero positivo $l_1$ tal que $\psi (D,D)=l l_1 \mathbb{Z}$, es decir D $\in HL(\mathbb{C}^{n}).$
+\end{lemma}
+
+\begin{lemma} \label{1.8}
+ Un $D \in HL(\mathbb{C}^n)$ se puede escribir como una suma directa $\psi-ortogonal : D=<v_1,v_1'>\oplus<v_2,v_2'>...<v_n,v_n'>$
+ de $\mathbb{Z}$-módulos bidimensionales $<v_j,v_j'>$. Sea $l_j=\psi(v_j,v_j')$. Entonces la descomposición puede ser tomada 
+ de forma tal que $l_j \in \mathbb{R}^{>0}$ y $\frac{l_{j+1}}{l_j}  \in \mathbb{Z}$.
+ 
+ Es más, estos $l_j$ están unívocamente determinados por D.
+\end{lemma}
+
+\end{frame}
+\begin{frame}
+  \begin{corollary}
+  $\pi L = HL(\mathbb{C}^n)$
+ \end{corollary}
+ \begin{corollary}
+  Sea $\Gamma  \in L$ entonces, $\psi(\pi(\Gamma),\pi(\Gamma))=l_1 \beta(\Gamma) \mathbb{Z}$  
+ \end{corollary} 
+\end{frame}
+
+\begin{frame}
+ \begin{example} 
+ Definimos,
+ $$Z_n^{\#}:= \{ \ell=(l_1,l_2,...,l_n) \in \mathbb{N}^n:l_j|l_{j+1} \}$$
+ 
+ Sea $e_j$, $1\leq j \leq 2n $,  la base canónica de $\mathbb{R}^{2n}$.Para $\ell$, definimos:
+ 
+ $$D(\ell):=<e_1,....e_n,l_1 e_{n+1},l_2 e_{n+2}...,l_n e_{2n}>$$
+  
+ 
+ Se ve facilmente que $\psi(e_j,e_{j+n})=1$ para $j=1,...,n$
+\end{example}
+\end{frame}
+
+\begin{frame}
+ \begin{theorem}
+ Para cada $D \in HL(\mathbb{C}^n)$ existe un único $\ell \in Z_n^{\#}$, un único $l \in \mathbb{R}_{>0}$ y un $\alpha \in SP(2n,\mathbb{R})$ tal que:
+ 
+ $D=\alpha(l^{1/2} D(\ell))$
+\end{theorem}
+\end{frame}
+
+\begin{frame}
+ \begin{definition}
+ Llamaremos $\Gamma(\ell)$ al grupo generado por,
+ $${(e_1,0),(e_2,0),...,(e_n,0),(l_1 e_{n+1},0),(l_2 e_{n+2},0),...,(l_n e_{2n},0)},$$
+ con $\ell=(l_1,...l_n) \in \mathbb{Z}_n^{\#}$.
+\end{definition}
+
+\begin{corollary}
+ Sea $\Gamma \in L(\mathbb{H}_n)$ tal que ${[}\Gamma,\Gamma{]}=\Gamma \cap Z$. Entonces existe un único $\ell \in  \mathbb{Z}_n^{\#}$, un único $l> 0$  y $\alpha \in Sp(2n,\mathbb{R})$ 
+ tal que:
+ 
+ $\Gamma = \delta_{l^{\frac{1}{2}}} \alpha (\Gamma(\ell))$
+\end{corollary}
+
+\end{frame}
+
+
+
+
+
+
+
+
 
  \begin{frame}{Referencias}
   \begin{thebibliography}{1}
