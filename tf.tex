@@ -76,7 +76,7 @@ del grupo de Heisenberg.
   $\mathfrak{h}_n$ & Álgebra de Heisenberg \\
   $\mathbb{H}_n$ & Grupo de Heisenberg \\
   $\mathbb{A}_n$ & Grupo de automorfismos de $\mathfrak{h}_n$\\
-  $\psi$ & Forma bilineal, alternante, no degenerada  en $\mathbb{R}^{2n}$ \\
+  $\psi$ & Forma bilineal, antisimétrica, no degenerada  en $\mathbb{R}^{2n}$ \\
   $h=(x,y,t)=(v,t)$ & $h \in \mathbb{H}_n$, $x,y \in \mathbb{R}^n,v \in \mathbb{R}^{2n}$, $t \in \mathbb{R}$ \\
   $\Gamma$ & Subgrupo discreto de $\mathbb{H}_n$ \\
   ${[}\Gamma,\Gamma{]}$ & Subgrupo conmutador de $\Gamma$ \\
@@ -115,14 +115,14 @@ explícitamente sus multiplicidades. ( Ver \cite{Fo} ,\cite{Th}).
 \section{Preliminares}
 \subsection{Formas bilineales}
 En esta sección describimos la forma canónica de una forma bilineal,
-alternante, no degenerada sobre un espacio vectorial real $V$ de dimensión finita. 
-Recordamos que una tal forma bilineal $\psi :V\times V\rightarrow R$
-es alternante si $\psi(v,v)=0$ $\forall v \in V$  y se dice no degenerada si 
+antisimétrica, no degenerada sobre un espacio vectorial real $V$ de dimensión finita. 
+Recordamos que una tal forma bilineal $\psi :V\times V\rightarrow \mathbb{R}$
+es antisimétrica si $\psi(v,w)=-\psi(w,v)$ $\forall v,w \in V$  y se dice no degenerada si 
 $\psi(v,v')=0$ $\forall v' \in V \Rightarrow v = 0$  y 
 $\psi(v,v')=0$ $\forall v \in V \Rightarrow v' = 0$
 
 \begin{definition} 
- Un plano hiperbólico para una forma alternante es un espacio vectorial de dimensión 2 no degenerado,
+ Un plano hiperbólico para una forma antisimétrica es un espacio vectorial de dimensión 2 no degenerado,
   i.e. $\psi|_P$ es no degenerada. 
 \end{definition}
 
@@ -132,7 +132,7 @@ $\psi(v,v')=0$ $\forall v \in V \Rightarrow v' = 0$
 \end{definition}
 
 \begin{theorem} \label{Lang-8.1}
- Sea V, un espacio vectorial real de dimensión finita, $\psi$ una forma bilineal, alternante, no degenerada, 
+ Sea V, un espacio vectorial real de dimensión finita, $\psi$ una forma bilineal, antisimétrica, no degenerada, 
  $\psi:VxV\mapsto \mathbb{R}$. Entonces V es un espacio hiperbólico y dim(V) es par.
 \end{theorem}
 
@@ -143,12 +143,12 @@ Existen entonces, $\tilde{e}_1$ y $f_1$ no nulos, tales que $\psi(\tilde{e}_1,f_
 Definimos, $e_1:=\frac{\tilde{e}_1}{c}$ entonces, $\psi(e_1,f_1)=1$.
 
 Notar que $e_1$ y $f_1$, son linealmente independientes, pues si $e_1=c f_1$ con $c\neq 0$,
-entonces $\psi(e_1,f_1)=\psi(c f_1,f_1)=0$
+entonces $\psi(e_1,f_1)=\psi(c f_1,f_1)=0$.
 
 
-Sea $P_1=<e_1,f_1>$ el $\mathbb{Z}$-módulo(\textcolor{red}{el espacio vectorial generado por los elementos...?}) generado por los elementos $e_1,f_1$
+Sea $P_1$ el espacio vectorial generado por los elementos $e_1,f_1$.
     
-Dado que $\psi(e_1,f_1)=1$ y $\psi$ es alternante, tenemos que:
+Dado que $\psi(e_1,f_1)=1$ y $\psi$ es antisimétrica, tenemos que:
 \begin{itemize}
  \item $\psi(e_1,e_1)=0$
  \item $\psi(f_1,f_1)=0$
@@ -367,7 +367,7 @@ Dado que $\alpha$ y $\theta$ son automorfismos, $\theta \alpha$ lo es. Además $
 un automorfismo como el visto en el caso anterior, y por ende,
 $$\alpha=
 \theta
-\delta_{\textcolor{red}{(-a)}^{1/2}}
+\delta_{(-a)^{1/2}}
 \begin{bmatrix}
 S & 0\\
 0 & 1
@@ -532,7 +532,7 @@ La prueba continua por inducción sobre la dimensión de D.
 Para Dim(D)=2 la prueba resulta de la unicidad de $l_1$
 
 Dado n $\in \mathbb{N}$ , supongamos que los $l_i$ son únicos para los lattice de Heisenberg de dimensión 2n-2.
-Para D con dimensión 2n, defino 
+Para D con dimensión 2n, definimos
 $$\tilde{D}:=D/(v_1 \mathbb{Z} \oplus v_1' \mathbb{Z})$$
 $\tilde{D}$ es un lattice de Heisenberg, de dimensión 2n-2, por lo que sus $2\leq l_i\leq n$ asociados son únicos
 (por hipótesis inductiva). Además el $l_1$ es único por lo visto en el primer párrafo de la unicidad.
@@ -562,7 +562,7 @@ $\psi(\pi(\Gamma),\pi(\Gamma))=l_1 \beta(\Gamma) \mathbb{Z} \therefore \pi(\Gamm
 
 $\supseteq)$ $D\in HL(\mathbb{C}^n) \Rightarrow D=<v_1,v_1'>\oplus ... \oplus <v_n,v_n'>$ por (\ref{1.8}) 
 
-Defino $\Gamma$  como el grupo generado por
+Definimos $\Gamma$  como el grupo generado por
 $${(v_1,0),(v_2,0),...,(v_n,0),(v_1',0),(v_2',0),...,(v_n',0)}.$$
 
 Más explicitamente, $\Gamma=\{(\sum_{i=1}^n a_i v_i + b_i v_i', \frac{1}{2} m l_1):a_i,b_i,m \in \mathbb{Z} \}$.
@@ -584,12 +584,13 @@ Es inmediato ver que $\Gamma$ es un subgrupo discreto y que $\mathbb{H}_n / \Gam
  Definimos,
  $$Z_n^{\#}:= \{ \ell=(l_1,l_2,...,l_n) \in \mathbb{N}^n:l_j|l_{j+1} \}$$
  
- Sea $e_j$, $1\leq j \leq 2n $,  la base canónica de $\mathbb{R}^{2n}$.Para $\ell$, definimos:
+ Sea $e_j$, $1\leq j \leq 2n $,  la base canónica de $\mathbb{R}^{2n}$. Se ve fácilmente que $\psi(e_j,e_{j+n})=1$
+ para $j=1,...,n$. Para $\ell$, definimos:
  
  $$D(\ell):=<e_1,....e_n,l_1 e_{n+1},l_2 e_{n+2}...,l_n e_{2n}>$$
   
  
- Se ve facilmente que $\psi(e_j,e_{j+n})=1$ para $j=1,...,n$
+ 
 \end{example}
 
  Observación: En el lema $\ref{1.8}$ vimos que si $D(\ell) \in HL(\mathbb{C}^n)$ entonces admitía una descomposición de la forma 
